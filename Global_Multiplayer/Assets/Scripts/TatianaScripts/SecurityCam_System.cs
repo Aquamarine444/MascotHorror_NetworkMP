@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
+/* Omogonix (2023), Basic Security Camera System in Unity - Unity C# Tutorial.[YouTube]
+ * https://www.youtube.com/watch?v=ixnnXbzY688*/
 
 public class SecurityCam_System : MonoBehaviour
 {
     public List<GameObject> cameras;
     public int cameraSelected;
     public SecurityCam_System OtherButton;
-    //public Animator buttonAnim;
 
     public void nextCam()
     {
         cameraSelected = cameraSelected + 1;
-        //buttonAnim.Play("buttonpress");
 
         if (cameraSelected > cameras.Count - 1)
         {
@@ -36,7 +36,6 @@ public class SecurityCam_System : MonoBehaviour
     {
 
         cameraSelected = cameraSelected - 1;
-        //buttonAnim.Play("buttonpress");
 
         if (cameraSelected < 0)
         {
