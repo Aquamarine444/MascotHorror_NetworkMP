@@ -330,6 +330,7 @@ GameObject:
   - component: {fileID: 392330030}
   - component: {fileID: 392330029}
   - component: {fileID: 392330028}
+  - component: {fileID: 392330034}
   m_Layer: 6
   m_Name: InteractCube (2)
   m_TagString: Untagged
@@ -487,6 +488,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &392330034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392330027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2937453723
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1014,7 @@ GameObject:
   - component: {fileID: 853874180}
   - component: {fileID: 853874179}
   - component: {fileID: 853874178}
+  - component: {fileID: 853874184}
   m_Layer: 6
   m_Name: InteractCube (1)
   m_TagString: Untagged
@@ -1153,6 +1172,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &853874184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853874177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 234780631
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &865224843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1737,7 @@ GameObject:
   - component: {fileID: 1775409566}
   - component: {fileID: 1775409571}
   - component: {fileID: 1775409570}
+  - component: {fileID: 1775409572}
   m_Layer: 6
   m_Name: InteractCube
   m_TagString: Untagged
@@ -1858,6 +1895,23 @@ MonoBehaviour:
   examineCamera: {fileID: 0}
   text: A Cube?
   cM: {fileID: 0}
+--- !u!114 &1775409572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775409565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1324529153
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1804396686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +2085,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1837744081
 BoxCollider:
   m_ObjectHideFlags: 0
