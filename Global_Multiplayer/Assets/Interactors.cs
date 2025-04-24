@@ -13,7 +13,7 @@ public class Interactors : MonoBehaviour
 
     private Transform teractibleTransform;
     private Collider teractibleCollider;
-    [SerializeField] private int teractiblesFound;
+    //[SerializeField] private int teractiblesFound;
     [SerializeField] private GameObject teractibleCamera;
 
     public ObjectInspect OI;

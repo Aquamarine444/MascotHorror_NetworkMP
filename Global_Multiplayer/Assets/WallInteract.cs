@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class CubeInteract : MonoBehaviour, IInteractible
+public class WallInteract : MonoBehaviour, IInteractible
 {
-
     [SerializeField] private bool inspect;
     [SerializeField] private bool examine;
     [SerializeField] private GameObject examineCamera;
@@ -25,5 +24,4 @@ public class CubeInteract : MonoBehaviour, IInteractible
         return false;
 
     }
-
 }

@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Profiling;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class ObjectInspect : MonoBehaviour
 {
@@ -14,12 +16,12 @@ public class ObjectInspect : MonoBehaviour
     Vector3 originaPosition;
     Vector3 originalRotation;
 
-    [SerializeField]public bool examineMode;
-    [SerializeField]public bool zoomMode;
+    [SerializeField] public bool examineMode;
+    [SerializeField] public bool zoomMode;
 
 
-    //[SerializeField] private PostProcessVolume postProcessVol;
-    //[SerializeField] private DepthOfField dOF;
+    [SerializeField] private Volume postProcessVol;
+    [SerializeField] private DepthOfField dOF;
 
     [SerializeField] private GameObject UIComments;
     [SerializeField] private GameObject UIPrompts;
@@ -30,19 +32,20 @@ public class ObjectInspect : MonoBehaviour
 
     void Start()
     {
-        //postProcessVol = GameObject.FindGameObjectWithTag("PostProcessing").GetComponent<PostProcessVolume>();
-        //postProcessVol.profile.TryGetSettings(out dOF);
+        postProcessVol = GameObject.FindGameObjectWithTag("PostProcessing").GetComponent<Volume>();
+        postProcessVol.profile.TryGet<DepthOfField>(out dOF);
 
         mainCam = Camera.main;
         examineMode = false;
         zoomMode = false;
-       // dOF.active = false;
     }
 
     private void Update()
     {
         TurnObject();
         ExitExamineMode();
+
+
     }
 
     public void Pickup(Transform objectTransform)
@@ -58,16 +61,16 @@ public class ObjectInspect : MonoBehaviour
             originaPosition = clickedObject.transform.position;
             originalRotation = clickedObject.transform.rotation.eulerAngles;
 
-            clickedObject.transform.position = ExamineCam.transform.position + (transform.forward * 3f);
+            clickedObject.transform.position = ExamineCam.transform.position + (transform.forward * 2f);
 
             Time.timeScale = 0;
             //dOF.active = true;
+            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            dOF.mode.value = DepthOfFieldMode.Bokeh;
 
             examineMode = true;
-
-
         }
-        
+
     }
 
     public void ZoomIn(GameObject ZoomCam)
@@ -86,6 +89,8 @@ public class ObjectInspect : MonoBehaviour
 
             Time.timeScale = 0;
             //dOF.active = true;
+            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            dOF.mode.value = DepthOfFieldMode.Bokeh;
 
             zoomMode = true;
         }
@@ -122,6 +127,7 @@ public class ObjectInspect : MonoBehaviour
 
             Time.timeScale = 1;
             //dOF.active = false;
+            dOF.mode.value = DepthOfFieldMode.Off;
 
             examineMode = false;
 
@@ -142,18 +148,22 @@ public class ObjectInspect : MonoBehaviour
             gameObject.GetComponent<Camera>().enabled = true;
 
             Time.timeScale = 1;
-           // dOF.active = false;
+            //dOF.active = false;
+            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            dOF.mode.value = DepthOfFieldMode.Off;
 
             zoomMode = false;
 
             Player.GetComponent<Interactors>().EnableRaycast();
 
-        }
             Player.GetComponent<Interactors>().minicrosshairUI.SetActive(true);
 
             UIComments.SetActive(false);
             UIPrompts.SetActive(false);
+
         }
 
     }
+
+}
 
