@@ -16,12 +16,14 @@ public class CubeInteract : MonoBehaviour, IInteractible
 
     private void Start()
     {
-        cM = GameObject.FindWithTag("DialogueManager").GetComponent<CommsManager>();
+        //cM = GameObject.FindWithTag("DialogueManager").GetComponent<CommsManager>();
     }
 
     public bool Interact(Interactors interact)
     {
-        cM.InteractComment(text);
+        interact.gameObject.GetComponent<CommsManager>().InteractComment(text);
+
+        //cM.InteractComment(text);
         return false;
 
     }

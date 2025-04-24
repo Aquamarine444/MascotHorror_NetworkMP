@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 7730971979947252034}
   - component: {fileID: 8135679203195127918}
   - component: {fileID: 8383479285097073624}
+  - component: {fileID: 3212500498289488098}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -977,6 +978,23 @@ MonoBehaviour:
   interactUI: {fileID: 6774302566528984192}
   minicrosshairUI: {fileID: 8158479254827886286}
   canRaycast: 1
+--- !u!114 &3212500498289488098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488150267730309876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5154c4f8d6a47c43a48d2a2ac021922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupText: {fileID: 8715585105655772641}
+  popup: {fileID: 3068244422780420401}
+  interactHelpText: {fileID: 7193709967467468262}
+  InteractHelpPopup: {fileID: 547476341153451908}
+  popupDuration: 0
 --- !u!1 &4738911301882810552
 GameObject:
   m_ObjectHideFlags: 0
