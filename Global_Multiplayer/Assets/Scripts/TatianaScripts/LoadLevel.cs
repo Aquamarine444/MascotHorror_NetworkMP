@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Mirror;
 
 public class LoadLevel : MonoBehaviour
 {
@@ -43,9 +44,19 @@ public class LoadLevel : MonoBehaviour
 
 
 
-    public void ContinueToScene()
+    /*public void ContinueToScene()
     {
         loadLevel.allowSceneActivation = true;
+    }*/
+    public void ChangeScene()
+    {
+        // Only the server (host) is allowed to change the scene
+        if (NetworkServer.active)
+        {
+            loadLevel.allowSceneActivation = true;
+            // Change scene for everyone
+            NetworkManager.singleton.ServerChangeScene(NextScene);
+        }
     }
 
     public void QuitGame()
