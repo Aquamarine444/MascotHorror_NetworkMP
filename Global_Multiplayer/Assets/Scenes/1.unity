@@ -331,9 +331,9 @@ GameObject:
   - component: {fileID: 392330029}
   - component: {fileID: 392330028}
   - component: {fileID: 392330034}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: InteractCube (2)
-  m_TagString: Untagged
+  m_TagString: Interactible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1015,9 +1015,9 @@ GameObject:
   - component: {fileID: 853874179}
   - component: {fileID: 853874178}
   - component: {fileID: 853874184}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: InteractCube (1)
-  m_TagString: Untagged
+  m_TagString: Interactible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1738,9 +1738,9 @@ GameObject:
   - component: {fileID: 1775409571}
   - component: {fileID: 1775409570}
   - component: {fileID: 1775409572}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: InteractCube
-  m_TagString: Untagged
+  m_TagString: Interactible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2845,7 +2845,6 @@ SceneRoots:
   - {fileID: 1492681421}
   - {fileID: 552075560}
   - {fileID: 929649890}
-  - {fileID: 1473125485}
   - {fileID: 769720889}
   - {fileID: 1775409569}
   - {fileID: 853874183}
@@ -2855,4 +2854,5 @@ SceneRoots:
   - {fileID: 1262686686}
   - {fileID: 1804396687}
   - {fileID: 1819395492}
+  - {fileID: 1473125485}
   - {fileID: 2538432468115198260}
