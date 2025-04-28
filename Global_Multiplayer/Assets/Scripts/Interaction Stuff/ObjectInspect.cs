@@ -61,7 +61,7 @@ public class ObjectInspect : MonoBehaviour
             originaPosition = clickedObject.transform.position;
             originalRotation = clickedObject.transform.rotation.eulerAngles;
 
-            clickedObject.transform.position = ExamineCam.transform.position + (transform.forward * 2f);
+            clickedObject.transform.position = ExamineCam.transform.position + (transform.forward * 3f);
 
             Time.timeScale = 0;
             //dOF.active = true;

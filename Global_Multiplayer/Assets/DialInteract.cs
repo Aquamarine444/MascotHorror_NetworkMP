@@ -19,6 +19,7 @@ public class DialInteract : MonoBehaviour, IInteractible
     {
         interact.gameObject.GetComponent<CommsManager>().InteractComment(text);
         interact.gameObject.GetComponent<PlayerInventory>().hasDial = true;
+        interact.gameObject.GetComponent<PlayerInventory>().UpdateInventory();
         return false;
     }
 
