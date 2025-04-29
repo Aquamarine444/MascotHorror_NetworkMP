@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DialInteract : MonoBehaviour, IInteractible
+public class FuseInteract : MonoBehaviour, IInteractible
 {
     [SerializeField] private bool inspect;
     [SerializeField] private bool examine;
@@ -16,9 +16,8 @@ public class DialInteract : MonoBehaviour, IInteractible
     public bool Interact(Interactors interact)
     {
         interact.gameObject.GetComponent<CommsManager>().InteractComment(text);
-        interact.gameObject.GetComponent<PlayerInventory>().hasDial = true;
+        interact.gameObject.GetComponent<PlayerInventory>().hasFuse = true;
         interact.gameObject.GetComponent<PlayerInventory>().UpdateInventory();
         return false;
     }
-
 }
