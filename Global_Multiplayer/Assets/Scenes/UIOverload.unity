@@ -1805,7 +1805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingBar: {fileID: 599087936}
-  NextScene: CameraTestingSite
+  NextScene: MascotAI
   Timer: 0
   Button: {fileID: 1488536645}
 --- !u!95 &416059407

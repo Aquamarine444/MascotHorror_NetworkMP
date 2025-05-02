@@ -48,15 +48,17 @@ public class LoadLevel : MonoBehaviour
     {
         loadLevel.allowSceneActivation = true;
     }*/
+
     public void ChangeScene()
     {
         // Only the server (host) is allowed to change the scene
-        if (NetworkServer.active)
-        {
-            loadLevel.allowSceneActivation = true;
-            // Change scene for everyone
-            NetworkManager.singleton.ServerChangeScene(NextScene);
-        }
+         if (NetworkServer.active)
+         {
+             loadLevel.allowSceneActivation = true;
+
+             // Change scene for everyone
+             NetworkManager.singleton.ServerChangeScene(NextScene);
+         }
     }
 
     public void QuitGame()
