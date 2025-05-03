@@ -1299,7 +1299,7 @@ MonoBehaviour:
   playerCamera: {fileID: 8184879829415005131}
   interactLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   teractibleTransform: {fileID: 0}
   teractibleCollider: {fileID: 0}
   teractibleCamera: {fileID: 7471813515470643627}
