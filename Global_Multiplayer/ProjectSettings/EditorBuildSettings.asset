@@ -17,9 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIOverload.unity
     guid: 8fbe14cfa6a8bf2469342481e41fbcf1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CameraTestingSite.unity
     guid: 70f92d5ef0217614ead6caa6d3d9c63d
+  - enabled: 0
+    path: Assets/Scenes/Kes-LevelDesign.unity
+    guid: e1a50a4917d766f49a5d14e53ca559f7
+  - enabled: 1
+    path: Assets/Scenes/MascotAI.unity
+    guid: d2d6437488bdcc740afe96ffcfc2a039
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
