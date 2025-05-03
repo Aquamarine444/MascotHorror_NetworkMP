@@ -39,7 +39,7 @@ public class Interactors : MonoBehaviour
                     teractibleCollider = hit.collider;
                     teractible = hit.collider.GetComponent<IInteractible>();
 
-
+                    Debug.Log(teractible.Trigger);
 
                     if (teractible != null)
                     {
@@ -80,16 +80,22 @@ public class Interactors : MonoBehaviour
             minicrosshairUI.SetActive(false);
 
             // If you want to pick up the item
-            if (teractible.Inspect && !teractible.Examine)
+            if (teractible.Inspect && !teractible.Examine &&!teractible.Trigger)
             {
+                Debug.Log("test");
                 Inspect(teractibleTransform);
-                //teractible.InventoryItem.SetActive(true);
             }
 
             // If you want to zoom in
-            else if (!teractible.Inspect && teractible.Examine)
+            if (!teractible.Inspect && teractible.Examine && !teractible.Trigger)
             {
                 Examine(teractibleCamera);
+            }
+
+            if (teractible.Trigger && !teractible.Inspect && !teractible.Examine)
+            {
+                Debug.Log("works1"); 
+                Trigger();
             }
 
 
@@ -144,6 +150,11 @@ public class Interactors : MonoBehaviour
     private void Examine(GameObject C)
     {
         OI.ZoomIn(C);
+    }
+
+    private void Trigger()
+    {
+        OI.Trigger();
     }
 
     public void EnableRaycast()

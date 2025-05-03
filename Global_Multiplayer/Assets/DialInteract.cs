@@ -4,10 +4,12 @@ public class DialInteract : MonoBehaviour, IInteractible
 {
     [SerializeField] private bool inspect;
     [SerializeField] private bool examine;
+    [SerializeField] private bool trigger;
     [SerializeField] private GameObject examineCamera;
     [SerializeField] private GameObject particles;
     public bool Inspect { get { return inspect; } }
     public bool Examine { get { return examine; } }
+    public bool Trigger { get { return trigger; } }
     public GameObject ExamineCam { get { return examineCamera; } }
 
     public string text;

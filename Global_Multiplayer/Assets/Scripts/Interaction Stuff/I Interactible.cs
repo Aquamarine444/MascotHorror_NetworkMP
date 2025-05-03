@@ -7,6 +7,8 @@ public interface IInteractible
 
     bool Inspect { get; }
     bool Examine { get; }
+    bool Trigger { get; }
+
 
     GameObject ExamineCam { get; }
 

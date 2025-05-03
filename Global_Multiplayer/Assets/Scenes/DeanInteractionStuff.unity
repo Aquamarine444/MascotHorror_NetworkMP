@@ -1243,6 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inspect: 1
   examine: 0
+  trigger: 0
   examineCamera: {fileID: 0}
   text: A fuse?
   cM: {fileID: 0}
@@ -10236,7 +10237,7 @@ GameObject:
   - component: {fileID: 1130878522}
   - component: {fileID: 1130878521}
   - component: {fileID: 1130878520}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Dial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10339,6 +10340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inspect: 1
   examine: 0
+  trigger: 0
   examineCamera: {fileID: 0}
   particles: {fileID: 1979271180}
   text: A lock dial? I wonder if this fits somewhere
@@ -12723,7 +12725,7 @@ GameObject:
   - component: {fileID: 1477536842}
   - component: {fileID: 1477536841}
   - component: {fileID: 1477536840}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12824,6 +12826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inspect: 0
   examine: 1
+  trigger: 0
   examineCamera: {fileID: 378203760}
   dial: {fileID: 369546722}
   textTrue: This dial seems to fit

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FuseInteract : MonoBehaviour, IInteractible
+public class LidInteract : MonoBehaviour, IInteractible
 {
     [SerializeField] private bool inspect;
     [SerializeField] private bool examine;
@@ -15,11 +15,24 @@ public class FuseInteract : MonoBehaviour, IInteractible
 
     public CommsManager cM;
 
+    public bool isOpen;
+
     public bool Interact(Interactors interact)
     {
-        interact.gameObject.GetComponent<CommsManager>().InteractComment(text);
-        interact.gameObject.GetComponent<PlayerInventory>().hasFuse = true;
-        interact.gameObject.GetComponent<PlayerInventory>().UpdateInventory();
+        if (isOpen)
+        {
+            gameObject.transform.parent.GetComponent<Animator>().SetBool("DoorOpen", false);
+            isOpen = false;
+        }
+
+        else if (!isOpen)
+        {
+            gameObject.transform.parent.GetComponent<Animator>().SetBool("DoorOpen", true);
+            isOpen = false;
+        }
+
+       
+        //gameObject.GetComponent<MeshRenderer>().enabled = false;
         return false;
     }
 }

@@ -18,6 +18,7 @@ public class ObjectInspect : MonoBehaviour
 
     [SerializeField] public bool examineMode;
     [SerializeField] public bool zoomMode;
+    [SerializeField] public bool TriggerMode;
 
 
     [SerializeField] private Volume postProcessVol;
@@ -97,6 +98,24 @@ public class ObjectInspect : MonoBehaviour
 
     }
 
+    public void Trigger()
+    {
+        StartCoroutine(TriggerRoutine());
+    }
+
+    private IEnumerator TriggerRoutine()
+    {
+        Debug.Log("works3");
+        yield return new WaitForSeconds(1f);
+
+        var interactors = Player.GetComponent<Interactors>();
+        interactors.EnableRaycast();
+        interactors.minicrosshairUI.SetActive(true);
+
+        UIComments.SetActive(false);
+        UIPrompts.SetActive(false);
+    }
+
 
     void TurnObject()
     {
@@ -142,7 +161,7 @@ public class ObjectInspect : MonoBehaviour
             UIPrompts.SetActive(false);
         }
 
-        else if (Input.GetMouseButtonDown(1) && zoomMode)
+        if (Input.GetMouseButtonDown(1) && zoomMode)
         {
 
             zoomCam.SetActive(false);
