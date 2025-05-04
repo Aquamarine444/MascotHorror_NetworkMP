@@ -11,6 +11,7 @@ public class SecurityCam_System : MonoBehaviour
 
     public void nextCam()
     {
+        Debug.Log("works");
         cameraSelected = cameraSelected + 1;
 
         if (cameraSelected > cameras.Count - 1)

@@ -221,6 +221,9 @@ public class ObjectInspect : MonoBehaviour
             UIComments.SetActive(false);
             UIPrompts.SetActive(false);
 
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
         }
 
     }

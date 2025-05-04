@@ -22,8 +22,10 @@ public class PCInteract : MonoBehaviour, IInteractible
 
     public bool Interact(Interactors interact)
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-
+        //CameraSystem.GetComponent
 
         return false;
     }
