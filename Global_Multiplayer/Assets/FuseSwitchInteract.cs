@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FuseInteract : MonoBehaviour, IInteractible
+public class FuseSwitchInteract : MonoBehaviour, IInteractible
 {
     [SerializeField] private bool inspect;
     [SerializeField] private bool examine;
@@ -17,11 +17,31 @@ public class FuseInteract : MonoBehaviour, IInteractible
 
     public CommsManager cM;
 
+    public bool isOn;
+
     public bool Interact(Interactors interact)
     {
-        interact.gameObject.GetComponent<CommsManager>().InteractComment(text);
-        interact.gameObject.GetComponent<PlayerInventory>().hasFuse = true;
-        interact.gameObject.GetComponent<PlayerInventory>().UpdateInventory();
+        // When turning off
+        if (isOn)
+        {
+            gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
+            isOn = false;
+        }
+
+        // When turning on
+        else if (!isOn)
+        {
+            gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", true);
+            isOn = true;
+
+            if (interact.gameObject.GetComponent<PlayerInventory>().hasDial == false)
+            {
+
+            }
+        }
+
+
+        //gameObject.GetComponent<MeshRenderer>().enabled = false;
         return false;
     }
 }

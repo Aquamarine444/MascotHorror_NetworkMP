@@ -105,8 +105,7 @@ public class ObjectInspect : MonoBehaviour
 
     private IEnumerator TriggerRoutine()
     {
-        Debug.Log("works3");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
 
         var interactors = Player.GetComponent<Interactors>();
         interactors.EnableRaycast();
@@ -116,6 +115,23 @@ public class ObjectInspect : MonoBehaviour
         UIPrompts.SetActive(false);
     }
 
+
+    public void Place()
+    {
+        StartCoroutine(PlaceRoutine());
+    }
+
+    private IEnumerator PlaceRoutine()
+    {
+        yield return new WaitForSeconds(1);
+
+        var interactors = Player.GetComponent<Interactors>();
+        interactors.EnableRaycast();
+        interactors.minicrosshairUI.SetActive(true);
+
+        UIComments.SetActive(false);
+        UIPrompts.SetActive(false);
+    }
 
     void TurnObject()
     {

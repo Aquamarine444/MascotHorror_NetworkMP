@@ -5,6 +5,7 @@ public class PlayerInventory : MonoBehaviour
 
     [SerializeField] public bool hasDial;
     [SerializeField] public bool hasFuse;
+    [SerializeField] public bool fuseFilled;
 
     [SerializeField] private GameObject dialSprite;
     [SerializeField] private GameObject fuseSprite;
@@ -21,6 +22,7 @@ public class PlayerInventory : MonoBehaviour
         {
             fuseSprite.SetActive(true);
         }
+
     }
     
 }

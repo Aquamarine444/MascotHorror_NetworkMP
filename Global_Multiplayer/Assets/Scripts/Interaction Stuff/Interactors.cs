@@ -39,8 +39,6 @@ public class Interactors : MonoBehaviour
                     teractibleCollider = hit.collider;
                     teractible = hit.collider.GetComponent<IInteractible>();
 
-                    Debug.Log(teractible.Trigger);
-
                     if (teractible != null)
                     {
                         teractibleCamera = teractible.ExamineCam;
@@ -78,29 +76,33 @@ public class Interactors : MonoBehaviour
             OutlineOff();
 
             minicrosshairUI.SetActive(false);
+            teractible.Interact(this);
 
             // If you want to pick up the item
-            if (teractible.Inspect && !teractible.Examine &&!teractible.Trigger)
+            if (teractible.Inspect && !teractible.Examine &&!teractible.Trigger && !teractible.Place)
             {
-                Debug.Log("test");
                 Inspect(teractibleTransform);
             }
 
             // If you want to zoom in
-            if (!teractible.Inspect && teractible.Examine && !teractible.Trigger)
+            if (teractible.Examine && !teractible.Inspect && !teractible.Trigger && !teractible.Place)
             {
                 Examine(teractibleCamera);
             }
 
-            if (teractible.Trigger && !teractible.Inspect && !teractible.Examine)
+            if (teractible.Trigger && !teractible.Inspect && !teractible.Examine && !teractible.Place)
             {
-                Debug.Log("works1"); 
                 Trigger();
+            }
+
+            if (teractible.Place && !teractible.Inspect && !teractible.Examine && !teractible.Trigger)
+            {
+                Place();
             }
 
 
             canRaycast = false;
-            teractible.Interact(this);
+            //teractible.Interact(this);
 
 
 
@@ -155,6 +157,11 @@ public class Interactors : MonoBehaviour
     private void Trigger()
     {
         OI.Trigger();
+    }
+
+    private void Place()
+    {
+        OI.Place();
     }
 
     public void EnableRaycast()
