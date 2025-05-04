@@ -19,8 +19,6 @@ public class MissingFuseInteract : MonoBehaviour, IInteractible
     public CommsManager cM;
 
     public bool isOn;
-    public int dialogTime;
-
 
     public GameObject missingFuse;
     public Material rightMat;
@@ -40,7 +38,7 @@ public class MissingFuseInteract : MonoBehaviour, IInteractible
             interact.gameObject.GetComponent<PlayerInventory>().hasFuse = false;
             interact.gameObject.GetComponent<PlayerInventory>().UpdateInventory();
 
-            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<MeshCollider>().enabled = false;
         }
 
         else if (interact.gameObject.GetComponent<PlayerInventory>().hasFuse == false)
