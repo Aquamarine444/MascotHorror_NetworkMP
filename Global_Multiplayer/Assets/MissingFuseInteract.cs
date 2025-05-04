@@ -33,7 +33,7 @@ public class MissingFuseInteract : MonoBehaviour, IInteractible
             place = true;
 
 
-            interact.gameObject.GetComponent<CommsManager>().InteractComment(textTrue);
+            //interact.gameObject.GetComponent<CommsManager>().InteractComment(textTrue);
             missingFuse.GetComponent<MeshRenderer>().material = rightMat;
 
             GetComponent<Animator>().SetBool("isOn", true);

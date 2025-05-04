@@ -97,7 +97,7 @@ public class Interactors : MonoBehaviour
 
             if (teractible.Place && !teractible.Inspect && !teractible.Examine && !teractible.Trigger)
             {
-                Place();
+                Place(teractibleCamera);
             }
 
 
@@ -159,9 +159,9 @@ public class Interactors : MonoBehaviour
         OI.Trigger();
     }
 
-    private void Place()
+    private void Place(GameObject C)
     {
-        OI.Place();
+        OI.Place(C);
     }
 
     public void EnableRaycast()

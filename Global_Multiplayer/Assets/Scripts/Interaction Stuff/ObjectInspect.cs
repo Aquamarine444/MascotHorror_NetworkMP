@@ -116,14 +116,26 @@ public class ObjectInspect : MonoBehaviour
     }
 
 
-    public void Place()
+    public void Place(GameObject ZoomCam)
     {
-        StartCoroutine(PlaceRoutine());
+            zoomCam = ZoomCam;
+            zoomCamera = ZoomCam.GetComponent<Camera>();
+
+            zoomCam.SetActive(true);
+            gameObject.GetComponent<Camera>().enabled = false;
+
+
+            //Time.timeScale = 0;
+            //dOF.active = true;
+            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            dOF.mode.value = DepthOfFieldMode.Bokeh;
+
+            StartCoroutine(PlaceRoutine());
     }
 
     private IEnumerator PlaceRoutine()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
 
         var interactors = Player.GetComponent<Interactors>();
         interactors.EnableRaycast();
@@ -131,6 +143,18 @@ public class ObjectInspect : MonoBehaviour
 
         UIComments.SetActive(false);
         UIPrompts.SetActive(false);
+
+
+        zoomCam.SetActive(false);
+        gameObject.GetComponent<Camera>().enabled = true;
+
+        postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        dOF.mode.value = DepthOfFieldMode.Off;
+
+
+        Player.GetComponent<Interactors>().EnableRaycast();
+
+
     }
 
     void TurnObject()

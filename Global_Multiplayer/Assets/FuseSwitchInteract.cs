@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class FuseSwitchInteract : MonoBehaviour, IInteractible
 {
@@ -34,14 +36,31 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
             gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", true);
             isOn = true;
 
-            if (interact.gameObject.GetComponent<PlayerInventory>().hasDial == false)
+            if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == false)
             {
+                StartCoroutine(SwitchFlip());
+            }
+
+            else if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
+            {
+                Debug.Log("Power is on");
+                //turn power on
 
             }
+
         }
 
 
         //gameObject.GetComponent<MeshRenderer>().enabled = false;
         return false;
+    }
+
+    private IEnumerator SwitchFlip()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
+        isOn = false;
+
     }
 }
