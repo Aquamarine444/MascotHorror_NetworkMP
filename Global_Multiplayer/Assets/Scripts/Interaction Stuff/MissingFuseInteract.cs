@@ -32,13 +32,15 @@ public class MissingFuseInteract : MonoBehaviour, IInteractible
             examine = false;
             place = true;
 
-
-            //interact.gameObject.GetComponent<CommsManager>().InteractComment(textTrue);
             missingFuse.GetComponent<MeshRenderer>().material = rightMat;
 
             GetComponent<Animator>().SetBool("isOn", true);
 
             interact.gameObject.GetComponent<PlayerInventory>().fuseFilled = true;
+            interact.gameObject.GetComponent<PlayerInventory>().hasFuse = false;
+            interact.gameObject.GetComponent<PlayerInventory>().UpdateInventory();
+
+            GetComponent<BoxCollider>().enabled = false;
         }
 
         else if (interact.gameObject.GetComponent<PlayerInventory>().hasFuse == false)

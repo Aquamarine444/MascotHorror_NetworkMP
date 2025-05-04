@@ -13,16 +13,8 @@ public class PlayerInventory : MonoBehaviour
 
     public void UpdateInventory()
     {
-        if (hasDial)
-        {
-            dialSprite.SetActive(true);
-        }
-
-        if (hasFuse)
-        {
-            fuseSprite.SetActive(true);
-        }
-
+        dialSprite.SetActive(hasDial);
+        fuseSprite.SetActive(hasFuse);
     }
-    
+
 }
