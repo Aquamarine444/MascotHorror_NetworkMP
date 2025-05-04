@@ -17,6 +17,8 @@ public class PCInteract : MonoBehaviour, IInteractible
 
     public CommsManager cM;
 
+    public GameObject CameraSystem;
+
 
     public bool Interact(Interactors interact)
     {
