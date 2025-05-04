@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MissingFuseInteract : MonoBehaviour, IInteractible
@@ -23,6 +24,10 @@ public class MissingFuseInteract : MonoBehaviour, IInteractible
     public GameObject missingFuse;
     public Material rightMat;
 
+    public GameObject light;
+    public Material lightOut;
+    public Material lightOff;
+
     public bool Interact(Interactors interact)
     {
         if (interact.gameObject.GetComponent<PlayerInventory>().hasFuse == true)
@@ -39,6 +44,8 @@ public class MissingFuseInteract : MonoBehaviour, IInteractible
             interact.gameObject.GetComponent<PlayerInventory>().UpdateInventory();
 
             GetComponent<MeshCollider>().enabled = false;
+
+            StartCoroutine(wait());
         }
 
         else if (interact.gameObject.GetComponent<PlayerInventory>().hasFuse == false)
@@ -48,6 +55,13 @@ public class MissingFuseInteract : MonoBehaviour, IInteractible
 
         return false;
 
+    }
+
+    private IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1f);
+
+        light.GetComponent<MeshRenderer>().material = lightOff;
     }
 
 
