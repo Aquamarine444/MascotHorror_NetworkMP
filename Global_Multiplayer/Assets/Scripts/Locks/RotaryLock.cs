@@ -21,6 +21,9 @@ public class RotaryLock : MonoBehaviour
     private bool isUnlocked = false;
     private float currentAngle = 0f;
 
+
+    public GameObject lockerDoor;
+
     void Start()
     {
         currentAngle = NormalizeAngle(transform.eulerAngles.x);
@@ -74,6 +77,11 @@ public class RotaryLock : MonoBehaviour
                 {
                     isUnlocked = true;
                     Debug.Log("🏆 Lock Fully Opened!");
+
+                    lockerDoor.SetActive(false);
+
+                    GetComponent<MissingDialInteract>().currentPlayer.GetComponentInChildren<ObjectInspect>().ForceExit();
+
                 }
                 else
                 {

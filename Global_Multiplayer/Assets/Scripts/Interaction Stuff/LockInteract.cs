@@ -7,7 +7,7 @@ public class LockInteract : MonoBehaviour, IInteractible
     [SerializeField] private bool trigger;
     [SerializeField] private bool place;
     [SerializeField] private GameObject examineCamera;
-    [SerializeField] private GameObject dial;
+
     public bool Inspect { get { return inspect; } }
     public bool Examine { get { return examine; } }
     public bool Trigger { get { return trigger; } }
@@ -19,18 +19,15 @@ public class LockInteract : MonoBehaviour, IInteractible
     public string textFalse;
 
     public CommsManager cM;
+    public GameObject DialPuzzle;
 
     public bool Interact(Interactors interact)
     {
-        if (interact.gameObject.GetComponent<PlayerInventory>().hasDial == true)
+        if (interact.gameObject.GetComponent<PlayerInventory>().dialFilled == true)
         {
             interact.gameObject.GetComponent<CommsManager>().InteractComment(textTrue);
-            dial.SetActive(true);
-        }
 
-        else if (interact.gameObject.GetComponent<PlayerInventory>().hasDial == false)
-        {
-            interact.gameObject.GetComponent<CommsManager>().InteractComment(textFalse);
+            DialPuzzle.GetComponent<RotaryLock>().enabled = true;
         }
 
             return false;

@@ -18,18 +18,24 @@ public class MissingDialInteract : MonoBehaviour, IInteractible
     public CommsManager cM;
 
     public GameObject missingDial;
+    public GameObject dialBase;
     public Material rightMat;
+
+    public Animator lockAnim;
+    public GameObject currentPlayer;
 
     public bool Interact(Interactors interact)
     {
-        if (interact.gameObject.GetComponent<PlayerInventory>().hasFuse == true)
+        currentPlayer = interact.gameObject;
+
+        if (interact.gameObject.GetComponent<PlayerInventory>().hasDial == true)
         {
             examine = false;
             place = true;
 
             missingDial.GetComponent<MeshRenderer>().material = rightMat;
 
-            GetComponent<Animator>().SetBool("isOn", true);
+            lockAnim.SetBool("isOn", true);
 
             interact.gameObject.GetComponent<PlayerInventory>().dialFilled = true;
             interact.gameObject.GetComponent<PlayerInventory>().hasDial = false;
@@ -38,9 +44,12 @@ public class MissingDialInteract : MonoBehaviour, IInteractible
 
             GetComponent<MeshCollider>().enabled = false;
 
+            dialBase.GetComponent<MeshCollider>().enabled = true;
+
+
         }
 
-        else if (interact.gameObject.GetComponent<PlayerInventory>().hasFuse == false)
+        else if (interact.gameObject.GetComponent<PlayerInventory>().hasDial == false)
         {
 
             interact.gameObject.GetComponent<CommsManager>().InteractComment(text);

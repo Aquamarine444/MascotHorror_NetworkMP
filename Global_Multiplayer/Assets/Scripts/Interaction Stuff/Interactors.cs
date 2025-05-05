@@ -44,9 +44,12 @@ public class Interactors : MonoBehaviour
                         teractibleCamera = teractible.ExamineCam;
                         teractibleCamera = teractible.ExamineCam != null ? teractible.ExamineCam : teractibleCamera;
 
+                        Debug.Log("works");
+
                         OutlineOn();
                         EnableInteractUI();
                         TryInteract();
+
                     }
 
 

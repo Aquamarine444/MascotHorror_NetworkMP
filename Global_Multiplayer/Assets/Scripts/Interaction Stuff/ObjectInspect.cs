@@ -172,6 +172,30 @@ public class ObjectInspect : MonoBehaviour
         }
     }
 
+    public void ForceExit()
+    {
+        zoomCam.SetActive(false);
+        gameObject.GetComponent<Camera>().enabled = true;
+
+        Time.timeScale = 1;
+        //dOF.active = false;
+        postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        dOF.mode.value = DepthOfFieldMode.Off;
+
+        zoomMode = false;
+
+        Player.GetComponent<Interactors>().EnableRaycast();
+
+        Player.GetComponent<Interactors>().minicrosshairUI.SetActive(true);
+
+        UIComments.SetActive(false);
+        UIPrompts.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+    }
+
     void ExitExamineMode()
     {
 
