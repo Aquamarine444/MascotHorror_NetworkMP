@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 2f;
 
+    [SerializeField] private Animator AnimState;
+
     private Vector3 velocity;
     private bool canJump = false;
    private bool canCrouch = true;
@@ -31,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        AnimState = GetComponent<Animator>();
+
+        AnimState.SetBool("AnimWalk", false);
+        AnimState.SetBool("AnimJump", false);
+        AnimState.SetBool("AnimFall", false);
     }
 
 
@@ -47,11 +55,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
+            AnimState.SetBool("AnimWalk", true);
             float tAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, tAngle, ref smoothVelocity, smoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             moveDire = Quaternion.Euler(0f, tAngle, 0f) * Vector3.forward;
+        }
+        else
+        {
+            AnimState.SetBool("AnimWalk", false);
+            AnimState.SetBool("AnimJump", false);
+            AnimState.SetBool("AnimFall", false);
         }
 
         if (Input.GetKey(KeyCode.C) && canCrouch)
@@ -95,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
     {
         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         canJump = false;
+        AnimState.SetBool("AnimFall", true);
     }
 
     private void Crouch(bool istru)

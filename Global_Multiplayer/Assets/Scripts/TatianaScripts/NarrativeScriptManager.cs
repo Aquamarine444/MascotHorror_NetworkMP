@@ -19,6 +19,9 @@ public class NarrativeScriptManager : MonoBehaviour
     public GameObject Audio;
     public GameObject SecondAudio;
 
+    public GameObject MommaNarrative;
+    public GameObject MommaLoad;
+
     private void Start()
     {
         Audio.SetActive(false);
@@ -67,6 +70,16 @@ public class NarrativeScriptManager : MonoBehaviour
             }
 
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SecondAudio.SetActive(false);
+            Audio.SetActive(true);
+
+            MommaNarrative.SetActive(false);
+
+            MommaLoad.SetActive(true);
         }
 
     }

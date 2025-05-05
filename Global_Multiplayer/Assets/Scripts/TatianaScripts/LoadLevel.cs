@@ -15,21 +15,8 @@ public class LoadLevel : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(LoadNextLevel());
+        //StartCoroutine(LoadNextLevel());
         Button.SetActive(false);
-    }
-
-    IEnumerator LoadNextLevel()
-    {
-        loadLevel = SceneManager.LoadSceneAsync(NextScene);
-
-        loadLevel.allowSceneActivation = false;
-
-        while (Timer != 15)
-        {
-            loadingBar.fillAmount = Mathf.Clamp01(Timer / 5.0f);
-            yield return null;
-        }
     }
 
     private void Update()
@@ -42,7 +29,18 @@ public class LoadLevel : MonoBehaviour
         }
     }
 
+    /*IEnumerator LoadNextLevel()
+    {
+        loadLevel = SceneManager.LoadSceneAsync(NextScene);
 
+        //loadLevel.allowSceneActivation = false;
+
+        while (Timer != 9)
+        {
+            loadingBar.fillAmount = Mathf.Clamp01(Timer / .9f);
+            yield return null;
+        }
+    }*/
 
     /*public void ContinueToScene()
     {
@@ -50,19 +48,20 @@ public class LoadLevel : MonoBehaviour
     }*/
 
     public void ChangeScene()
-    {
-        // Only the server (host) is allowed to change the scene
-         if (NetworkServer.active)
-         {
-             loadLevel.allowSceneActivation = true;
+     {
+         // Only the server (host) is allowed to change the scene
+          if (NetworkServer.active)
+          {
+              loadLevel.allowSceneActivation = true;
 
-             // Change scene for everyone
-             NetworkManager.singleton.ServerChangeScene(NextScene);
-         }
-    }
+              // Change scene for everyone
+              NetworkManager.singleton.ServerChangeScene(NextScene);
+          }
+     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
 }
+
