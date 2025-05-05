@@ -15,7 +15,6 @@ public class SceneChanger : MonoBehaviour
         // Only the server (host) is allowed to change the scene
         if (NetworkServer.active)
         {
-            Debug.Log("Pressed");
             // Change scene for everyone
             NetworkManager.singleton.ServerChangeScene("MascotAI");
         }
