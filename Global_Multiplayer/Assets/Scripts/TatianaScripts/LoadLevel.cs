@@ -15,7 +15,7 @@ public class LoadLevel : MonoBehaviour
 
     private void Start()
     {
-        //StartCoroutine(LoadNextLevel());
+        StartCoroutine(LoadNextLevel());
         Button.SetActive(false);
     }
 
@@ -27,20 +27,25 @@ public class LoadLevel : MonoBehaviour
         {
             Button.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            ChangeScene();
+        }
     }
 
-    /*IEnumerator LoadNextLevel()
+    IEnumerator LoadNextLevel()
     {
         loadLevel = SceneManager.LoadSceneAsync(NextScene);
 
-        //loadLevel.allowSceneActivation = false;
+        loadLevel.allowSceneActivation = false;
 
         while (Timer != 9)
         {
-            loadingBar.fillAmount = Mathf.Clamp01(Timer / .9f);
+            loadingBar.fillAmount = Mathf.Clamp01(Timer / 5.0f);
             yield return null;
         }
-    }*/
+    }
 
     /*public void ContinueToScene()
     {

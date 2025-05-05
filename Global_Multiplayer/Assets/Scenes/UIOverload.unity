@@ -203,6 +203,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &939420564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1666269057314008828, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
+  m_PrefabInstance: {fileID: 155361157203304308}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1060841112
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +482,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1541356491687962720, guid: 3e9dafad1a1088b498fbd317a64b7c9b, type: 3}
   m_PrefabInstance: {fileID: 622475777060643255}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1491568283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5978228994017478754, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
+  m_PrefabInstance: {fileID: 155361157203304308}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1657809133
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +640,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5452600902021085985, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
   m_PrefabInstance: {fileID: 155361157203304308}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2045265232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045265225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea031e517618fe4d9ddb3ba9397fc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingBar: {fileID: 939420564}
+  NextScene: MascotAI
+  Timer: 15
+  Button: {fileID: 1491568283}
 --- !u!1001 &4823861192607514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -913,6 +945,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3485548431505892436, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5452600902021085985, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
       propertyPath: m_Name
       value: LoadingCanvas
@@ -941,7 +977,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 6793813996185248949, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5452600902021085985, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2045265232}
   m_SourcePrefab: {fileID: 100100000, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
 --- !u!1001 &622475777060643255
 PrefabInstance:
