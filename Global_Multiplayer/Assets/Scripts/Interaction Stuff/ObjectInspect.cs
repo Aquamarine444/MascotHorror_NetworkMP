@@ -91,7 +91,7 @@ public class ObjectInspect : MonoBehaviour
             Time.timeScale = 0;
             //dOF.active = true;
             postProcessVol.profile.TryGet<DepthOfField>(out dOF);
-            dOF.mode.value = DepthOfFieldMode.Bokeh;
+            //dOF.mode.value = DepthOfFieldMode.Bokeh;
 
             zoomMode = true;
         }
