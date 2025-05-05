@@ -4227,6 +4227,7 @@ GameObject:
   - component: {fileID: 1652044153988370536}
   - component: {fileID: 8065597564432232984}
   - component: {fileID: 7804760332861931225}
+  - component: {fileID: 1749527925398081817}
   m_Layer: 0
   m_Name: Charlie
   m_TagString: Player
@@ -4391,9 +4392,23 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: d980fad6-e5a7-4bb4-aa80-f9f54cd2f771
+  m_DefaultActionMap: Player1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1749527925398081817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7503577175717350011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71379d92ca81f248a2a9cc247c1cbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathScreen: {fileID: 0}
+  Dead: 0
 --- !u!1 &7516496526130483262
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,14 @@ using Mirror;
 
 public class SyncedScreen : MonoBehaviour
 {
+    public DeathScript Player1;
+    public DeathScript Player2;
+
+    public bool Death;
+    public GameObject DeathScreen;
+
+    public GameObject PauseScreen;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -18,5 +26,20 @@ public class SyncedScreen : MonoBehaviour
         {
             Debug.Log("Porblem");
         }
+
+        if (Death)
+        {
+            DeathScreen.SetActive(true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            PauseScreen.SetActive(true);
+        }
+    }
+
+    public void Afterlife()
+    {
+        NetworkManager.singleton.ServerChangeScene("UIOverload");
     }
 }

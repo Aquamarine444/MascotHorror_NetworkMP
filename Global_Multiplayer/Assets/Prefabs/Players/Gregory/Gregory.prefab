@@ -2677,6 +2677,7 @@ GameObject:
   - component: {fileID: 8276282267215342177}
   - component: {fileID: 9210894152782826636}
   - component: {fileID: 1167202937255682982}
+  - component: {fileID: 8756501632726690622}
   m_Layer: 0
   m_Name: Gregory
   m_TagString: Player
@@ -2867,6 +2868,19 @@ MonoBehaviour:
   jumpHeight: 2
   AnimState: {fileID: 9210894152782826636}
   focusPoint: {fileID: 4873571933598280280}
+--- !u!114 &8756501632726690622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4873571933598280280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d71379d92ca81f248a2a9cc247c1cbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dead: {fileID: 0}
 --- !u!1 &4889227026289401651
 GameObject:
   m_ObjectHideFlags: 0
