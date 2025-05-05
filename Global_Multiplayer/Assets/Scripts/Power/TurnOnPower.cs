@@ -15,6 +15,11 @@ public class TurnOnPower : MonoBehaviour
     public float currentPower = 100f;
     public float powerDecreaseRate;
 
+    public bool fuseTrigger = false;
+
+    private float totalPowerLost = 0f;
+    private bool hasActivatedFromFuse = false;
+
     void Start()
     {
         currentPower = powerLevel;
@@ -48,24 +53,41 @@ public class TurnOnPower : MonoBehaviour
 
     void Update()
     {
-        if (inReach && Input.GetKeyDown(KeyCode.E))
+        // TESTING: Press V to simulate power usage
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            if (currentPower > 0f) // <- This check blocks reactivation if power is 0
-            {
-                powerIsOn = !powerIsOn;
-                SetLights(powerIsOn);
+            SpendPower(5f);
+        }
 
-                if (powerIsOn)
-                {
-                    DoorManager.Instance?.ReactivateAllDoors();
-                }
+        // Turn power on when fuse is triggered (once)
+        if (fuseTrigger && !hasActivatedFromFuse)
+        {
+            hasActivatedFromFuse = true;
+
+            if (currentPower > 0f)
+            {
+                powerIsOn = true;
+                SetLights(true);
+                currentPower = powerLevel;
+                DoorManager.Instance?.ReactivateAllDoors();
             }
         }
 
+        float powerLostThisFrame = 0f;
 
+        // Drain power if it's on
         if (powerIsOn)
         {
-            currentPower -= powerDecreaseRate * Time.deltaTime;
+            powerLostThisFrame = powerDecreaseRate * Time.deltaTime;
+            currentPower -= powerLostThisFrame;
+            totalPowerLost += powerLostThisFrame;
+
+            // Notify PowerMeter when every 10 power units are lost
+            while (totalPowerLost >= 10f)
+            {
+                totalPowerLost -= 10f;
+                GetComponent<PowerMeter>()?.RemoveBar();
+            }
 
             if (currentPower <= 0f)
             {
@@ -74,7 +96,7 @@ public class TurnOnPower : MonoBehaviour
                 SetLights(false);
                 Debug.Log("Power depleted. Turning off.");
 
-                // Optional: Recharge automatically
+                // Optional: auto recharge
                 currentPower = powerLevel;
                 Debug.Log("Power recharged to 100.");
             }
@@ -82,7 +104,8 @@ public class TurnOnPower : MonoBehaviour
 
         Debug.Log("Power Level: " + currentPower.ToString("F2"));
 
-        if (currentPower <= 0f)
+        // Extra safeguard
+        if (currentPower <= 0f && powerIsOn)
         {
             currentPower = 0f;
             powerIsOn = false;
@@ -102,6 +125,13 @@ public class TurnOnPower : MonoBehaviour
     public void SpendPower(float amount)
     {
         currentPower -= amount;
+        totalPowerLost += amount;
+
+        while (totalPowerLost >= 10f)
+        {
+            totalPowerLost -= 10f;
+            GetComponent<PowerMeter>()?.RemoveBar();
+        }
 
         if (currentPower <= 0f)
         {
@@ -112,6 +142,4 @@ public class TurnOnPower : MonoBehaviour
             Debug.Log("Power depleted due to door usage.");
         }
     }
-
-
 }
