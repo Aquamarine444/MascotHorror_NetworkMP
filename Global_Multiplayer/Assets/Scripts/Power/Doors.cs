@@ -28,6 +28,22 @@ public class Doors : MonoBehaviour
         }
     }
 
+    public void DoorOpen()
+    {
+        if (powerSystem != null && powerSystem.IsPowerOn)
+        {
+            ToggleDoor();
+            powerSystem.SpendPower(powerDoorCost); // Use the method to deduct power
+
+            Debug.Log("works");
+
+        }
+        else
+        {
+            Debug.Log("Power is off. Door cannot be used by player.");
+        }
+    }
+
     public void ToggleDoor()
     {
         SecuredDoor.SetActive(!SecuredDoor.activeSelf);
