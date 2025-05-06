@@ -19,6 +19,9 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
     private Vector2 lookInput;
     private float verticalVelocity;
     private float cameraPitch = 0f;
+
+    [Header("AnimationStuff")]
+    public Animator AnimState;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -30,6 +33,12 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        AnimState = GetComponent<Animator>();
+
+        AnimState.SetBool("AnimWalk", false);
+        AnimState.SetBool("AnimJump", false);
+        AnimState.SetBool("AnimFall", false);
     }
 
     private void Update()
@@ -77,6 +86,7 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
     public void OnMove(InputValue value) //connected to InputSystem ActionMap - get inputvalue to be able to use it in code(case sensitive)
     {
         moveInput = value.Get<Vector2>();
+        AnimState.SetBool("AnimWalk", true);
     }
 
     public void OnLook(InputValue value) //connected to InputSystem ActionMap

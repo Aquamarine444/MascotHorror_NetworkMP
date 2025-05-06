@@ -9,7 +9,9 @@ public class DoorManager : MonoBehaviour
     public TurnOnPower powerSystem;
     public int maxDisabledDoorsBeforeShutdown = 3;
 
-    public List<GameObject> doorObjects = new List<GameObject>(); 
+    public List<GameObject> doorObjects = new List<GameObject>();
+
+    
 
     public static DoorManager Instance;
 
@@ -51,22 +53,22 @@ public class DoorManager : MonoBehaviour
             }
         }
     }
-
     public void DeactivateAllDoors()
     {
-
         foreach (GameObject door in doorObjects)
         {
-            door.GetComponent<Doors>().ToggleDoor();
+            Doors doorScript = door.GetComponent<Doors>();
 
-            if (!door.GetComponent<Doors>())
+            if (doorScript != null)
             {
-                Debug.Log("type shi");
+                doorScript.ToggleDoor();
             }
-          
+            else
+            {
+                Debug.Log("Broke");
+            }
         }
     }
-
     public void DisableDoors()
     {
         foreach (GameObject door in doorObjects)

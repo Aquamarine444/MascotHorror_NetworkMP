@@ -9,15 +9,21 @@ public class NarrativeScriptManager : MonoBehaviour
     public GameObject Text_001;
     public GameObject Text_002;
 
+    public GameObject Controls;
+
     public float Timer;
     public float Timer2;
     public float Timer3;
     public float Timer4;
+    public float Timer5;
 
     public GameObject Button;
 
     public GameObject Audio;
     public GameObject SecondAudio;
+
+    public GameObject MommaNarrative;
+    public GameObject MommaLoad;
 
     private void Start()
     {
@@ -61,12 +67,34 @@ public class NarrativeScriptManager : MonoBehaviour
                     }
                     else if (Timer4 <= 0)
                     {
-                        Button.SetActive(true);
+                        Narrative.SetActive(false);
+                        Controls.SetActive(true);
+
+                        if (Timer5 !> 0)
+                        {
+                            Timer5 -= Time.deltaTime;
+                        }
+                        else if (Timer5 <= 0)
+                        {
+                            Button.SetActive(true);
+                        }
                     }
                 }
             }
 
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SecondAudio.SetActive(false);
+            Audio.SetActive(true);
+
+            Poster.SetActive(true);
+            Controls.SetActive(false);
+            MommaNarrative.SetActive(false);
+
+            MommaLoad.SetActive(true);
         }
 
     }
