@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class DoorManager : MonoBehaviour
 {
@@ -48,6 +49,29 @@ public class DoorManager : MonoBehaviour
             {
                 door.SetActive(true);
             }
+        }
+    }
+
+    public void DeactivateAllDoors()
+    {
+
+        foreach (GameObject door in doorObjects)
+        {
+            door.GetComponent<Doors>().ToggleDoor();
+
+            if (!door.GetComponent<Doors>())
+            {
+                Debug.Log("type shi");
+            }
+          
+        }
+    }
+
+    public void DisableDoors()
+    {
+        foreach (GameObject door in doorObjects)
+        {
+            door.SetActive(false);
         }
     }
 }

@@ -30,6 +30,11 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
 
     public GameObject player;
 
+    public GameObject elevator;
+    public GameObject controlRoomDoor;
+
+    public DoorManager dM;
+
     public bool Interact(Interactors interact)
     {
         player = interact.gameObject;
@@ -66,6 +71,8 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
                 //turn power on
                 //StartCoroutine(SwitchFlip());
                 light.GetComponent<MeshRenderer>().material = lightRed;
+
+                //
                 
                 power.fuseTrigger = true;
 
@@ -76,10 +83,18 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
                 //Open Elevator
                 Debug.Log("Power is on");
                 light.GetComponent<MeshRenderer>().material = lightGreen;
-                
-                
-                power.fuseTrigger = true;
 
+                //dM.DeactivateAllDoors();
+                controlRoomDoor.SetActive(false);
+
+
+                elevator.SetActive(false);
+
+                //dM.DeactivateAllDoors();
+
+                Debug.Log("Doors Open");
+
+                power.fuseTrigger = true;
             }
 
         }
