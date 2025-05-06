@@ -3,6 +3,8 @@ using UnityEngine;
 public class DeathScript : MonoBehaviour
 {
     public bool Death;
+    public GameObject DeathCanvas;
+    public GameObject Player;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,7 +17,7 @@ public class DeathScript : MonoBehaviour
     public void HandleDeath()
     {
         Death = true;
-
-        gameObject.SetActive(false);
+        DeathCanvas.SetActive(true);
+        Player.SetActive(false);
     }
 }

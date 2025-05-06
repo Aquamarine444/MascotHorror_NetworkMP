@@ -1,5 +1,6 @@
 using UnityEngine;
 using Mirror;
+using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
@@ -7,12 +8,28 @@ public class GameSceneManager : MonoBehaviour
     {
         if (NetworkServer.connections.Count != 2)
         {
-            NetworkManager.singleton.ServerChangeScene("UIOverload");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene("UIOverload");
+        }
+
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            OnReturnToStart();
         }
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OnReturnToStart()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("UIOverload");
     }
 }
