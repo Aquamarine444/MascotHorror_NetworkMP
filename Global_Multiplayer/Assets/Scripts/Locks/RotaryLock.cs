@@ -35,8 +35,8 @@ public class RotaryLock : MonoBehaviour
     {
         if (isUnlocked) return;
 
-        if (Input.GetKeyDown(KeyCode.J)) HandleTurn(-1);
-        else if (Input.GetKeyDown(KeyCode.K)) HandleTurn(1);
+        if (Input.GetKeyDown(KeyCode.J) || (Input.GetKeyDown(KeyCode.JoystickButton10))) HandleTurn(-1);
+        else if (Input.GetKeyDown(KeyCode.K) || (Input.GetKeyDown(KeyCode.JoystickButton2))) HandleTurn(1);
     }
 
     private void HandleTurn(int direction)

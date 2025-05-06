@@ -72,7 +72,7 @@ public class Interactors : MonoBehaviour
 
     private void TryInteract()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1))
         {
 
             DisableInteractUI();
