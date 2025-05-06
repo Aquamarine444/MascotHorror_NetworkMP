@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 public class DoorManager : MonoBehaviour
 {
     public TurnOnPower powerSystem;
-    public int maxDisabledDoorsBeforeShutdown = 3;
+    public int maxDisabledDoorsBeforeShutdown = 30;
 
     public List<GameObject> doorObjects = new List<GameObject>();
 
