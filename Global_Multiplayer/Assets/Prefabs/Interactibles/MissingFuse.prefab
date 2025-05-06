@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5140140678535771289}
   - component: {fileID: 4978760602429804960}
   - component: {fileID: 5018636049397186292}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: MissingFuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 5200144252093311813}
   - component: {fileID: 5316285002996647367}
   - component: {fileID: 293128557506814106}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SM_standard_monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 136073284794601622}
   - component: {fileID: 1515812342056293006}
   - component: {fileID: 6412434486768336473}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

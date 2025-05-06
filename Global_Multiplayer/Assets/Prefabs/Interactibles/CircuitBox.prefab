@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 3058564832367994238}
   - component: {fileID: 5696274344813997965}
   - component: {fileID: 1919335063998054189}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -993,9 +993,9 @@ GameObject:
   - component: {fileID: 6382275355394084664}
   - component: {fileID: 5185485084066130154}
   - component: {fileID: 877105828071981800}
-  - component: {fileID: 8357377894735656455}
   - component: {fileID: 1257496584602363455}
-  m_Layer: 6
+  - component: {fileID: 4370110380192827235}
+  m_Layer: 8
   m_Name: FuseNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,25 +1093,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8357377894735656455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2909363430003897609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e46c1ceafe3b0614abdf3caad19e662f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inspect: 0
-  examine: 1
-  trigger: 0
-  place: 0
-  examineCamera: {fileID: 493321406694810726}
-  text: A Note?
-  cM: {fileID: 0}
 --- !u!114 &1257496584602363455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,6 +1137,25 @@ MonoBehaviour:
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: -0.57735026, z: 0.57735026}
+--- !u!114 &4370110380192827235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909363430003897609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872f6feeddfc09f4eb425ad7cabbbf84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspect: 0
+  examine: 1
+  trigger: 0
+  place: 0
+  examineCamera: {fileID: 493321406694810726}
+  text: A note?
+  cM: {fileID: 0}
 --- !u!1 &3195127897593942460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1168,7 @@ GameObject:
   - component: {fileID: 7237059936413897835}
   - component: {fileID: 5550532773136586182}
   - component: {fileID: 3285316665394289100}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fuse Examine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2120,7 +2120,7 @@ GameObject:
   - component: {fileID: 920547887580860307}
   - component: {fileID: 5361338420889408802}
   - component: {fileID: 6824657053603812348}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FuseSwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2300,7 +2300,7 @@ GameObject:
   - component: {fileID: 4375332510990193749}
   - component: {fileID: 3917297414269464886}
   - component: {fileID: 2827418362943046091}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: FuseLid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2622,7 +2622,7 @@ GameObject:
   - component: {fileID: 1420715959990451193}
   - component: {fileID: 145179920582069009}
   - component: {fileID: 8278363324258328707}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: MissingFuse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3057,7 +3057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6667182769273658296
 Transform:
   m_ObjectHideFlags: 0

@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 4724454422783845899}
   - component: {fileID: 7790636879488185019}
   - component: {fileID: 6572284039205255504}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: 03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 4090426496571699273}
   - component: {fileID: 216948016168743521}
   - component: {fileID: 2793170033051106289}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LockCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 7848058209807896102}
   - component: {fileID: 9184625588634242618}
   - component: {fileID: 2770007139829965063}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DialCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 7684095107083227437}
   - component: {fileID: 1425830761799174130}
   - component: {fileID: 8291638512360320061}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

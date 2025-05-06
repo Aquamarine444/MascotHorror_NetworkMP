@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 3477668120694080446}
   - component: {fileID: 9203190262559523087}
   - component: {fileID: 2998886403250761717}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,7 +1058,7 @@ GameObject:
   - component: {fileID: 5353802831052323751}
   - component: {fileID: 8205645297188180292}
   - component: {fileID: 943816986652903691}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Small Book_MAIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
