@@ -1183,7 +1183,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -1339,6 +1339,7 @@ MonoBehaviour:
   hasDial: 0
   hasFuse: 0
   fuseFilled: 0
+  dialFilled: 0
   dialSprite: {fileID: 1835806166794901574}
   fuseSprite: {fileID: 5744646023668389364}
 --- !u!1 &4738911301882810552

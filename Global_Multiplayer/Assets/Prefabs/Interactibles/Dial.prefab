@@ -109,7 +109,7 @@ MonoBehaviour:
   place: 0
   examineCamera: {fileID: 0}
   particles: {fileID: 3288058712728578427}
-  text: A lock dial? I wonder if this fits somewhere
+  text: A lock dial? On the production floor?
   cM: {fileID: 0}
 --- !u!65 &4536351166760404935
 BoxCollider:
