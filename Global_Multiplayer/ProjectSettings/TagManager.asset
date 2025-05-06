@@ -7,7 +7,6 @@ TagManager:
   - DialogueManager
   - PostProcessing
   - Animatronic
-  - Interactible
   layers:
   - Default
   - TransparentFX
@@ -15,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Interactible
   - 
+  - PostProcessing
   - 
   - 
   - 
