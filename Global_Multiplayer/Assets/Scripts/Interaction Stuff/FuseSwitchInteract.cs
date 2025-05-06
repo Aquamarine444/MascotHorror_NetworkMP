@@ -27,8 +27,12 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
 
     public TurnOnPower power;
 
+    public GameObject player;
+
     public bool Interact(Interactors interact)
     {
+        player = interact.gameObject;
+
         // When turning off
         if (isOn)
         {
@@ -39,11 +43,8 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
             if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
             {
                 light.GetComponent<MeshRenderer>().material = lightOff;
-
-               
+              
             }
-
-
                
         }
 
@@ -71,12 +72,23 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
             }
 
         }
-
-
         //gameObject.GetComponent<MeshRenderer>().enabled = false;
         return false;
     }
 
+    public void forceTurnOff()
+    {
+        Debug.Log("works");
+        gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
+
+        isOn = false;
+        power.fuseTrigger = false;
+
+        if (player.GetComponent<PlayerInventory>().fuseFilled == true)
+        {
+            light.GetComponent<MeshRenderer>().material = lightOff;
+        }
+    }
 
     private IEnumerator SwitchFlip()
     {

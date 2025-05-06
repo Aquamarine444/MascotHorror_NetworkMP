@@ -9,6 +9,14 @@ public class PowerMeter : MonoBehaviour
 
     private void Start()
     {
+        RemoveAll(); // Start with no bars showing
+    }
+
+    public void StartMeter()
+    {
+        foreach (Image img in powerBars)
+            img.enabled = true;
+
         currentBarIndex = powerBars.Length - 1; // Start from last bar
     }
 
@@ -27,5 +35,13 @@ public class PowerMeter : MonoBehaviour
             img.enabled = true;
 
         currentBarIndex = powerBars.Length - 1;
+    }
+
+    public void RemoveAll()
+    {
+        foreach (Image img in powerBars)
+            img.enabled = false;
+
+        currentBarIndex = -1;
     }
 }
