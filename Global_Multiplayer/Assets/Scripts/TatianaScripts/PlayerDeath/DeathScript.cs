@@ -2,12 +2,8 @@ using UnityEngine;
 
 public class DeathScript : MonoBehaviour
 {
-    private SyncedScreen Dead;
+    public bool Death;
 
-    private void Start()
-    {
-        Dead = GetComponent<SyncedScreen>();
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Death"))
@@ -18,7 +14,8 @@ public class DeathScript : MonoBehaviour
 
     public void HandleDeath()
     {
-        Dead.Death = true;
+        Death = true;
+
         gameObject.SetActive(false);
     }
 }

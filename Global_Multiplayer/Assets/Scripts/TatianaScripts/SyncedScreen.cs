@@ -6,7 +6,6 @@ public class SyncedScreen : MonoBehaviour
     public DeathScript Player1;
     public DeathScript Player2;
 
-    public bool Death;
     public GameObject DeathScreen;
 
     public GameObject PauseScreen;
@@ -15,6 +14,9 @@ public class SyncedScreen : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        Player1 = GetComponent<DeathScript>();
+        Player2 = GetComponent<DeathScript>();
     }
     private void Update()
     {
@@ -27,7 +29,7 @@ public class SyncedScreen : MonoBehaviour
             Debug.Log("Porblem");
         }
 
-        if (Death)
+        if (Player1.Death || Player2.Death)
         {
             DeathScreen.SetActive(true);
         }
