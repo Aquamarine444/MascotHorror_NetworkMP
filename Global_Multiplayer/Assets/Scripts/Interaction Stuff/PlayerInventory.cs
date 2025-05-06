@@ -12,6 +12,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private GameObject fuseSprite;
 
 
+
     public void UpdateInventory()
     {
         dialSprite.SetActive(hasDial);
