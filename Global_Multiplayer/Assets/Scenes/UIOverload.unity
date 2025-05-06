@@ -657,10 +657,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingBar: {fileID: 939420564}
-  NextScene: MascotAI
+  NextScene: FinalScene
   Timer: 15
   Button: {fileID: 1491568283}
-  LoadingScreen: {fileID: 0}
+  LoadingScreen: {fileID: 2045265225}
 --- !u!1001 &4823861192607514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -995,6 +995,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3949043883083088536, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
+      propertyPath: NextScene
+      value: FinalScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3949043883083088536, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
+      propertyPath: LoadingScreen
+      value: 
+      objectReference: {fileID: 2045265225}
     - target: {fileID: 5452600902021085985, guid: 961965ab6774cf94cb0ee38a06efe52b, type: 3}
       propertyPath: m_Name
       value: LoadingCanvas
