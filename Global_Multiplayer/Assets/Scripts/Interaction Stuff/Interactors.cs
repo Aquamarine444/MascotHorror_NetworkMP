@@ -39,16 +39,17 @@ public class Interactors : MonoBehaviour
                     teractibleCollider = hit.collider;
                     teractible = hit.collider.GetComponent<IInteractible>();
 
-
-
                     if (teractible != null)
                     {
                         teractibleCamera = teractible.ExamineCam;
                         teractibleCamera = teractible.ExamineCam != null ? teractible.ExamineCam : teractibleCamera;
 
+                        Debug.Log("works");
+
                         OutlineOn();
                         EnableInteractUI();
                         TryInteract();
+
                     }
 
 
@@ -78,23 +79,33 @@ public class Interactors : MonoBehaviour
             OutlineOff();
 
             minicrosshairUI.SetActive(false);
+            teractible.Interact(this);
 
             // If you want to pick up the item
-            if (teractible.Inspect && !teractible.Examine)
+            if (teractible.Inspect && !teractible.Examine &&!teractible.Trigger && !teractible.Place)
             {
                 Inspect(teractibleTransform);
-                //teractible.InventoryItem.SetActive(true);
             }
 
             // If you want to zoom in
-            else if (!teractible.Inspect && teractible.Examine)
+            if (teractible.Examine && !teractible.Inspect && !teractible.Trigger && !teractible.Place)
             {
                 Examine(teractibleCamera);
             }
 
+            if (teractible.Trigger && !teractible.Inspect && !teractible.Examine && !teractible.Place)
+            {
+                Trigger();
+            }
+
+            if (teractible.Place && !teractible.Inspect && !teractible.Examine && !teractible.Trigger)
+            {
+                Place(teractibleCamera);
+            }
+
 
             canRaycast = false;
-            teractible.Interact(this);
+            //teractible.Interact(this);
 
 
 
@@ -144,6 +155,16 @@ public class Interactors : MonoBehaviour
     private void Examine(GameObject C)
     {
         OI.ZoomIn(C);
+    }
+
+    private void Trigger()
+    {
+        OI.Trigger();
+    }
+
+    private void Place(GameObject C)
+    {
+        OI.Place(C);
     }
 
     public void EnableRaycast()

@@ -1074,7 +1074,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.8, y: 3.8, z: 3.8}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4039196751986645660}
@@ -1229,7 +1229,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   moveSpeed: 20
-  lookSpeed: 20
+  lookSpeed: 10
   jumpHeight: 1.5
   gravity: -9.81
   playerCamera: {fileID: 4039196751986645660}
@@ -1299,7 +1299,7 @@ MonoBehaviour:
   playerCamera: {fileID: 8184879829415005131}
   interactLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 256
   teractibleTransform: {fileID: 0}
   teractibleCollider: {fileID: 0}
   teractibleCamera: {fileID: 7471813515470643627}
@@ -1338,6 +1338,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasDial: 0
   hasFuse: 0
+  fuseFilled: 0
+  dialFilled: 0
   dialSprite: {fileID: 1835806166794901574}
   fuseSprite: {fileID: 5744646023668389364}
 --- !u!1 &4738911301882810552
@@ -1859,6 +1861,7 @@ MonoBehaviour:
   zoomCamera: {fileID: 0}
   examineMode: 0
   zoomMode: 0
+  TriggerMode: 0
   postProcessVol: {fileID: 0}
   dOF: {fileID: 0}
   UIComments: {fileID: 547476341153451908}

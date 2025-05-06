@@ -1,0 +1,68 @@
+using System.Collections;
+using UnityEngine;
+
+public class MissingFuseInteract : MonoBehaviour, IInteractible
+{
+    [SerializeField] private bool inspect;
+    [SerializeField] private bool examine;
+    [SerializeField] private bool trigger;
+    [SerializeField] private bool place;
+    [SerializeField] private GameObject examineCamera;
+    public bool Inspect { get { return inspect; } }
+    public bool Examine { get { return examine; } }
+    public bool Trigger { get { return trigger; } }
+    public bool Place { get { return place; } }
+    public GameObject ExamineCam { get { return examineCamera; } }
+
+    public string textTrue;
+    public string textFalse;
+
+    public CommsManager cM;
+
+    public bool isOn;
+
+    public GameObject missingFuse;
+    public Material rightMat;
+
+    public GameObject light;
+    public Material lightOut;
+    public Material lightOff;
+
+    public bool Interact(Interactors interact)
+    {
+        if (interact.gameObject.GetComponent<PlayerInventory>().hasFuse == true)
+        {
+            examine = false;
+            place = true;
+
+            missingFuse.GetComponent<MeshRenderer>().material = rightMat;
+
+            GetComponent<Animator>().SetBool("isOn", true);
+
+            interact.gameObject.GetComponent<PlayerInventory>().fuseFilled = true;
+            interact.gameObject.GetComponent<PlayerInventory>().hasFuse = false;
+            interact.gameObject.GetComponent<PlayerInventory>().UpdateInventory();
+
+            GetComponent<MeshCollider>().enabled = false;
+
+            StartCoroutine(wait());
+        }
+
+        else if (interact.gameObject.GetComponent<PlayerInventory>().hasFuse == false)
+        {
+            interact.gameObject.GetComponent<CommsManager>().InteractComment(textFalse);
+        }
+
+        return false;
+
+    }
+
+    private IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1f);
+
+        light.GetComponent<MeshRenderer>().material = lightOff;
+    }
+
+
+}

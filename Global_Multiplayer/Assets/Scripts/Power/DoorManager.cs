@@ -2,13 +2,16 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class DoorManager : MonoBehaviour
 {
     public TurnOnPower powerSystem;
     public int maxDisabledDoorsBeforeShutdown = 3;
 
-    public List<GameObject> doorObjects = new List<GameObject>(); 
+    public List<GameObject> doorObjects = new List<GameObject>();
+
+    
 
     public static DoorManager Instance;
 
@@ -48,6 +51,29 @@ public class DoorManager : MonoBehaviour
             {
                 door.SetActive(true);
             }
+        }
+    }
+    public void DeactivateAllDoors()
+    {
+        foreach (GameObject door in doorObjects)
+        {
+            Doors doorScript = door.GetComponent<Doors>();
+
+            if (doorScript != null)
+            {
+                doorScript.ToggleDoor();
+            }
+            else
+            {
+                Debug.Log("Broke");
+            }
+        }
+    }
+    public void DisableDoors()
+    {
+        foreach (GameObject door in doorObjects)
+        {
+            door.SetActive(false);
         }
     }
 }

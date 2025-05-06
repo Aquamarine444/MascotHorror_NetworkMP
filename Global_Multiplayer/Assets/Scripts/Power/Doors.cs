@@ -14,7 +14,7 @@ public class Doors : MonoBehaviour
 
     void Update()
     {
-        if (inReach && Input.GetKeyDown(KeyCode.E))
+        if (inReach)
         {
             if (powerSystem != null && powerSystem.IsPowerOn)
             {

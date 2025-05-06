@@ -1,0 +1,136 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
+
+public class FuseSwitchInteract : MonoBehaviour, IInteractible
+{
+    [SerializeField] private bool inspect;
+    [SerializeField] private bool examine;
+    [SerializeField] private bool trigger;
+    [SerializeField] private bool place;
+    [SerializeField] private GameObject examineCamera;
+    public bool Inspect { get { return inspect; } }
+    public bool Examine { get { return examine; } }
+    public bool Trigger { get { return trigger; } }
+    public bool Place { get { return place; } }
+    public GameObject ExamineCam { get { return examineCamera; } }
+
+    public string text;
+
+    public CommsManager cM;
+
+    public bool isOn;
+
+    public GameObject light;
+    public Material LightBlank;
+    public Material lightRed;
+    public Material lightGreen;
+
+    public TurnOnPower power;
+
+    public GameObject player;
+
+    public GameObject elevator;
+    public GameObject controlRoomDoor;
+
+    public DoorManager dM;
+
+    public bool Interact(Interactors interact)
+    {
+        player = interact.gameObject;
+
+        // When turning off
+        if (isOn)
+        {
+            gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
+            isOn = false;
+            power.fuseTrigger = false;
+
+            if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
+            {
+                light.GetComponent<MeshRenderer>().material = lightRed;
+              
+            }
+
+            else if (!interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
+            {
+                light.GetComponent<MeshRenderer>().material = LightBlank;
+
+            }
+
+        }
+
+        // When turning on
+        else if (!isOn)
+        {
+            gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", true);
+            isOn = true;
+         
+            if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == false)
+            {
+                //turn power on
+                //StartCoroutine(SwitchFlip());
+                light.GetComponent<MeshRenderer>().material = lightRed;
+
+                //
+                
+                power.fuseTrigger = true;
+
+            }
+
+            else if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
+            {
+                //Open Elevator
+                Debug.Log("Power is on");
+                light.GetComponent<MeshRenderer>().material = lightGreen;
+
+                //dM.DeactivateAllDoors();
+                controlRoomDoor.SetActive(false);
+
+
+                elevator.SetActive(false);
+
+                //dM.DeactivateAllDoors();
+
+                Debug.Log("Doors Open");
+
+                power.fuseTrigger = true;
+            }
+
+        }
+        //gameObject.GetComponent<MeshRenderer>().enabled = false;
+        return false;
+    }
+
+    public void forceTurnOff()
+    {
+        Debug.Log("works");
+        gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
+
+        isOn = false;
+        power.fuseTrigger = false;
+
+        if (player.GetComponent<PlayerInventory>().fuseFilled == true)
+        {
+            light.GetComponent<MeshRenderer>().material = LightBlank;
+        }
+
+        else if (!player.GetComponent<PlayerInventory>().fuseFilled == true)
+        {
+            light.GetComponent<MeshRenderer>().material = LightBlank;
+
+        }
+    }
+
+    private IEnumerator SwitchFlip()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
+        isOn = false;
+
+
+        
+
+    }
+}

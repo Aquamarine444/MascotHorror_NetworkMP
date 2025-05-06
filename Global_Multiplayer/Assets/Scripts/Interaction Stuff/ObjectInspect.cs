@@ -18,6 +18,7 @@ public class ObjectInspect : MonoBehaviour
 
     [SerializeField] public bool examineMode;
     [SerializeField] public bool zoomMode;
+    [SerializeField] public bool TriggerMode;
 
 
     [SerializeField] private Volume postProcessVol;
@@ -90,13 +91,71 @@ public class ObjectInspect : MonoBehaviour
             Time.timeScale = 0;
             //dOF.active = true;
             postProcessVol.profile.TryGet<DepthOfField>(out dOF);
-            dOF.mode.value = DepthOfFieldMode.Bokeh;
+            //dOF.mode.value = DepthOfFieldMode.Bokeh;
 
             zoomMode = true;
         }
 
     }
 
+    public void Trigger()
+    {
+        StartCoroutine(TriggerRoutine());
+    }
+
+    private IEnumerator TriggerRoutine()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        var interactors = Player.GetComponent<Interactors>();
+        interactors.EnableRaycast();
+        interactors.minicrosshairUI.SetActive(true);
+
+        UIComments.SetActive(false);
+        UIPrompts.SetActive(false);
+    }
+
+
+    public void Place(GameObject ZoomCam)
+    {
+            zoomCam = ZoomCam;
+            zoomCamera = ZoomCam.GetComponent<Camera>();
+
+            zoomCam.SetActive(true);
+            gameObject.GetComponent<Camera>().enabled = false;
+
+
+            //Time.timeScale = 0;
+            //dOF.active = true;
+            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            dOF.mode.value = DepthOfFieldMode.Bokeh;
+
+            StartCoroutine(PlaceRoutine());
+    }
+
+    private IEnumerator PlaceRoutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        var interactors = Player.GetComponent<Interactors>();
+        interactors.EnableRaycast();
+        interactors.minicrosshairUI.SetActive(true);
+
+        UIComments.SetActive(false);
+        UIPrompts.SetActive(false);
+
+
+        zoomCam.SetActive(false);
+        gameObject.GetComponent<Camera>().enabled = true;
+
+        postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        dOF.mode.value = DepthOfFieldMode.Off;
+
+
+        Player.GetComponent<Interactors>().EnableRaycast();
+
+
+    }
 
     void TurnObject()
     {
@@ -111,6 +170,30 @@ public class ObjectInspect : MonoBehaviour
             clickedObject.transform.Rotate(Vector3.up, -xAxis, Space.World);
             clickedObject.transform.Rotate(Vector3.right, yAxis, Space.World);
         }
+    }
+
+    public void ForceExit()
+    {
+        zoomCam.SetActive(false);
+        gameObject.GetComponent<Camera>().enabled = true;
+
+        Time.timeScale = 1;
+        //dOF.active = false;
+        postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        dOF.mode.value = DepthOfFieldMode.Off;
+
+        zoomMode = false;
+
+        Player.GetComponent<Interactors>().EnableRaycast();
+
+        Player.GetComponent<Interactors>().minicrosshairUI.SetActive(true);
+
+        UIComments.SetActive(false);
+        UIPrompts.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
     void ExitExamineMode()
@@ -142,7 +225,7 @@ public class ObjectInspect : MonoBehaviour
             UIPrompts.SetActive(false);
         }
 
-        else if (Input.GetMouseButtonDown(1) && zoomMode)
+        if (Input.GetMouseButtonDown(1) && zoomMode)
         {
 
             zoomCam.SetActive(false);
@@ -161,6 +244,9 @@ public class ObjectInspect : MonoBehaviour
 
             UIComments.SetActive(false);
             UIPrompts.SetActive(false);
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
 
         }
 
