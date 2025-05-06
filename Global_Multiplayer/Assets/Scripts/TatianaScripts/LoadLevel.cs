@@ -13,6 +13,8 @@ public class LoadLevel : MonoBehaviour
 
     public AsyncOperation loadLevel;
 
+    public GameObject LoadingScreen;
+
     private void Start()
     {
         StartCoroutine(LoadNextLevel());
@@ -31,6 +33,7 @@ public class LoadLevel : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             ChangeScene();
+            LoadingScreen.SetActive(false);
         }
     }
 

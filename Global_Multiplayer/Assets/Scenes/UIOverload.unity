@@ -575,6 +575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e06b6a44e3502e489fd3c62be96c45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
+  DeathScreen: {fileID: 0}
+  PauseScreen: {fileID: 0}
 --- !u!114 &1657809140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +660,7 @@ MonoBehaviour:
   NextScene: MascotAI
   Timer: 15
   Button: {fileID: 1491568283}
+  LoadingScreen: {fileID: 0}
 --- !u!1001 &4823861192607514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -792,6 +797,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4953036914246302171, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5626097541480915403, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -812,6 +821,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8542146047365842553, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8677218613723226256, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: Audio
       value: 
@@ -820,6 +833,14 @@ PrefabInstance:
       propertyPath: Timer2
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8677218613723226256, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: Timer5
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677218613723226256, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: Controls
+      value: 
+      objectReference: {fileID: 4823861192607515}
     - target: {fileID: 8677218613723226256, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: MommaLoad
       value: 
@@ -832,11 +853,36 @@ PrefabInstance:
       propertyPath: MommaNarrative
       value: 
       objectReference: {fileID: 1267984356}
+    - target: {fileID: 9099071823267393806, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099071823267393806, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d32f7588e8ab624498a1850825283323, type: 3}
+    - target: {fileID: 9099071823267393806, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099071823267393806, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099071823267393806, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+--- !u!1 &4823861192607515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8542146047365842553, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
+  m_PrefabInstance: {fileID: 4823861192607514}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &155361157203304308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1201,6 +1247,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1000410811634184618, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -113
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129626967468501699, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
+      propertyPath: m_text
+      value: "Kesavan:\nLevel design\nPower and door mechanics\nLock system\nLighting\n\nDean:\nInteraction
+        code\nInventory System \nNetworking\nCamera System\n\nMia-Tatiana:\nMascot
+        Movement\nCamera System\nNetworking\nUI\n\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 1172748556289972451, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1301,9 +1357,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LobbyManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2114961861560334950, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3059584013731741877, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059584013731741877, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3816079709515354998, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

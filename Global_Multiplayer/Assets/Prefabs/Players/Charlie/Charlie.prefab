@@ -4407,8 +4407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71379d92ca81f248a2a9cc247c1cbf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathScreen: {fileID: 0}
-  Dead: 0
+  Death: 0
 --- !u!1 &7516496526130483262
 GameObject:
   m_ObjectHideFlags: 0
