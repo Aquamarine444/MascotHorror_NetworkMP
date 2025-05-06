@@ -402272,7 +402272,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1751318524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a321569267dcc847a666873f5f5f8ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
@@ -402289,11 +402289,10 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 4873571933598280280, guid: 7071686662c84be498bfb1688208f7bb, type: 3}
+  playerPrefab: {fileID: 4488150267730309876, guid: 8d75ca84c5daa0245a5a6f1e8a39608d, type: 3}
   autoCreatePlayer: 1
-  playerSpawnMethod: 1
-  spawnPrefabs:
-  - {fileID: 7503577175717350011, guid: 54b2204620b851e419aaadd35eaeb524, type: 3}
+  playerSpawnMethod: 0
+  spawnPrefabs: []
   exceptionsDisconnect: 1
   snapshotSettings:
     bufferTimeMultiplier: 2
@@ -402309,9 +402308,6 @@ MonoBehaviour:
   evaluationMethod: 0
   evaluationInterval: 3
   timeInterpolationGui: 0
-  playerPrefabs:
-  - {fileID: 4873571933598280280, guid: 7071686662c84be498bfb1688208f7bb, type: 3}
-  - {fileID: 7503577175717350011, guid: 54b2204620b851e419aaadd35eaeb524, type: 3}
 --- !u!1 &1751494692
 GameObject:
   m_ObjectHideFlags: 0
