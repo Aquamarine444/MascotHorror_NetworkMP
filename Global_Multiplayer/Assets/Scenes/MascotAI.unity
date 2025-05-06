@@ -10150,6 +10150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1789518655}
+  - component: {fileID: 1789518656}
   m_Layer: 0
   m_Name: CanvasManager
   m_TagString: Untagged
@@ -10172,6 +10173,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789518656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789518653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e06b6a44e3502e489fd3c62be96c45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player1: {fileID: 8756501632726690622, guid: 7071686662c84be498bfb1688208f7bb, type: 3}
+  Player2: {fileID: 1749527925398081817, guid: 54b2204620b851e419aaadd35eaeb524, type: 3}
+  DeathScreen: {fileID: 811719576459182635}
+  PauseScreen: {fileID: 2514946425048130595}
 --- !u!1 &1810617276
 GameObject:
   m_ObjectHideFlags: 0
