@@ -8,7 +8,7 @@ public class Flashlight : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.JoystickButton3)))
         {
             Counter += 1;
 
