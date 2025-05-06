@@ -10,6 +10,7 @@ public class GameSceneManager : MonoBehaviour
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene("UIOverload");
         }
 
@@ -28,6 +29,7 @@ public class GameSceneManager : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("UIOverload");
     }
 }
