@@ -97,7 +97,7 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
 
         if (player.GetComponent<PlayerInventory>().fuseFilled == true)
         {
-            light.GetComponent<MeshRenderer>().material = lightRed;
+            light.GetComponent<MeshRenderer>().material = LightBlank;
         }
 
         else if (!player.GetComponent<PlayerInventory>().fuseFilled == true)
@@ -113,5 +113,9 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
 
         gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
         isOn = false;
+
+
+        
+
     }
 }

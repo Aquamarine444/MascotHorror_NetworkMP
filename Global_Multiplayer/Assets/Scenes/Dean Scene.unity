@@ -184347,7 +184347,7 @@ PrefabInstance:
       objectReference: {fileID: 490428449}
     - target: {fileID: 8186162546247803170, guid: 639f1e2b2d97173409ebb51d1bf1a0fe, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8201664634587987371, guid: 639f1e2b2d97173409ebb51d1bf1a0fe, type: 3}
       propertyPath: 'lights.Array.data[0]'
