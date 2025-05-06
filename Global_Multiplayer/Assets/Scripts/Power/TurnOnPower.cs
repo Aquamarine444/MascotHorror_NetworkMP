@@ -21,6 +21,7 @@ public class TurnOnPower : MonoBehaviour
 
     public FuseSwitchInteract fsI;
 
+
     void Start()
     {
         currentPower = powerLevel;
