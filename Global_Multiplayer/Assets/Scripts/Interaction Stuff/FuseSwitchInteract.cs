@@ -22,8 +22,9 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
     public bool isOn;
 
     public GameObject light;
-    public Material lightOff;
-    public Material lightOn;
+    public Material LightBlank;
+    public Material lightRed;
+    public Material lightGreen;
 
     public TurnOnPower power;
 
@@ -42,10 +43,16 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
 
             if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
             {
-                light.GetComponent<MeshRenderer>().material = lightOff;
+                light.GetComponent<MeshRenderer>().material = lightRed;
               
             }
-               
+
+            else if (!interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
+            {
+                light.GetComponent<MeshRenderer>().material = LightBlank;
+
+            }
+
         }
 
         // When turning on
@@ -53,20 +60,24 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
         {
             gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", true);
             isOn = true;
-
-            
-
+         
             if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == false)
             {
-                StartCoroutine(SwitchFlip());
+                //turn power on
+                //StartCoroutine(SwitchFlip());
+                light.GetComponent<MeshRenderer>().material = lightRed;
+                
+                power.fuseTrigger = true;
+
             }
 
             else if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
             {
+                //Open Elevator
                 Debug.Log("Power is on");
-                light.GetComponent<MeshRenderer>().material = lightOn;
-                //turn power on
-
+                light.GetComponent<MeshRenderer>().material = lightGreen;
+                
+                
                 power.fuseTrigger = true;
 
             }
@@ -86,7 +97,13 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
 
         if (player.GetComponent<PlayerInventory>().fuseFilled == true)
         {
-            light.GetComponent<MeshRenderer>().material = lightOff;
+            light.GetComponent<MeshRenderer>().material = LightBlank;
+        }
+
+        else if (!player.GetComponent<PlayerInventory>().fuseFilled == true)
+        {
+            light.GetComponent<MeshRenderer>().material = LightBlank;
+
         }
     }
 
