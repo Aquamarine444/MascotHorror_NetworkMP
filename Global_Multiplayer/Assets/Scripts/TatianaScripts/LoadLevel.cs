@@ -60,7 +60,7 @@ public class LoadLevel : MonoBehaviour
          // Only the server (host) is allowed to change the scene
           if (NetworkServer.active)
           {
-              loadLevel.allowSceneActivation = true;
+              //loadLevel.allowSceneActivation = true;
 
               // Change scene for everyone
               NetworkManager.singleton.ServerChangeScene(NextScene);
