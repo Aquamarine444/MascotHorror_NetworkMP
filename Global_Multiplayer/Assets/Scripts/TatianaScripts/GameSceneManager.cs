@@ -6,13 +6,13 @@ public class GameSceneManager : MonoBehaviour
 {
     void Update()
     {
-        if (NetworkServer.connections.Count != 2)
+        /*if (NetworkServer.connections.Count != 2)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 1.0f;
             SceneManager.LoadScene("UIOverload");
-        }
+        }*/
 
         if (Input.GetKeyUp(KeyCode.X))
         {
