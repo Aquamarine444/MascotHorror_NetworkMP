@@ -46,6 +46,14 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         AnimState.SetBool("AnimFall", false);*/
     }
 
+    public override void OnStartAuthority()
+    {
+        base.OnStartAuthority();
+
+        UnityEngine.InputSystem.PlayerInput playerInput = GetComponent<UnityEngine.InputSystem.PlayerInput>();
+        playerInput.enabled = true;
+    }
+
     private void Update()
     {
         if (!isLocalPlayer) return; // return stops the code
