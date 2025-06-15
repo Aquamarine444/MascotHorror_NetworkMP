@@ -33,8 +33,8 @@ public class ObjectInspect : MonoBehaviour
 
     void Start()
     {
-        postProcessVol = GameObject.FindGameObjectWithTag("PostProcessing").GetComponent<Volume>();
-        postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        /*postProcessVol = GameObject.FindGameObjectWithTag("PostProcessing").GetComponent<Volume>();
+        postProcessVol.profile.TryGet<DepthOfField>(out dOF);*/
 
         mainCam = Camera.main;
         examineMode = false;
@@ -90,7 +90,7 @@ public class ObjectInspect : MonoBehaviour
 
             Time.timeScale = 0;
             //dOF.active = true;
-            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
             //dOF.mode.value = DepthOfFieldMode.Bokeh;
 
             zoomMode = true;
@@ -127,8 +127,8 @@ public class ObjectInspect : MonoBehaviour
 
             //Time.timeScale = 0;
             //dOF.active = true;
-            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
-            dOF.mode.value = DepthOfFieldMode.Bokeh;
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //dOF.mode.value = DepthOfFieldMode.Bokeh;
 
             StartCoroutine(PlaceRoutine());
     }
@@ -148,8 +148,8 @@ public class ObjectInspect : MonoBehaviour
         zoomCam.SetActive(false);
         gameObject.GetComponent<Camera>().enabled = true;
 
-        postProcessVol.profile.TryGet<DepthOfField>(out dOF);
-        dOF.mode.value = DepthOfFieldMode.Off;
+        //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        //dOF.mode.value = DepthOfFieldMode.Off;
 
 
         Player.GetComponent<Interactors>().EnableRaycast();
@@ -179,8 +179,8 @@ public class ObjectInspect : MonoBehaviour
 
         Time.timeScale = 1;
         //dOF.active = false;
-        postProcessVol.profile.TryGet<DepthOfField>(out dOF);
-        dOF.mode.value = DepthOfFieldMode.Off;
+        //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        //dOF.mode.value = DepthOfFieldMode.Off;
 
         zoomMode = false;
 
@@ -210,8 +210,8 @@ public class ObjectInspect : MonoBehaviour
 
             Time.timeScale = 1;
             //dOF.active = false;
-            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
-            dOF.mode.value = DepthOfFieldMode.Off;
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //dOF.mode.value = DepthOfFieldMode.Off;
 
             examineMode = false;
 
@@ -233,8 +233,8 @@ public class ObjectInspect : MonoBehaviour
 
             Time.timeScale = 1;
             //dOF.active = false;
-            postProcessVol.profile.TryGet<DepthOfField>(out dOF);
-            dOF.mode.value = DepthOfFieldMode.Off;
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //dOF.mode.value = DepthOfFieldMode.Off;
 
             zoomMode = false;
 
