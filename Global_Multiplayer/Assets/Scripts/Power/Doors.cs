@@ -46,6 +46,7 @@ public class Doors : MonoBehaviour
 
     public void ToggleDoor()
     {
+        Debug.Log("door works");
         SecuredDoor.SetActive(!SecuredDoor.activeSelf);
         Debug.Log("Toggled door state.");
     }
