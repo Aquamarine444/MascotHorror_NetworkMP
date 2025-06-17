@@ -18,5 +18,11 @@ public class PowerManager : MonoBehaviour
             foreach (GameObject light in lights)
                 light.SetActive(true);
         }
+
+        else
+        {
+            foreach (GameObject light in lights)
+                light.SetActive(false);
+        }
     }
 }

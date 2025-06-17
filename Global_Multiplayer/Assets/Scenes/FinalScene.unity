@@ -25104,7 +25104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -38731,7 +38731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -40890,7 +40890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -42987,7 +42987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -44606,7 +44606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -46738,7 +46738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -57517,7 +57517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -57638,7 +57638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -58733,7 +58733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -60824,7 +60824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -62483,6 +62483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 277310693}
+  - component: {fileID: 277310694}
   m_Layer: 0
   m_Name: CircuitBox
   m_TagString: Untagged
@@ -62508,6 +62509,81 @@ Transform:
   - {fileID: 1043619577}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277310694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277310692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1acbdaf3dbfbb44a9f87aba78c0335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerOn: 0
+  lights:
+  - {fileID: 253739541}
+  - {fileID: 108976076}
+  - {fileID: 182965558}
+  - {fileID: 1381679050}
+  - {fileID: 827589214}
+  - {fileID: 1493299542}
+  - {fileID: 1905244986}
+  - {fileID: 191839129}
+  - {fileID: 1759192506}
+  - {fileID: 1169368744}
+  - {fileID: 461682914}
+  - {fileID: 1169725738}
+  - {fileID: 1146505979}
+  - {fileID: 925387156}
+  - {fileID: 1007940964}
+  - {fileID: 1953194239}
+  - {fileID: 1332445553}
+  - {fileID: 2070440622}
+  - {fileID: 1475164697}
+  - {fileID: 660174495}
+  - {fileID: 1088236492}
+  - {fileID: 353084581}
+  - {fileID: 2040230246}
+  - {fileID: 2124664695}
+  - {fileID: 449212140}
+  - {fileID: 1832746359}
+  - {fileID: 4061947338215593319}
+  - {fileID: 1355212302}
+  - {fileID: 1872369192}
+  - {fileID: 1137851778}
+  - {fileID: 268342533}
+  - {fileID: 869488074}
+  - {fileID: 2034311196}
+  - {fileID: 824465745}
+  - {fileID: 996072212}
+  - {fileID: 1038450002}
+  - {fileID: 1174215846}
+  - {fileID: 2070710744}
+  - {fileID: 970871228}
+  - {fileID: 281130350}
+  - {fileID: 926945376}
+  - {fileID: 1953482951}
+  - {fileID: 197015691}
+  - {fileID: 204919768}
+  - {fileID: 257612317}
+  - {fileID: 1831175541}
+  - {fileID: 636342220}
+  - {fileID: 253290644}
+  - {fileID: 424142114}
+  - {fileID: 1187920394}
+  - {fileID: 580132859}
+  - {fileID: 1343364425}
+  - {fileID: 955993213}
+  - {fileID: 861946405}
+  - {fileID: 1073923785}
+  - {fileID: 1286053118}
+  - {fileID: 1440265748}
+  - {fileID: 1885678614}
+  - {fileID: 1186546056}
+  - {fileID: 173582391}
+  - {fileID: 2038470543}
 --- !u!1 &277823556
 GameObject:
   m_ObjectHideFlags: 0
@@ -63266,7 +63342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -80757,7 +80833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -95760,7 +95836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -100472,7 +100548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -102938,7 +103014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -129006,7 +129082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -142988,7 +143064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -149606,7 +149682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -190745,7 +190821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -191782,7 +191858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -195227,7 +195303,8 @@ GameObject:
   - component: {fileID: 843748953}
   - component: {fileID: 843748952}
   - component: {fileID: 843748951}
-  - component: {fileID: 843748950}
+  - component: {fileID: 843748956}
+  - component: {fileID: 843748957}
   m_Layer: 8
   m_Name: Button (3)
   m_TagString: Untagged
@@ -195250,28 +195327,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1167321004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &843748950
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843748948}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
 --- !u!114 &843748951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195279,7 +195334,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843748948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38f43a763ed4eee41b56f213ecdd9570, type: 3}
   m_Name: 
@@ -195306,7 +195361,7 @@ MonoBehaviour:
   examineCamera: {fileID: 0}
   text: 
   cM: {fileID: 0}
-  door: {fileID: 843748951}
+  door: {fileID: 843748957}
 --- !u!114 &843748953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195524,6 +195579,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843748948}
   m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
+--- !u!65 &843748956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843748948}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0, y: 0, z: 0.000000059604645}
+--- !u!114 &843748957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843748948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecuredDoor: {fileID: 919132147966808642}
+  powerSystem: {fileID: 277310694}
+  powerDoorCost: 5
 --- !u!1 &844027832
 GameObject:
   m_ObjectHideFlags: 0
@@ -199681,7 +199772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -201467,7 +201558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -215462,7 +215553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -215910,7 +216001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -222914,7 +223005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -225708,7 +225799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -230004,7 +230095,8 @@ GameObject:
   - component: {fileID: 994776888}
   - component: {fileID: 994776887}
   - component: {fileID: 994776886}
-  - component: {fileID: 994776885}
+  - component: {fileID: 994776891}
+  - component: {fileID: 994776892}
   m_Layer: 8
   m_Name: Button (2)
   m_TagString: Untagged
@@ -230027,28 +230119,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1167321004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &994776885
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994776883}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
 --- !u!114 &994776886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230056,7 +230126,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994776883}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38f43a763ed4eee41b56f213ecdd9570, type: 3}
   m_Name: 
@@ -230083,7 +230153,7 @@ MonoBehaviour:
   examineCamera: {fileID: 0}
   text: 
   cM: {fileID: 0}
-  door: {fileID: 994776886}
+  door: {fileID: 994776892}
 --- !u!114 &994776888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230301,6 +230371,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994776883}
   m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
+--- !u!65 &994776891
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994776883}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0, y: -0.00000023841858, z: 0}
+--- !u!114 &994776892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994776883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecuredDoor: {fileID: 919132148252514804}
+  powerSystem: {fileID: 277310694}
+  powerDoorCost: 5
 --- !u!1 &994938109
 GameObject:
   m_ObjectHideFlags: 0
@@ -230934,7 +231040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -234389,7 +234495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -240575,7 +240681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -247893,7 +247999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -251893,7 +251999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -262890,7 +262996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -264445,6 +264551,7 @@ GameObject:
   - component: {fileID: 1143454082}
   - component: {fileID: 1143454081}
   - component: {fileID: 1143454084}
+  - component: {fileID: 1143454085}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -264527,7 +264634,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143454077}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38f43a763ed4eee41b56f213ecdd9570, type: 3}
   m_Name: 
@@ -264554,7 +264661,7 @@ MonoBehaviour:
   examineCamera: {fileID: 0}
   text: 
   cM: {fileID: 0}
-  door: {fileID: 1143454081}
+  door: {fileID: 1143454085}
 --- !u!114 &1143454083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264719,8 +264826,8 @@ MonoBehaviour:
     - {x: 0.0000018179417, y: -1, z: 0.000002592802}
     - {x: 0.000020066509, y: -1, z: 0.000010788442}
     - {x: 0.0000011995435, y: -1, z: 0.0000059604645}
---- !u!64 &1143454084
-MeshCollider:
+--- !u!65 &1143454084
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -264737,10 +264844,24 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0, y: 0.00000023841858, z: -0.000000029802322}
+--- !u!114 &1143454085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143454077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecuredDoor: {fileID: 919132148779127224}
+  powerSystem: {fileID: 277310694}
+  powerDoorCost: 5
 --- !u!1 &1143518663
 GameObject:
   m_ObjectHideFlags: 0
@@ -265134,7 +265255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -269343,7 +269464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -269539,7 +269660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -270702,7 +270823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -273563,7 +273684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -273893,7 +274014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -294319,7 +294440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -304518,7 +304639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -307567,7 +307688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -310530,7 +310651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -317166,7 +317287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -330223,7 +330344,8 @@ GameObject:
   - component: {fileID: 1437096825}
   - component: {fileID: 1437096824}
   - component: {fileID: 1437096823}
-  - component: {fileID: 1437096822}
+  - component: {fileID: 1437096828}
+  - component: {fileID: 1437096829}
   m_Layer: 8
   m_Name: Button (1)
   m_TagString: Untagged
@@ -330246,28 +330368,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1167321004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1437096822
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437096820}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
 --- !u!114 &1437096823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330275,7 +330375,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437096820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38f43a763ed4eee41b56f213ecdd9570, type: 3}
   m_Name: 
@@ -330302,7 +330402,7 @@ MonoBehaviour:
   examineCamera: {fileID: 0}
   text: 
   cM: {fileID: 0}
-  door: {fileID: 1437096823}
+  door: {fileID: 1437096829}
 --- !u!114 &1437096825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330520,6 +330620,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437096820}
   m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
+--- !u!65 &1437096828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437096820}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0, y: 0, z: -0.000000059604645}
+--- !u!114 &1437096829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437096820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecuredDoor: {fileID: 919132149075454590}
+  powerSystem: {fileID: 277310694}
+  powerDoorCost: 5
 --- !u!1 &1437143487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4a57d5fb0570bdd4bb473e916abb4500, type: 3}
@@ -331288,7 +331424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -339994,7 +340130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -345299,7 +345435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -378751,7 +378887,8 @@ GameObject:
   - component: {fileID: 1635403497}
   - component: {fileID: 1635403496}
   - component: {fileID: 1635403495}
-  - component: {fileID: 1635403494}
+  - component: {fileID: 1635403500}
+  - component: {fileID: 1635403501}
   m_Layer: 8
   m_Name: Button (4)
   m_TagString: Untagged
@@ -378774,28 +378911,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1167321004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1635403494
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635403492}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
 --- !u!114 &1635403495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378803,7 +378918,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635403492}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38f43a763ed4eee41b56f213ecdd9570, type: 3}
   m_Name: 
@@ -378830,7 +378945,7 @@ MonoBehaviour:
   examineCamera: {fileID: 0}
   text: 
   cM: {fileID: 0}
-  door: {fileID: 1635403495}
+  door: {fileID: 1635403501}
 --- !u!114 &1635403497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379048,6 +379163,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635403492}
   m_Mesh: {fileID: -7387706064836869012, guid: 5e76ef8904f35464e9da3d99c495021b, type: 3}
+--- !u!65 &1635403500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635403492}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03, y: 0.03, z: 0.03}
+  m_Center: {x: 0, y: -0.00000023841858, z: -0.000000059604645}
+--- !u!114 &1635403501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635403492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecuredDoor: {fileID: 919132148956066504}
+  powerSystem: {fileID: 277310694}
+  powerDoorCost: 5
 --- !u!1 &1635651323
 GameObject:
   m_ObjectHideFlags: 0
@@ -404587,7 +404738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -419748,7 +419899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -419960,7 +420111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -429325,7 +429476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -432850,7 +433001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -438624,7 +438775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -450143,7 +450294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -450426,7 +450577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -469204,7 +469355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -470583,7 +470734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -470974,7 +471125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -478379,7 +478530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -478578,7 +478729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -491404,7 +491555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0
@@ -551267,7 +551418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
+  m_AdditionalLightsShadowResolutionTier: 1
   m_LightLayerMask: 1
   m_RenderingLayers: 3
   m_CustomShadowLayers: 0

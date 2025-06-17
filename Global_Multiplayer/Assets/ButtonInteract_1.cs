@@ -17,11 +17,11 @@ public class ButtonInteract_1 : MonoBehaviour, IInteractible
 
     public CommsManager cM;
 
-    public Doors door;
+    public IndividualDoor door;
 
     public bool Interact(Interactors interact)
     {
-
+        
         door.DoorOpen();
 
         return false;
