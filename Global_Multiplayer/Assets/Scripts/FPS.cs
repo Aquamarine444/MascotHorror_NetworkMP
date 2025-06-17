@@ -28,8 +28,13 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         if (!isLocalPlayer) //if not this computer's player, disable camera
         {
             playerCamera.gameObject.SetActive(false);
+            gameObject.GetComponent<PlayerInput>().enabled = false;
         }
-
+        else
+        {
+            gameObject.GetComponent<PlayerInput>().enabled = true;
+        }
+    
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -39,6 +44,14 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         AnimState.SetBool("AnimWalk", false);
         AnimState.SetBool("AnimJump", false);
         AnimState.SetBool("AnimFall", false);*/
+    }
+
+    public override void OnStartAuthority()
+    {
+        base.OnStartAuthority();
+
+        UnityEngine.InputSystem.PlayerInput playerInput = GetComponent<UnityEngine.InputSystem.PlayerInput>();
+        playerInput.enabled = true;
     }
 
     private void Update()

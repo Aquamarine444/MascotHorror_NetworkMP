@@ -39,9 +39,9 @@ public class LoadLevel : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
-        loadLevel = SceneManager.LoadSceneAsync(NextScene);
+       /* loadLevel = SceneManager.LoadSceneAsync(NextScene);
 
-        loadLevel.allowSceneActivation = false;
+        loadLevel.allowSceneActivation = false;*/
 
         while (Timer != 9)
         {
@@ -60,7 +60,7 @@ public class LoadLevel : MonoBehaviour
          // Only the server (host) is allowed to change the scene
           if (NetworkServer.active)
           {
-              loadLevel.allowSceneActivation = true;
+              //loadLevel.allowSceneActivation = true;
 
               // Change scene for everyone
               NetworkManager.singleton.ServerChangeScene(NextScene);
