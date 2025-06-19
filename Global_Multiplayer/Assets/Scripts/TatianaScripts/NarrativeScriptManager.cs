@@ -1,7 +1,9 @@
+using Mirror;
 using UnityEngine;
 
-public class NarrativeScriptManager : MonoBehaviour
+public class NarrativeScriptManager : NetworkBehaviour
 {
+
     public GameObject Poster;
     public GameObject Article;
 
@@ -11,6 +13,7 @@ public class NarrativeScriptManager : MonoBehaviour
 
     public GameObject Controls;
 
+    [SyncVar]
     public float Timer;
     public float Timer2;
     public float Timer3;
@@ -25,14 +28,17 @@ public class NarrativeScriptManager : MonoBehaviour
     public GameObject MommaNarrative;
     public GameObject MommaLoad;
 
+    [Command]
     private void Start()
     {
         Audio.SetActive(false);
         SecondAudio.SetActive(true);
     }
 
+    [Command]
     private void Update()
     {
+        if (!isServer) return;
         if (Timer !> 0)
         {
             Timer -= Time.deltaTime;
@@ -99,8 +105,10 @@ public class NarrativeScriptManager : MonoBehaviour
 
     }
 
+    [Command]
     public void Continue()
     {
+        if (!isServer) return;
         SecondAudio.SetActive(false);
         Audio.SetActive(true);
         MommaLoad .SetActive(true);

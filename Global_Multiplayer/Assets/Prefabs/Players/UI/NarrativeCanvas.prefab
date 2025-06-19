@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 119434418747300995}
   - component: {fileID: 409211365983978562}
   - component: {fileID: 8677218613723226256}
+  - component: {fileID: 7579199398085168768}
   m_Layer: 5
   m_Name: NarrativeCanvas
   m_TagString: Untagged
@@ -334,6 +335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b342bd5ec69bf949a69e787e030b28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   Poster: {fileID: 2187598138380737143}
   Article: {fileID: 4953036914246302171}
   Narrative: {fileID: 196311748028530802}
@@ -350,6 +354,23 @@ MonoBehaviour:
   SecondAudio: {fileID: 0}
   MommaNarrative: {fileID: 0}
   MommaLoad: {fileID: 0}
+--- !u!114 &7579199398085168768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792946081350376439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1377342015
+  serverOnly: 0
+  visibility: 2
+  hasSpawned: 0
 --- !u!1 &1998385392649498294
 GameObject:
   m_ObjectHideFlags: 0
