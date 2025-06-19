@@ -24,7 +24,8 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
     public bool Dead = false;
     public bool Win = false;
     public string NextScene;
-    public string FinalScene;
+
+    public GameObject EndSound;
 
     public int Counter = 0;
 
@@ -121,6 +122,7 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
     {
         if (other.CompareTag("Death"))
         {
+            EndSound.SetActive(true);
             if (NetworkServer.active)
             {
                 //loadLevel.allowSceneActivation = true;
