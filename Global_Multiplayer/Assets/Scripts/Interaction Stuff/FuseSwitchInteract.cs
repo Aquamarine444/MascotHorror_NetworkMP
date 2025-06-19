@@ -26,7 +26,7 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
     public Material lightRed;
     public Material lightGreen;
 
-    public TurnOnPower power;
+    public PowerManager power;
 
     public GameObject player;
 

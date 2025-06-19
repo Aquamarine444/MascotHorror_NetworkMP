@@ -28,17 +28,7 @@ public class TurnOnPower : MonoBehaviour
         SetLights(false);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            inReach = true;
-    }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            inReach = false;
-    }
 
     public void ShutDownPower()
     {
@@ -152,4 +142,17 @@ public class TurnOnPower : MonoBehaviour
             fsI.forceTurnOff();
         }
     }
+
+
+    /*void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player"))
+        inReach = true;
+}
+
+void OnTriggerExit(Collider other)
+{
+    if (other.CompareTag("Player"))
+        inReach = false;
+}*/
 }
