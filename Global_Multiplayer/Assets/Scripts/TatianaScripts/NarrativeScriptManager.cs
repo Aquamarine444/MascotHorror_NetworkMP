@@ -103,5 +103,6 @@ public class NarrativeScriptManager : MonoBehaviour
     {
         SecondAudio.SetActive(false);
         Audio.SetActive(true);
+        MommaLoad .SetActive(true);
     }
 }

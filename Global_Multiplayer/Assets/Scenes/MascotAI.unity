@@ -5012,6 +5012,74 @@ Transform:
   - {fileID: 1981382817}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &482179475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 482179477}
+  - component: {fileID: 482179476}
+  - component: {fileID: 482179478}
+  m_Layer: 0
+  m_Name: Freedom
+  m_TagString: End
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &482179476
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482179475}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &482179477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482179475}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 118.4, y: -45.5, z: -115.7}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &482179478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482179475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82c12f4c845ae9488fc08db1350b3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndScene: EndingScene
+  Counter: 0
 --- !u!1 &484391064
 GameObject:
   m_ObjectHideFlags: 0
@@ -14616,15 +14684,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 227289701686212096, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 113.33971
+      value: 85.4
       objectReference: {fileID: 0}
     - target: {fileID: 227289701686212096, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.69
+      value: -52.2
       objectReference: {fileID: 0}
     - target: {fileID: 227289701686212096, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.563389
+      value: 37.5
       objectReference: {fileID: 0}
     - target: {fileID: 227289701686212096, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14658,10 +14726,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moondrop
       objectReference: {fileID: 0}
+    - target: {fileID: 2740823590903255615, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
+      propertyPath: m_Constraints
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201635027004802351, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6453007400453806139, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1733635425}
+    - target: {fileID: 6453007400453806139, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15392,3 +15472,4 @@ SceneRoots:
   - {fileID: 4330841075419334192}
   - {fileID: 662136933}
   - {fileID: 1789518655}
+  - {fileID: 482179477}

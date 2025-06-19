@@ -20,6 +20,14 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
     private float verticalVelocity;
     private float cameraPitch = 0f;
 
+    [Header("End Game")]
+    public bool Dead = false;
+    public bool Win = false;
+    public string NextScene;
+    public string FinalScene;
+
+    public int Counter = 0;
+
     //[Header("AnimationStuff")]
     //public Animator AnimState;
     void Start()
@@ -60,6 +68,8 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
 
         HandleMovement();
         HandleLook();
+
+        MouseController();
     }
 
     private void HandleMovement()
@@ -105,5 +115,40 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
     public void OnLook(InputValue value) //connected to InputSystem ActionMap
     {
         lookInput = value.Get<Vector2>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Death"))
+        {
+            if (NetworkServer.active)
+            {
+                //loadLevel.allowSceneActivation = true;
+                Debug.Log("Death");
+                // Change scene for everyone
+                NetworkManager.singleton.ServerChangeScene(NextScene);
+            }
+        }
+    }
+
+    public void MouseController()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Counter += 1;
+
+            if (Counter % 2 == 1)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+
+            if (Counter % 2 == 2)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+
+        }
     }
 }
