@@ -25072,6 +25072,7 @@ GameObject:
   - component: {fileID: 108976077}
   - component: {fileID: 108976079}
   - component: {fileID: 108976078}
+  - component: {fileID: 108976080}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -25182,6 +25183,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &108976080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108976076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1865410836
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &109510318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38807,6 +38825,7 @@ GameObject:
   - component: {fileID: 173582392}
   - component: {fileID: 173582394}
   - component: {fileID: 173582393}
+  - component: {fileID: 173582395}
   m_Layer: 0
   m_Name: Point Light (5)
   m_TagString: Untagged
@@ -38917,6 +38936,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &173582395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173582391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1706950588
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &173683998
 GameObject:
   m_ObjectHideFlags: 0
@@ -40966,6 +41002,7 @@ GameObject:
   - component: {fileID: 182965559}
   - component: {fileID: 182965561}
   - component: {fileID: 182965560}
+  - component: {fileID: 182965562}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -41076,6 +41113,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &182965562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182965558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1079449200
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &183949387
 GameObject:
   m_ObjectHideFlags: 0
@@ -43063,6 +43117,7 @@ GameObject:
   - component: {fileID: 191839130}
   - component: {fileID: 191839132}
   - component: {fileID: 191839131}
+  - component: {fileID: 191839133}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -43173,6 +43228,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &191839133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191839129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1757325394
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &192320229
 GameObject:
   m_ObjectHideFlags: 0
@@ -44682,6 +44754,7 @@ GameObject:
   - component: {fileID: 197015692}
   - component: {fileID: 197015694}
   - component: {fileID: 197015693}
+  - component: {fileID: 197015695}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -44792,6 +44865,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &197015695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197015691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3038162928
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &197055066
 GameObject:
   m_ObjectHideFlags: 0
@@ -46814,6 +46904,7 @@ GameObject:
   - component: {fileID: 204919769}
   - component: {fileID: 204919771}
   - component: {fileID: 204919770}
+  - component: {fileID: 204919772}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -46924,6 +47015,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &204919772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204919768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1386450020
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &205622469
 GameObject:
   m_ObjectHideFlags: 0
@@ -57593,6 +57701,7 @@ GameObject:
   - component: {fileID: 253290645}
   - component: {fileID: 253290647}
   - component: {fileID: 253290646}
+  - component: {fileID: 253290648}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -57703,6 +57812,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &253290648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253290644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3160459628
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &253739541
 GameObject:
   m_ObjectHideFlags: 0
@@ -57714,6 +57840,7 @@ GameObject:
   - component: {fileID: 253739542}
   - component: {fileID: 253739544}
   - component: {fileID: 253739543}
+  - component: {fileID: 253739545}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -57824,6 +57951,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &253739545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253739541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3257929897
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &254047920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58809,6 +58953,7 @@ GameObject:
   - component: {fileID: 257612318}
   - component: {fileID: 257612320}
   - component: {fileID: 257612319}
+  - component: {fileID: 257612321}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -58919,6 +59064,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &257612321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257612317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1197879260
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &257849215
 GameObject:
   m_ObjectHideFlags: 0
@@ -60900,6 +61062,7 @@ GameObject:
   - component: {fileID: 268342534}
   - component: {fileID: 268342536}
   - component: {fileID: 268342535}
+  - component: {fileID: 268342537}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -61010,6 +61173,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &268342537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268342533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3066509331
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &268369201
 GameObject:
   m_ObjectHideFlags: 0
@@ -63341,6 +63521,7 @@ GameObject:
   - component: {fileID: 281130351}
   - component: {fileID: 281130353}
   - component: {fileID: 281130352}
+  - component: {fileID: 281130354}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -63451,6 +63632,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &281130354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281130350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3645736631
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &281207759
 GameObject:
   m_ObjectHideFlags: 0
@@ -80832,6 +81030,7 @@ GameObject:
   - component: {fileID: 353084582}
   - component: {fileID: 353084584}
   - component: {fileID: 353084583}
+  - component: {fileID: 353084585}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -80942,6 +81141,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &353084585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353084581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 264453466
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &353175300
 GameObject:
   m_ObjectHideFlags: 0
@@ -95835,6 +96051,7 @@ GameObject:
   - component: {fileID: 424142115}
   - component: {fileID: 424142117}
   - component: {fileID: 424142116}
+  - component: {fileID: 424142118}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -95945,6 +96162,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &424142118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424142114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2313994561
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &424631095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4564968870612321650, guid: 399560bf59799aa448e0a64abec91512, type: 3}
@@ -100547,6 +100781,7 @@ GameObject:
   - component: {fileID: 449212141}
   - component: {fileID: 449212143}
   - component: {fileID: 449212142}
+  - component: {fileID: 449212144}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -100657,6 +100892,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &449212144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449212140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1718211619
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &449224667
 GameObject:
   m_ObjectHideFlags: 0
@@ -103013,6 +103265,7 @@ GameObject:
   - component: {fileID: 461682915}
   - component: {fileID: 461682917}
   - component: {fileID: 461682916}
+  - component: {fileID: 461682918}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -103123,6 +103376,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &461682918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461682914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2986779953
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &462493388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129193,6 +129463,7 @@ GameObject:
   - component: {fileID: 580132860}
   - component: {fileID: 580132862}
   - component: {fileID: 580132861}
+  - component: {fileID: 580132863}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -129303,6 +129574,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &580132863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580132859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3888889467
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &580485595
 GameObject:
   m_ObjectHideFlags: 0
@@ -143175,6 +143463,7 @@ GameObject:
   - component: {fileID: 636342221}
   - component: {fileID: 636342223}
   - component: {fileID: 636342222}
+  - component: {fileID: 636342224}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -143285,6 +143574,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &636342224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636342220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 4216779319
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &636409346
 GameObject:
   m_ObjectHideFlags: 0
@@ -149800,6 +150106,7 @@ GameObject:
   - component: {fileID: 660174496}
   - component: {fileID: 660174498}
   - component: {fileID: 660174497}
+  - component: {fileID: 660174499}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -149910,6 +150217,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &660174499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660174495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1689912709
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &660409156
 GameObject:
   m_ObjectHideFlags: 0
@@ -191047,6 +191371,7 @@ GameObject:
   - component: {fileID: 824465746}
   - component: {fileID: 824465748}
   - component: {fileID: 824465747}
+  - component: {fileID: 824465749}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -191157,6 +191482,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &824465749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824465745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 821120144
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &824731769
 GameObject:
   m_ObjectHideFlags: 0
@@ -192084,6 +192426,7 @@ GameObject:
   - component: {fileID: 827589215}
   - component: {fileID: 827589217}
   - component: {fileID: 827589216}
+  - component: {fileID: 827589218}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -192194,6 +192537,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &827589218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827589214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3736943317
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &827640409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -200004,6 +200364,7 @@ GameObject:
   - component: {fileID: 861946406}
   - component: {fileID: 861946408}
   - component: {fileID: 861946407}
+  - component: {fileID: 861946409}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -200114,6 +200475,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &861946409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861946405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2610085007
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &862084201
 GameObject:
   m_ObjectHideFlags: 0
@@ -201790,6 +202168,7 @@ GameObject:
   - component: {fileID: 869488075}
   - component: {fileID: 869488077}
   - component: {fileID: 869488076}
+  - component: {fileID: 869488078}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -201900,6 +202279,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &869488078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869488074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2208057864
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &869598639
 GameObject:
   m_ObjectHideFlags: 0
@@ -215785,6 +216181,7 @@ GameObject:
   - component: {fileID: 925387157}
   - component: {fileID: 925387159}
   - component: {fileID: 925387158}
+  - component: {fileID: 925387160}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -215895,6 +216292,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &925387160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925387156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2267812118
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &926048141
 GameObject:
   m_ObjectHideFlags: 0
@@ -216233,6 +216647,7 @@ GameObject:
   - component: {fileID: 926945377}
   - component: {fileID: 926945379}
   - component: {fileID: 926945378}
+  - component: {fileID: 926945380}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -216343,6 +216758,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &926945380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926945376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 251416298
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &927548748
 GameObject:
   m_ObjectHideFlags: 0
@@ -223242,6 +223674,7 @@ GameObject:
   - component: {fileID: 955993214}
   - component: {fileID: 955993216}
   - component: {fileID: 955993215}
+  - component: {fileID: 955993217}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -223352,6 +223785,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &955993217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955993213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3471641465
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &956289559
 GameObject:
   m_ObjectHideFlags: 0
@@ -226144,6 +226594,7 @@ GameObject:
   - component: {fileID: 970871229}
   - component: {fileID: 970871231}
   - component: {fileID: 970871230}
+  - component: {fileID: 970871232}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -226254,6 +226705,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &970871232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970871228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2962089625
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &970917419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231391,6 +231859,7 @@ GameObject:
   - component: {fileID: 996072213}
   - component: {fileID: 996072215}
   - component: {fileID: 996072214}
+  - component: {fileID: 996072216}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -231501,6 +231970,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &996072216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996072212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 4161494952
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &996183025
 GameObject:
   m_ObjectHideFlags: 0
@@ -234846,6 +235332,7 @@ GameObject:
   - component: {fileID: 1007940965}
   - component: {fileID: 1007940967}
   - component: {fileID: 1007940966}
+  - component: {fileID: 1007940968}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -234956,6 +235443,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1007940968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007940964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2414083001
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1007959791
 GameObject:
   m_ObjectHideFlags: 0
@@ -241113,6 +241617,7 @@ GameObject:
   - component: {fileID: 1038450003}
   - component: {fileID: 1038450005}
   - component: {fileID: 1038450004}
+  - component: {fileID: 1038450006}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -241223,6 +241728,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1038450006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038450002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1093086721
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1038903136
 GameObject:
   m_ObjectHideFlags: 0
@@ -248233,6 +248755,7 @@ GameObject:
   - component: {fileID: 1073923786}
   - component: {fileID: 1073923788}
   - component: {fileID: 1073923787}
+  - component: {fileID: 1073923789}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -248343,6 +248866,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1073923789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073923785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2384154786
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1073989550
 GameObject:
   m_ObjectHideFlags: 0
@@ -252233,6 +252773,7 @@ GameObject:
   - component: {fileID: 1088236493}
   - component: {fileID: 1088236495}
   - component: {fileID: 1088236494}
+  - component: {fileID: 1088236496}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -252343,6 +252884,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1088236496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088236492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 674990044
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1088312938
 GameObject:
   m_ObjectHideFlags: 0
@@ -263338,6 +263896,7 @@ GameObject:
   - component: {fileID: 1137851779}
   - component: {fileID: 1137851781}
   - component: {fileID: 1137851780}
+  - component: {fileID: 1137851782}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -263448,6 +264007,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1137851782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137851778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3299911853
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1137939418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -265603,6 +266179,7 @@ GameObject:
   - component: {fileID: 1146505980}
   - component: {fileID: 1146505982}
   - component: {fileID: 1146505981}
+  - component: {fileID: 1146505983}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -265713,6 +266290,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1146505983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146505979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3199539445
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1146619497
 GameObject:
   m_ObjectHideFlags: 0
@@ -269812,6 +270406,7 @@ GameObject:
   - component: {fileID: 1169368745}
   - component: {fileID: 1169368747}
   - component: {fileID: 1169368746}
+  - component: {fileID: 1169368748}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -269922,6 +270517,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1169368748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169368744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3514644001
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1169702810
 GameObject:
   m_ObjectHideFlags: 0
@@ -270008,6 +270620,7 @@ GameObject:
   - component: {fileID: 1169725739}
   - component: {fileID: 1169725741}
   - component: {fileID: 1169725740}
+  - component: {fileID: 1169725742}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -270118,6 +270731,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1169725742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169725738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 33902073
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1169732443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271171,6 +271801,7 @@ GameObject:
   - component: {fileID: 1174215847}
   - component: {fileID: 1174215849}
   - component: {fileID: 1174215848}
+  - component: {fileID: 1174215850}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -271281,6 +271912,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1174215850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174215846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3742128405
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1174509896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274032,6 +274680,7 @@ GameObject:
   - component: {fileID: 1186546057}
   - component: {fileID: 1186546059}
   - component: {fileID: 1186546058}
+  - component: {fileID: 1186546060}
   m_Layer: 0
   m_Name: Point Light (4)
   m_TagString: Untagged
@@ -274142,6 +274791,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1186546060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186546056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 197920280
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1187146366
 GameObject:
   m_ObjectHideFlags: 0
@@ -274362,6 +275028,7 @@ GameObject:
   - component: {fileID: 1187920395}
   - component: {fileID: 1187920397}
   - component: {fileID: 1187920396}
+  - component: {fileID: 1187920398}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -274472,6 +275139,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1187920398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187920394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 4110839734
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1188395495
 GameObject:
   m_ObjectHideFlags: 0
@@ -294788,6 +295472,7 @@ GameObject:
   - component: {fileID: 1286053119}
   - component: {fileID: 1286053121}
   - component: {fileID: 1286053120}
+  - component: {fileID: 1286053122}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -294898,6 +295583,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1286053122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286053118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 446800077
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1286301859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304987,6 +305689,7 @@ GameObject:
   - component: {fileID: 1332445554}
   - component: {fileID: 1332445556}
   - component: {fileID: 1332445555}
+  - component: {fileID: 1332445557}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -305097,6 +305800,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1332445557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332445553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 697360381
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1332481342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308036,6 +308756,7 @@ GameObject:
   - component: {fileID: 1343364426}
   - component: {fileID: 1343364428}
   - component: {fileID: 1343364427}
+  - component: {fileID: 1343364429}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -308146,6 +308867,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1343364429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343364425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 427748139
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1343489741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310999,6 +311737,7 @@ GameObject:
   - component: {fileID: 1355212303}
   - component: {fileID: 1355212305}
   - component: {fileID: 1355212304}
+  - component: {fileID: 1355212306}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -311109,6 +311848,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1355212306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355212302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1453540764
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!4 &1355305127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e87cf1ba73d61914eb64b9e53bf76c4a, type: 3}
@@ -317635,6 +318391,7 @@ GameObject:
   - component: {fileID: 1381679051}
   - component: {fileID: 1381679053}
   - component: {fileID: 1381679052}
+  - component: {fileID: 1381679054}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -317745,6 +318502,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1381679054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381679050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2722028351
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1382386156
 GameObject:
   m_ObjectHideFlags: 0
@@ -331778,6 +332552,7 @@ GameObject:
   - component: {fileID: 1440265749}
   - component: {fileID: 1440265751}
   - component: {fileID: 1440265750}
+  - component: {fileID: 1440265752}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -331888,6 +332663,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1440265752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440265748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1056646733
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1440709850
 GameObject:
   m_ObjectHideFlags: 0
@@ -340484,6 +341276,7 @@ GameObject:
   - component: {fileID: 1475164698}
   - component: {fileID: 1475164700}
   - component: {fileID: 1475164699}
+  - component: {fileID: 1475164701}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -340594,6 +341387,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1475164701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475164697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1907876143
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1475187561
 GameObject:
   m_ObjectHideFlags: 0
@@ -345789,6 +346599,7 @@ GameObject:
   - component: {fileID: 1493299543}
   - component: {fileID: 1493299545}
   - component: {fileID: 1493299544}
+  - component: {fileID: 1493299546}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -345899,6 +346710,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1493299546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493299542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2944516871
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1493329278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405109,6 +405937,7 @@ GameObject:
   - component: {fileID: 1759192507}
   - component: {fileID: 1759192509}
   - component: {fileID: 1759192508}
+  - component: {fileID: 1759192510}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -405219,6 +406048,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1759192510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759192506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3706859465
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1759350757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -420270,6 +421116,7 @@ GameObject:
   - component: {fileID: 1831175542}
   - component: {fileID: 1831175544}
   - component: {fileID: 1831175543}
+  - component: {fileID: 1831175545}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -420380,6 +421227,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1831175545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831175541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3235182982
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1831545213
 GameObject:
   m_ObjectHideFlags: 0
@@ -420482,6 +421346,7 @@ GameObject:
   - component: {fileID: 1832746360}
   - component: {fileID: 1832746362}
   - component: {fileID: 1832746361}
+  - component: {fileID: 1832746363}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -420592,6 +421457,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1832746363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832746359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 4238741863
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1833043481
 GameObject:
   m_ObjectHideFlags: 0
@@ -429847,6 +430729,7 @@ GameObject:
   - component: {fileID: 1872369193}
   - component: {fileID: 1872369195}
   - component: {fileID: 1872369194}
+  - component: {fileID: 1872369196}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -429957,6 +430840,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1872369196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872369192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 4232588781
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1872533790
 GameObject:
   m_ObjectHideFlags: 0
@@ -433372,6 +434272,7 @@ GameObject:
   - component: {fileID: 1885678615}
   - component: {fileID: 1885678617}
   - component: {fileID: 1885678616}
+  - component: {fileID: 1885678618}
   m_Layer: 0
   m_Name: Point Light (3)
   m_TagString: Untagged
@@ -433482,6 +434383,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1885678618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885678614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 303725245
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1886409332
 GameObject:
   m_ObjectHideFlags: 0
@@ -439146,6 +440064,7 @@ GameObject:
   - component: {fileID: 1905244987}
   - component: {fileID: 1905244989}
   - component: {fileID: 1905244988}
+  - component: {fileID: 1905244990}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -439256,6 +440175,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1905244990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905244986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2726309418
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1905429115
 GameObject:
   m_ObjectHideFlags: 0
@@ -450665,6 +451601,7 @@ GameObject:
   - component: {fileID: 1953194240}
   - component: {fileID: 1953194242}
   - component: {fileID: 1953194241}
+  - component: {fileID: 1953194243}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -450775,6 +451712,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1953194243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953194239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3409064581
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1953309254
 GameObject:
   m_ObjectHideFlags: 0
@@ -450948,6 +451902,7 @@ GameObject:
   - component: {fileID: 1953482952}
   - component: {fileID: 1953482954}
   - component: {fileID: 1953482953}
+  - component: {fileID: 1953482955}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -451058,6 +452013,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1953482955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953482951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 4226958510
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &1953559476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -469726,6 +470698,7 @@ GameObject:
   - component: {fileID: 2034311197}
   - component: {fileID: 2034311199}
   - component: {fileID: 2034311198}
+  - component: {fileID: 2034311200}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -469836,6 +470809,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &2034311200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034311196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3525548208
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &2034416722
 GameObject:
   m_ObjectHideFlags: 0
@@ -471105,6 +472095,7 @@ GameObject:
   - component: {fileID: 2038470544}
   - component: {fileID: 2038470546}
   - component: {fileID: 2038470545}
+  - component: {fileID: 2038470547}
   m_Layer: 0
   m_Name: Point Light (6)
   m_TagString: Untagged
@@ -471215,6 +472206,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &2038470547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038470543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 494063467
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &2038995390
 GameObject:
   m_ObjectHideFlags: 0
@@ -471496,6 +472504,7 @@ GameObject:
   - component: {fileID: 2040230247}
   - component: {fileID: 2040230249}
   - component: {fileID: 2040230248}
+  - component: {fileID: 2040230250}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -471606,6 +472615,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &2040230250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040230246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1264970086
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &2040263790
 GameObject:
   m_ObjectHideFlags: 0
@@ -478901,6 +479927,7 @@ GameObject:
   - component: {fileID: 2070440623}
   - component: {fileID: 2070440625}
   - component: {fileID: 2070440624}
+  - component: {fileID: 2070440626}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -479011,6 +480038,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &2070440626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070440622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2171025214
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &2070503763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -479100,6 +480144,7 @@ GameObject:
   - component: {fileID: 2070710745}
   - component: {fileID: 2070710747}
   - component: {fileID: 2070710746}
+  - component: {fileID: 2070710748}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -479210,6 +480255,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &2070710748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070710744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1658102986
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1001 &2070748399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -491926,6 +492988,7 @@ GameObject:
   - component: {fileID: 2124664696}
   - component: {fileID: 2124664698}
   - component: {fileID: 2124664697}
+  - component: {fileID: 2124664699}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -492036,6 +493099,23 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &2124664699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124664695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3395282547
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &2124904711
 GameObject:
   m_ObjectHideFlags: 0
@@ -551804,6 +552884,7 @@ GameObject:
   - component: {fileID: 4061947338215593318}
   - component: {fileID: 4061947338215593313}
   - component: {fileID: 4061947338215593320}
+  - component: {fileID: 4061947338215593321}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -551834,6 +552915,23 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &4061947338215593321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061947338215593319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2061725934
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!33 &4063538010725469018
 MeshFilter:
   m_ObjectHideFlags: 0
