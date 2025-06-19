@@ -942,7 +942,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2825,7 +2825,6 @@ MonoBehaviour:
   jumpHeight: 1.5
   gravity: -9.81
   playerCamera: {fileID: 1415219652510103184}
-  AnimState: {fileID: 9210894152782826636}
 --- !u!95 &9210894152782826636
 Animator:
   serializedVersion: 7
