@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/UIOverload.unity
     guid: 8fbe14cfa6a8bf2469342481e41fbcf1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: a7921cc61c1f5b54688d2e22db02544a
   - enabled: 0
@@ -32,10 +32,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FinalScene_Dean.unity
     guid: d071f5800ecbfaa40aa0d7b4d218636f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/EndingScene.unity
     guid: e268a03ea6d8fee47b8836062a2a1817
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: 809db83be7ce2d04f8e2314555c4745b
   - enabled: 1
