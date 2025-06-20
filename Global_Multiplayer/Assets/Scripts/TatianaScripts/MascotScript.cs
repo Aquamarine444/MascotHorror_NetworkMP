@@ -18,6 +18,10 @@ public class SpiritMovement : MonoBehaviour
     [Header("FindPlayer")]
     private bool moveToPlayer;
 
+    [Header("Sounds")]
+    public GameObject ChaseSound;
+    public AudioSource MainSong;
+
 
 
     [SerializeField]
@@ -25,7 +29,7 @@ public class SpiritMovement : MonoBehaviour
 
     void Start()
     {
-
+        MainSong = GetComponent<AudioSource>(); 
     }
 
     void Update()
@@ -103,6 +107,9 @@ public class SpiritMovement : MonoBehaviour
     {
             if (other.CompareTag("Player"))
             {
+            Debug.Log("Num num");
+                ChaseSound.SetActive(true);
+                MainSong.Stop();
                 moveToPlayer = true;
                 navAgent.SetDestination(other.transform.position);
             }
@@ -112,6 +119,8 @@ public class SpiritMovement : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            ChaseSound.SetActive(false);
+            MainSong.Play();
             moveToPlayer = false;
             SetNewDestination();
         }

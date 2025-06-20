@@ -30,11 +30,11 @@ public class LoadLevel : MonoBehaviour
             Button.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        /*if (Input.GetKeyDown(KeyCode.Return))
         {
             ChangeScene();
             LoadingScreen.SetActive(false);
-        }
+        }*/
     }
 
     IEnumerator LoadNextLevel()

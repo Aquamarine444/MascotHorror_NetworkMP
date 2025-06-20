@@ -865,6 +865,7 @@ MonoBehaviour:
   NextScene: MascotAI
   Timer: 0
   Button: {fileID: 5978228994017478754}
+  LoadingScreen: {fileID: 0}
 --- !u!1 &8491088433228579586
 GameObject:
   m_ObjectHideFlags: 0

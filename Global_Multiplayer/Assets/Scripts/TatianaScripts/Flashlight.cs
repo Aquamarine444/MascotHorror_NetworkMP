@@ -1,26 +1,41 @@
 using UnityEngine;
+using Mirror;
 
-public class Flashlight : MonoBehaviour
+public class Flashlight : NetworkBehaviour
 {
     public GameObject Light;
 
-    public int Counter;
+    [SyncVar(hook = nameof(OnFlashlightStateChanged))]
+    public bool isFlashlightOn = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) || (Input.GetKeyDown(KeyCode.JoystickButton3)))
+        // Only allow the owner to control the flashlight
+        if (!isLocalPlayer) return;
+
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            Counter += 1;
-
-            if (Counter%2 == 1)
-            {
-                Light.SetActive(true);
-            }
-
-            if (Counter%2 == 2)
-            {
-                Light.SetActive(false);
-            }
+            // Call command to toggle flashlight on server
+            CmdToggleFlashlight();
         }
+    }
+
+    [Command]
+    void CmdToggleFlashlight()
+    {
+        // Toggle the state on the server
+        isFlashlightOn = !isFlashlightOn;
+    }
+
+    // This method is called whenever the SyncVar changes
+    void OnFlashlightStateChanged(bool oldValue, bool newValue)
+    {
+        Light.SetActive(newValue);
+    }
+
+    // Initialize the light state when the object starts
+    public override void OnStartClient()
+    {
+        Light.SetActive(isFlashlightOn);
     }
 }
