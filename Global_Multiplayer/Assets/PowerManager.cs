@@ -34,7 +34,7 @@ public class PowerManager : NetworkBehaviour
 
         if (doorsOpen >= 3)
         {
-            powerOn = false;
+           // powerOn = false;
         }
 
         if (powerOn)
