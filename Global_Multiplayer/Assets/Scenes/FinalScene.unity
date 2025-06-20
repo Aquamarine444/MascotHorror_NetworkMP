@@ -210556,7 +210556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &883264273
 Transform:
   m_ObjectHideFlags: 0
@@ -418715,6 +418715,8 @@ MonoBehaviour:
   - {fileID: 1855411984}
   - {fileID: 559050199}
   - {fileID: 584558881}
+  lightParentEMMISSION: {fileID: 883264272}
+  lightParentOFF: {fileID: 2112505641}
   powerLevel: 100
   currentPower: 100
   powerDecreaseRate: 0
@@ -500618,7 +500620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2112505642
 Transform:
   m_ObjectHideFlags: 0

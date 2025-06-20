@@ -7,6 +7,8 @@ public class PowerManager : NetworkBehaviour
     public bool powerOn = false;
 
     public GameObject[] lights;
+    public GameObject lightParentEMMISSION;
+    public GameObject lightParentOFF;
 
     [Header("Power Settings")]
     [SyncVar] public float powerLevel = 100f;
@@ -39,6 +41,9 @@ public class PowerManager : NetworkBehaviour
 
         if (powerOn)
         {
+            lightParentEMMISSION.SetActive(true);
+            lightParentOFF.SetActive(false);
+
             float powerLostThisFrame = powerDecreaseRate * Time.deltaTime;
             currentPower -= powerLostThisFrame;
             totalPowerLost += powerLostThisFrame;
@@ -55,6 +60,12 @@ public class PowerManager : NetworkBehaviour
                 powerOn = false;
                 Debug.Log("Power depleted. Turning off.");
             }
+        }
+
+        else
+        {
+            lightParentEMMISSION.SetActive(false);
+            lightParentOFF.SetActive(true);
         }
     }
 
