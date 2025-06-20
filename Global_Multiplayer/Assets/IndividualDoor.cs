@@ -20,16 +20,18 @@ public class IndividualDoor : NetworkBehaviour
         UpdateLightAndForceClose();
     }
 
+
     public void DoorOpen()
     {
-       
+        Debug.Log("DoorOpen Works");
 
         CmdToggleDoor();
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     private void CmdToggleDoor()
     {
+        Debug.Log("CmdToggle Works");
         doorOpen = !doorOpen;
 
         if (doorOpen)
