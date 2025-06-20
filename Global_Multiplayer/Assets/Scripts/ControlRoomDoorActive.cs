@@ -26,68 +26,66 @@ public class ControlRoomDoorActive : NetworkBehaviour
     private bool isMoving = false;
     private AudioSource audioSrc;
 
+    public override void OnStartServer()
+    {
+        closedPos = doorObject.transform.localPosition;
+        openPos = closedPos + Vector3.up * moveDistance;
+    }
+
     void Start()
     {
-        if (doorObject != null)
-        {
-            closedPos = doorObject.transform.localPosition;
-            openPos = closedPos + Vector3.up * moveDistance;
-        }
-        if (outlineComponent != null) outlineComponent.enabled = false;
-        if (promptText != null) promptText.enabled = false;
-
         audioSrc = gameObject.AddComponent<AudioSource>();
         audioSrc.playOnAwake = false;
     }
 
     void Update()
     {
+        if (!isLocalPlayer) return;
         bool isLooking = IsLookingAtInteractable();
 
-        // Outline & prompt
-        if (outlineComponent != null)
-            outlineComponent.enabled = isLooking;
-        if (promptText != null)
+        outlineComponent.enabled = isLooking;
+        if (promptText)
         {
             promptText.enabled = isLooking;
-            if (isLooking)
-                promptText.text = promptMessage;
+            if (isLooking) promptText.text = promptMessage;
         }
 
-        // Toggle open/close
-        if (isLooking && Input.GetKeyDown(KeyCode.E) && !isMoving && doorObject != null)
+        if (isLooking && Input.GetKeyDown(KeyCode.E) && !isMoving)
         {
-            isOpen = !isOpen;
-            isMoving = true;
-
-            // Play sound
-            AudioClip clip = isOpen ? openClip : closeClip;
-            if (clip != null)
-                audioSrc.PlayOneShot(clip);
+            CmdToggleControlRoomDoor();
         }
 
-        // Animate door
         if (isMoving)
-        {
-            Vector3 target = isOpen ? openPos : closedPos;
-            doorObject.transform.localPosition = Vector3.MoveTowards(
-                doorObject.transform.localPosition,
-                target,
-                moveSpeed * Time.deltaTime
-            );
-            if (Vector3.Distance(doorObject.transform.localPosition, target) < 0.01f)
-            {
-                doorObject.transform.localPosition = target;
-                isMoving = false;
-            }
-        }
+            AnimateDoor();
+    }
+
+    [Command]
+    void CmdToggleControlRoomDoor()
+    {
+        isOpen = !isOpen;
+        RpcPlayDoorSound(isOpen);
+        isMoving = true;
+    }
+
+    [ClientRpc]
+    void RpcPlayDoorSound(bool open)
+    {
+        AudioClip clip = open ? openClip : closeClip;
+        if (clip && audioSrc) audioSrc.PlayOneShot(clip);
+    }
+
+    void AnimateDoor()
+    {
+        Vector3 target = isOpen ? openPos : closedPos;
+        doorObject.transform.localPosition = Vector3.MoveTowards(doorObject.transform.localPosition, target, moveSpeed * Time.deltaTime);
+        if (Vector3.Distance(doorObject.transform.localPosition, target) < 0.01f)
+            isMoving = false;
     }
 
     bool IsLookingAtInteractable()
     {
         Camera cam = Camera.main;
-        if (cam == null) return false;
-
+        if (!cam) return false;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, interactDistance, interactableLayers))
             return hit.collider.gameObject == gameObject;
         return false;
