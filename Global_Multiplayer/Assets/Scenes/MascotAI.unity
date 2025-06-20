@@ -7328,6 +7328,10 @@ PrefabInstance:
       value: Player 1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8885778516926580559, guid: ae3edfdeb9d1c9b448f6071df1399ff4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885778516926580559, guid: ae3edfdeb9d1c9b448f6071df1399ff4, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -12054,46 +12058,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1751318528}
-  - component: {fileID: 1751318526}
-  - component: {fileID: 1751318529}
-  - component: {fileID: 1751318530}
   - component: {fileID: 1751318531}
+  - component: {fileID: 1751318530}
+  - component: {fileID: 1751318529}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1751318526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751318524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 139
-  DualMode: 1
-  NoDelay: 1
-  Interval: 10
-  Timeout: 10000
-  RecvBufferSize: 7361536
-  SendBufferSize: 7361536
-  FastResend: 2
-  ReceiveWindowSize: 4096
-  SendWindowSize: 4096
-  MaxRetransmit: 40
-  MaximizeSocketBuffers: 1
-  ReliableMaxMessageSize: 297433
-  UnreliableMaxMessageSize: 1194
-  debugLog: 0
-  statisticsGUI: 0
-  statisticsLog: 0
+  m_IsActive: 1
 --- !u!4 &1751318528
 Transform:
   m_ObjectHideFlags: 0
@@ -12118,7 +12092,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 1751318524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a321569267dcc847a666873f5f5f8ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetX: 0
+  offsetY: 0
+--- !u!114 &1751318530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751318524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 7777
+  DualMode: 1
+  NoDelay: 1
+  Interval: 10
+  Timeout: 10000
+  RecvBufferSize: 7361536
+  SendBufferSize: 7361536
+  FastResend: 2
+  ReceiveWindowSize: 4096
+  SendWindowSize: 4096
+  MaxRetransmit: 40
+  MaximizeSocketBuffers: 1
+  ReliableMaxMessageSize: 297433
+  UnreliableMaxMessageSize: 1194
+  debugLog: 0
+  statisticsGUI: 0
+  statisticsLog: 0
+--- !u!114 &1751318531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751318524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aab4c8111b7c411b9b92cf3dbc5bd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
@@ -12129,17 +12146,16 @@ MonoBehaviour:
   offlineScene: 
   onlineScene: 
   offlineSceneLoadDelay: 0
-  transport: {fileID: 1751318526}
+  transport: {fileID: 1751318530}
   networkAddress: localhost
   maxConnections: 2
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 7503577175717350011, guid: 54b2204620b851e419aaadd35eaeb524, type: 3}
+  playerPrefab: {fileID: 4488150267730309876, guid: 8d75ca84c5daa0245a5a6f1e8a39608d, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
-  spawnPrefabs:
-  - {fileID: 4873571933598280280, guid: 7071686662c84be498bfb1688208f7bb, type: 3}
+  spawnPrefabs: []
   exceptionsDisconnect: 1
   snapshotSettings:
     bufferTimeMultiplier: 2
@@ -12155,36 +12171,6 @@ MonoBehaviour:
   evaluationMethod: 0
   evaluationInterval: 3
   timeInterpolationGui: 0
-  playerPrefabs:
-  - {fileID: 7503577175717350011, guid: 54b2204620b851e419aaadd35eaeb524, type: 3}
-  - {fileID: 4873571933598280280, guid: 7071686662c84be498bfb1688208f7bb, type: 3}
---- !u!114 &1751318530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751318524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  offsetX: 0
-  offsetY: 0
---- !u!114 &1751318531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751318524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628ef9b4961525b4db8edd87ad9899bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PausePanel: {fileID: 0}
 --- !u!1 &1789518653
 GameObject:
   m_ObjectHideFlags: 0
@@ -14775,6 +14761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sundrop
       objectReference: {fileID: 0}
+    - target: {fileID: 2821998818428009038, guid: 625f9eb59703db348b1eadd40fe1afec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2918679312452721051, guid: 625f9eb59703db348b1eadd40fe1afec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 110.5
@@ -14989,7 +14979,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1751318531}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameSceneManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -15467,6 +15457,10 @@ PrefabInstance:
     - target: {fileID: 894645931313041097, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
       propertyPath: m_Name
       value: Moondrop
+      objectReference: {fileID: 0}
+    - target: {fileID: 894645931313041097, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2740823590903255615, guid: ea2a5900b8d84de49a293433bb253369, type: 3}
       propertyPath: m_Constraints

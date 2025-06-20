@@ -29,8 +29,11 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
 
     public int Counter = 0;
 
-    //[Header("AnimationStuff")]
-    //public Animator AnimState;
+    [Header("AnimationStuff")]
+    public Animator AnimState;
+    public GameObject PlayerRig;
+    public bool isMoving = false;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -48,11 +51,11 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        /*AnimState = GetComponent<Animator>();
+        AnimState = PlayerRig.GetComponent<Animator>();
 
+        AnimState.SetBool("AnimFloat", true);
         AnimState.SetBool("AnimWalk", false);
-        AnimState.SetBool("AnimJump", false);
-        AnimState.SetBool("AnimFall", false);*/
+
     }
 
     public override void OnStartAuthority()
@@ -71,6 +74,7 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         HandleLook();
 
         MouseController();
+
     }
 
     private void HandleMovement()
@@ -78,10 +82,25 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         if (!isLocalPlayer) return;
 
         // Translate move input to world space
-        Vector3 move = transform.right * moveInput.x + transform.forward *
-        moveInput.y;
+        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
         move *= moveSpeed;
 
+        //checks if player is moving
+        isMoving = move.x != 0 || move.y != 0;
+        
+        if (isMoving)
+        {
+            AnimState.SetBool("AnimWalk", true);
+            AnimState.SetBool("AnimFloat", false);
+        }
+
+        if (!isMoving)
+        {
+            AnimState.SetBool("AnimWalk", false);
+            AnimState.SetBool("AnimFloat", true);
+        }
+
+       
         // Apply gravity
         if (controller.isGrounded && verticalVelocity < 0)
         {
@@ -107,10 +126,10 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         transform.Rotate(Vector3.up * mouseX);
     }
 
+
     public void OnMove(InputValue value) //connected to InputSystem ActionMap - get inputvalue to be able to use it in code(case sensitive)
     {
         moveInput = value.Get<Vector2>();
-       // AnimState.SetBool("AnimWalk", true);
     }
 
     public void OnLook(InputValue value) //connected to InputSystem ActionMap
