@@ -15,6 +15,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void UpdateInventory()
     {
+        Debug.Log("Inventory works");
         dialSprite.SetActive(hasDial);
         fuseSprite.SetActive(hasFuse);
     }

@@ -23,7 +23,6 @@ public class IndividualDoor : NetworkBehaviour
 
     public void DoorOpen()
     {
-        Debug.Log("DoorOpen Works");
 
         CmdToggleDoor();
     }
@@ -31,7 +30,6 @@ public class IndividualDoor : NetworkBehaviour
     [Command(requiresAuthority = false)]
     private void CmdToggleDoor()
     {
-        Debug.Log("CmdToggle Works");
         doorOpen = !doorOpen;
 
         if (doorOpen)

@@ -1,24 +1,26 @@
+using Mirror;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using Mirror;
 
 public class ObjectInspect : NetworkBehaviour
 {
     Camera mainCam;
-
     [SerializeField] private GameObject ExamineCam;
     [SerializeField] private GameObject zoomCam;
     [SerializeField] private Camera zoomCamera;
+    GameObject clickedObject;
 
-    private GameObject clickedObject;
-    private Vector3 originaPosition;
-    private Vector3 originalRotation;
+    Vector3 originaPosition;
+    Vector3 originalRotation;
 
     [SerializeField] public bool examineMode;
     [SerializeField] public bool zoomMode;
     [SerializeField] public bool TriggerMode;
+
 
     [SerializeField] private Volume postProcessVol;
     [SerializeField] private DepthOfField dOF;
@@ -27,10 +29,14 @@ public class ObjectInspect : NetworkBehaviour
     [SerializeField] private GameObject UIPrompts;
 
     public float zoomSpeed = 2.0f;
+
     public GameObject Player;
 
     void Start()
     {
+        /*postProcessVol = GameObject.FindGameObjectWithTag("PostProcessing").GetComponent<Volume>();
+        postProcessVol.profile.TryGet<DepthOfField>(out dOF);*/
+
         mainCam = Camera.main;
         examineMode = false;
         zoomMode = false;
@@ -38,25 +44,21 @@ public class ObjectInspect : NetworkBehaviour
 
     private void Update()
     {
-        if (!isLocalPlayer) return;
-
         TurnObject();
         ExitExamineMode();
+
+
     }
 
     public void Pickup(Transform objectTransform)
     {
-        if (!isLocalPlayer) return;
-
         UIPrompts.SetActive(true);
 
-        if (!examineMode)
+        if (examineMode == false)
         {
             ExamineCam.SetActive(true);
 
-            // Clone the object locally to avoid desync
-            clickedObject = Instantiate(objectTransform.gameObject);
-            clickedObject.layer = LayerMask.NameToLayer("UI"); // optional: set to ignore raycast or overlay layer
+            clickedObject = objectTransform.gameObject;
 
             originaPosition = clickedObject.transform.position;
             originalRotation = clickedObject.transform.rotation.eulerAngles;
@@ -64,44 +66,47 @@ public class ObjectInspect : NetworkBehaviour
             clickedObject.transform.position = ExamineCam.transform.position + (transform.forward * 3f);
 
             Time.timeScale = 0;
-
-            if (postProcessVol.profile.TryGet<DepthOfField>(out dOF))
-            {
-                dOF.mode.value = DepthOfFieldMode.Bokeh;
-            }
+            //dOF.active = true;
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //dOF.mode.value = DepthOfFieldMode.Bokeh;
 
             examineMode = true;
         }
+
     }
 
     public void ZoomIn(GameObject ZoomCam)
     {
-        if (!isLocalPlayer) return;
-
         UIPrompts.SetActive(true);
 
-        if (!zoomMode)
+        if (zoomMode == false)
         {
             zoomCam = ZoomCam;
+
             zoomCamera = ZoomCam.GetComponent<Camera>();
 
             zoomCam.SetActive(true);
-            GetComponent<Camera>().enabled = false;
+            gameObject.GetComponent<Camera>().enabled = false;
+
 
             Time.timeScale = 0;
+            //dOF.active = true;
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //dOF.mode.value = DepthOfFieldMode.Bokeh;
+
             zoomMode = true;
         }
+
     }
 
     public void Trigger()
     {
-        if (!isLocalPlayer) return;
         StartCoroutine(TriggerRoutine());
     }
 
     private IEnumerator TriggerRoutine()
     {
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSeconds(.5f);
 
         var interactors = Player.GetComponent<Interactors>();
         interactors.EnableRaycast();
@@ -111,22 +116,27 @@ public class ObjectInspect : NetworkBehaviour
         UIPrompts.SetActive(false);
     }
 
+
     public void Place(GameObject ZoomCam)
     {
-        if (!isLocalPlayer) return;
+            zoomCam = ZoomCam;
+            zoomCamera = ZoomCam.GetComponent<Camera>();
 
-        zoomCam = ZoomCam;
-        zoomCamera = ZoomCam.GetComponent<Camera>();
+            zoomCam.SetActive(true);
+            gameObject.GetComponent<Camera>().enabled = false;
 
-        zoomCam.SetActive(true);
-        GetComponent<Camera>().enabled = false;
 
-        StartCoroutine(PlaceRoutine());
+            //Time.timeScale = 0;
+            //dOF.active = true;
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //dOF.mode.value = DepthOfFieldMode.Bokeh;
+
+            StartCoroutine(PlaceRoutine());
     }
 
     private IEnumerator PlaceRoutine()
     {
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSeconds(1.5f);
 
         var interactors = Player.GetComponent<Interactors>();
         interactors.EnableRaycast();
@@ -135,18 +145,26 @@ public class ObjectInspect : NetworkBehaviour
         UIComments.SetActive(false);
         UIPrompts.SetActive(false);
 
+
         zoomCam.SetActive(false);
-        GetComponent<Camera>().enabled = true;
-        zoomMode = false;
+        gameObject.GetComponent<Camera>().enabled = true;
+
+        //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        //dOF.mode.value = DepthOfFieldMode.Off;
+
+
+        Player.GetComponent<Interactors>().EnableRaycast();
+
+
     }
 
     void TurnObject()
     {
-        if (!isLocalPlayer || !examineMode || clickedObject == null) return;
-
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && examineMode)
         {
-            float rotationSpeed = 15f;
+
+            float rotationSpeed = 15;
+
             float xAxis = Input.GetAxis("Mouse X") * rotationSpeed;
             float yAxis = Input.GetAxis("Mouse Y") * rotationSpeed;
 
@@ -157,61 +175,83 @@ public class ObjectInspect : NetworkBehaviour
 
     public void ForceExit()
     {
-        if (!isLocalPlayer) return;
-
         zoomCam.SetActive(false);
-        GetComponent<Camera>().enabled = true;
+        gameObject.GetComponent<Camera>().enabled = true;
 
         Time.timeScale = 1;
+        //dOF.active = false;
+        //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+        //dOF.mode.value = DepthOfFieldMode.Off;
+
         zoomMode = false;
 
-        var interactors = Player.GetComponent<Interactors>();
-        interactors.EnableRaycast();
-        interactors.minicrosshairUI.SetActive(true);
+        Player.GetComponent<Interactors>().EnableRaycast();
+
+        Player.GetComponent<Interactors>().minicrosshairUI.SetActive(true);
 
         UIComments.SetActive(false);
         UIPrompts.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     void ExitExamineMode()
     {
-        if (!isLocalPlayer) return;
 
-        if (Input.GetMouseButtonDown(1))
+
+        if (Input.GetMouseButtonDown(1) && examineMode)
         {
-            if (examineMode)
-            {
-                ExamineCam.SetActive(false);
 
-                clickedObject.transform.position = originaPosition;
-                clickedObject.transform.eulerAngles = originalRotation;
+            ExamineCam.SetActive(false);
 
-                Destroy(clickedObject);
+            clickedObject.transform.position = originaPosition;
+            clickedObject.transform.eulerAngles = originalRotation;
 
-                Time.timeScale = 1;
-                examineMode = false;
-            }
+            Time.timeScale = 1;
+            //dOF.active = false;
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //dOF.mode.value = DepthOfFieldMode.Off;
 
-            if (zoomMode)
-            {
-                zoomCam.SetActive(false);
-                GetComponent<Camera>().enabled = true;
-                Time.timeScale = 1;
-                zoomMode = false;
-            }
+            examineMode = false;
 
-            var interactors = Player.GetComponent<Interactors>();
-            interactors.EnableRaycast();
-            interactors.minicrosshairUI.SetActive(true);
+            Player.GetComponent<Interactors>().EnableRaycast();
+
+            Player.GetComponent<Interactors>().minicrosshairUI.SetActive(true);
+
+            Destroy(clickedObject);
+
+            UIComments.SetActive(false);
+            UIPrompts.SetActive(false);
+        }
+
+        if (Input.GetMouseButtonDown(1) && zoomMode)
+        {
+
+            zoomCam.SetActive(false);
+            gameObject.GetComponent<Camera>().enabled = true;
+
+            Time.timeScale = 1;
+            //dOF.active = false;
+            //postProcessVol.profile.TryGet<DepthOfField>(out dOF);
+            //dOF.mode.value = DepthOfFieldMode.Off;
+
+            zoomMode = false;
+
+            Player.GetComponent<Interactors>().EnableRaycast();
+
+            Player.GetComponent<Interactors>().minicrosshairUI.SetActive(true);
 
             UIComments.SetActive(false);
             UIPrompts.SetActive(false);
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
         }
+
     }
+
 }
+

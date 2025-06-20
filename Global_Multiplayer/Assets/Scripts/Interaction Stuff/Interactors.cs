@@ -1,29 +1,33 @@
+using Mirror;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Mirror;
 
 public class Interactors : NetworkBehaviour
 {
+
     [SerializeField] private Camera playerCamera;
     [SerializeField] private LayerMask interactLayer;
 
     [SerializeField] private IInteractible teractible;
+
     [SerializeField] private Transform teractibleTransform;
     [SerializeField] private Collider teractibleCollider;
+    //[SerializeField] private int teractiblesFound;
     [SerializeField] private GameObject teractibleCamera;
+
     [SerializeField] private ObjectInspect OI;
 
     public GameObject interactUI;
     public GameObject minicrosshairUI;
 
-    [SerializeField] private bool canRaycast = true;
 
+    [SerializeField] private bool canRaycast = true;
 
 
     private void Update()
     {
-        if (!isLocalPlayer) return; // ensure only local player runs this logic
-
         if (canRaycast)
         {
             RaycastHit hit;
@@ -32,22 +36,32 @@ public class Interactors : NetworkBehaviour
                 if ((interactLayer.value & (1 << hit.collider.gameObject.layer)) != 0)
                 {
                     teractibleTransform = hit.transform;
+
                     teractibleCollider = hit.collider;
                     teractible = hit.collider.GetComponent<IInteractible>();
 
                     if (teractible != null)
                     {
                         teractibleCamera = teractible.ExamineCam;
+                        teractibleCamera = teractible.ExamineCam != null ? teractible.ExamineCam : teractibleCamera;
+
+                        //Debug.Log("works");
+
                         OutlineOn();
                         EnableInteractUI();
                         TryInteract();
+
                     }
+
+
                 }
                 else
                 {
                     OutlineOff();
                     DisableInteractUI();
                 }
+
+
             }
             else
             {
@@ -61,31 +75,43 @@ public class Interactors : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1))
         {
+
             DisableInteractUI();
             OutlineOff();
+
             minicrosshairUI.SetActive(false);
+            teractible.Interact(this);
 
-            if (teractible != null)
-                teractible.Interact(this); // This should call a Command if needed internally
-
-            // Conditional logic
-            if (teractible != null)
+            // If you want to pick up the item
+            if (teractible.Inspect && !teractible.Examine &&!teractible.Trigger && !teractible.Place)
             {
-                if (teractible.Inspect && !teractible.Examine && !teractible.Trigger && !teractible.Place)
-                    Inspect(teractibleTransform);
-
-                else if (teractible.Examine && !teractible.Inspect && !teractible.Trigger && !teractible.Place)
-                    Examine(teractibleCamera);
-
-                else if (teractible.Trigger && !teractible.Inspect && !teractible.Examine && !teractible.Place)
-                    Trigger();
-
-                else if (teractible.Place && !teractible.Inspect && !teractible.Examine && !teractible.Trigger)
-                    Place(teractibleCamera);
+                Inspect(teractibleTransform);
             }
 
+            // If you want to zoom in
+            if (teractible.Examine && !teractible.Inspect && !teractible.Trigger && !teractible.Place)
+            {
+                Examine(teractibleCamera);
+            }
+
+            if (teractible.Trigger && !teractible.Inspect && !teractible.Examine && !teractible.Place)
+            {
+                Trigger();
+            }
+
+            if (teractible.Place && !teractible.Inspect && !teractible.Examine && !teractible.Trigger)
+            {
+                Place(teractibleCamera);
+            }
+
+
             canRaycast = false;
+            //teractible.Interact(this);
+
+
+
         }
+
     }
 
     public void OutlineOn()
@@ -93,7 +119,10 @@ public class Interactors : NetworkBehaviour
         if (teractibleCollider != null)
         {
             var outline = teractibleCollider.GetComponent<Outline>();
-            if (outline != null) outline.enabled = true;
+            if (outline != null)
+            {
+                outline.enabled = true;
+            }
         }
     }
 
@@ -102,23 +131,51 @@ public class Interactors : NetworkBehaviour
         if (teractibleCollider != null)
         {
             var outline = teractibleCollider.GetComponent<Outline>();
-            if (outline != null) outline.enabled = false;
+            if (outline != null)
+            {
+                outline.enabled = false;
+            }
         }
     }
 
-    public void EnableInteractUI() => interactUI.SetActive(true);
-    public void DisableInteractUI() => interactUI.SetActive(false);
-    public void EnableRaycast() => canRaycast = true;
+    public void EnableInteractUI()
+    {
+        interactUI.SetActive(true);
+    }
 
-    private void Inspect(Transform T) => OI.Pickup(T);
-    private void Examine(GameObject C) => OI.ZoomIn(C);
-    private void Trigger() => OI.Trigger();
-    private void Place(GameObject C) => OI.Place(C);
+    public void DisableInteractUI()
+    {
+        interactUI.SetActive(false);
+    }
+
+    private void Inspect(Transform T)
+    {
+        OI.Pickup(T);
+    }
+
+    private void Examine(GameObject C)
+    {
+        OI.ZoomIn(C);
+    }
+
+    private void Trigger()
+    {
+        OI.Trigger();
+    }
+
+    private void Place(GameObject C)
+    {
+        OI.Place(C);
+    }
+
+    public void EnableRaycast()
+    {
+        canRaycast = true;
+    }
 
     private void OnDrawGizmos()
     {
-        if (playerCamera == null) return;
-
+        // Align gizmo with the player's camera crosshair.
         Vector3 cameraCenter = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, playerCamera.nearClipPlane));
         Gizmos.color = Color.red;
         Gizmos.DrawLine(cameraCenter, cameraCenter + playerCamera.transform.forward * 3f);
