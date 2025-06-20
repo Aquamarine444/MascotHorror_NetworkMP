@@ -59,7 +59,7 @@ public class ControlRoomDoorActive : NetworkBehaviour
             AnimateDoor();
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     void CmdToggleControlRoomDoor()
     {
         isOpen = !isOpen;

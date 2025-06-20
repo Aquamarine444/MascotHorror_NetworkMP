@@ -57,7 +57,7 @@ public class ControlDoorControl : NetworkBehaviour
         }
     }
 
-    [Command]
+    [Command(requiresAuthority = false)]
     void CmdRequestToggleDoor()
     {
         RpcToggleDoor();
