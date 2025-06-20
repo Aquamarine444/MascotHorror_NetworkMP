@@ -28,17 +28,7 @@ public class TurnOnPower : MonoBehaviour
         SetLights(false);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            inReach = true;
-    }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            inReach = false;
-    }
 
     public void ShutDownPower()
     {
@@ -48,7 +38,7 @@ public class TurnOnPower : MonoBehaviour
         currentPower = powerLevel;
         Debug.Log("Power shut down due to too many doors being open.");
 
-        fsI.forceTurnOff();
+        //fsI.forceTurnOff();
     }
 
     void Update()
@@ -111,7 +101,7 @@ public class TurnOnPower : MonoBehaviour
                 SetLights(false);
                 Debug.Log("Power depleted. Turning off.");
 
-                fsI.forceTurnOff();
+                //fsI.forceTurnOff();
 
                 // Optional auto-recharge
                 /*currentPower = powerLevel;
@@ -149,7 +139,20 @@ public class TurnOnPower : MonoBehaviour
 
             Debug.Log("Power depleted due to door usage.");
 
-            fsI.forceTurnOff();
+            //fsI.forceTurnOff();
         }
     }
+
+
+    /*void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player"))
+        inReach = true;
+}
+
+void OnTriggerExit(Collider other)
+{
+    if (other.CompareTag("Player"))
+        inReach = false;
+}*/
 }

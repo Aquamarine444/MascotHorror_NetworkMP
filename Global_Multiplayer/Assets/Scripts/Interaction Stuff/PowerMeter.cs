@@ -1,47 +1,68 @@
+using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PowerMeter : MonoBehaviour
+public class PowerMeter : NetworkBehaviour
 {
-    public Image[] powerBars; // Assign these in the inspector from top to bottom or left to right
-
-    private int currentBarIndex;
+    public Image[] powerBars; // Assign in inspector
+    [SyncVar(hook = nameof(OnPowerChanged))]
+    private int currentBarIndex = -1;
 
     private void Start()
     {
-        RemoveAll(); // Start with no bars showing
+        if (isServer)
+        {
+            // Start with all bars disabled on server, sync to clients
+            currentBarIndex = -1;
+        }
+        UpdateVisuals();
     }
 
     public void StartMeter()
     {
-        foreach (Image img in powerBars)
-            img.enabled = true;
-
-        currentBarIndex = powerBars.Length - 1; // Start from last bar
+        if (isServer)
+        {
+            currentBarIndex = powerBars.Length - 1;
+        }
     }
 
     public void RemoveBar()
     {
+        if (!isServer) return; // Only server modifies syncvars
+
         if (currentBarIndex >= 0)
         {
-            powerBars[currentBarIndex].enabled = false;
             currentBarIndex--;
         }
     }
 
     public void ResetMeter()
     {
-        foreach (Image img in powerBars)
-            img.enabled = true;
+        if (!isServer) return;
 
         currentBarIndex = powerBars.Length - 1;
     }
 
     public void RemoveAll()
     {
-        foreach (Image img in powerBars)
-            img.enabled = false;
+        if (!isServer) return;
 
         currentBarIndex = -1;
+    }
+
+    void OnPowerChanged(int oldVal, int newVal)
+    {
+        UpdateVisuals();
+    }
+
+    private void UpdateVisuals()
+    {
+        if (powerBars == null || powerBars.Length == 0)
+            return;
+
+        for (int i = 0; i < powerBars.Length; i++)
+        {
+            powerBars[i].enabled = (i <= currentBarIndex);
+        }
     }
 }

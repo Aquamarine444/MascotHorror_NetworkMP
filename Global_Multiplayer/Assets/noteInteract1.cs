@@ -1,17 +1,19 @@
 using UnityEngine;
+using Mirror;
 
-public class noteInteract1 : MonoBehaviour, IInteractible
+public class noteInteract1 : NetworkBehaviour, IInteractible
 {
     [SerializeField] private bool inspect;
     [SerializeField] private bool examine;
     [SerializeField] private bool trigger;
     [SerializeField] private bool place;
     [SerializeField] private GameObject examineCamera;
-    public bool Inspect { get { return inspect; } }
-    public bool Examine { get { return examine; } }
-    public bool Trigger { get { return trigger; } }
-    public bool Place { get { return place; } }
-    public GameObject ExamineCam { get { return examineCamera; } }
+
+    public bool Inspect => inspect;
+    public bool Examine => examine;
+    public bool Trigger => trigger;
+    public bool Place => place;
+    public GameObject ExamineCam => examineCamera;
 
     public string text;
 
@@ -19,7 +21,14 @@ public class noteInteract1 : MonoBehaviour, IInteractible
 
     public bool Interact(Interactors interact)
     {
-        interact.gameObject.GetComponent<CommsManager>().InteractComment(text);
+
+        // Directly call the local UI feedback
+        CommsManager cm = interact.GetComponent<CommsManager>();
+        if (cm != null)
+        {
+            cm.InteractComment(text);
+        }
+
         return false;
     }
 }
