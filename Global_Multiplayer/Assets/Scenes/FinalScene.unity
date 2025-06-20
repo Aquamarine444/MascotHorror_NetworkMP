@@ -145613,6 +145613,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8186162546247803170, guid: 639f1e2b2d97173409ebb51d1bf1a0fe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8201664634587987371, guid: 639f1e2b2d97173409ebb51d1bf1a0fe, type: 3}
       propertyPath: 'lights.Array.data[0]'
       value: 
@@ -145645,6 +145649,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7309291584650330532, guid: 639f1e2b2d97173409ebb51d1bf1a0fe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1031675107}
+    - targetCorrespondingSourceObject: {fileID: 7309291584650330532, guid: 639f1e2b2d97173409ebb51d1bf1a0fe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1031675112}
   m_SourcePrefab: {fileID: 100100000, guid: 639f1e2b2d97173409ebb51d1bf1a0fe, type: 3}
 --- !u!1001 &643081620
 PrefabInstance:
@@ -147191,7 +147198,7 @@ Transform:
   m_GameObject: {fileID: 648778775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 179.4, y: 5.6, z: -82.66}
+  m_LocalPosition: {x: 179.4, y: 8.6, z: -82.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -195927,6 +195934,7 @@ GameObject:
   - component: {fileID: 843748951}
   - component: {fileID: 843748956}
   - component: {fileID: 843748957}
+  - component: {fileID: 843748958}
   m_Layer: 8
   m_Name: Button (3)
   m_TagString: Untagged
@@ -196235,6 +196243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   SecuredDoor: {fileID: 919132147966808642}
   powerSystem: {fileID: 1031675107}
   powerDoorCost: 5
@@ -196243,6 +196254,23 @@ MonoBehaviour:
   lightGreen: {fileID: 2100000, guid: bcd441a1afd316d45ba513b69e304056, type: 2}
   lightOff: {fileID: 2100000, guid: 544554f8921eef34583db23e5c689835, type: 2}
   doorOpen: 0
+--- !u!114 &843748958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843748948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3474950058
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &844027832
 GameObject:
   m_ObjectHideFlags: 0
@@ -230946,6 +230974,7 @@ GameObject:
   - component: {fileID: 994776886}
   - component: {fileID: 994776891}
   - component: {fileID: 994776892}
+  - component: {fileID: 994776893}
   m_Layer: 8
   m_Name: Button (2)
   m_TagString: Untagged
@@ -231254,6 +231283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   SecuredDoor: {fileID: 919132148252514804}
   powerSystem: {fileID: 1031675107}
   powerDoorCost: 5
@@ -231262,6 +231294,23 @@ MonoBehaviour:
   lightGreen: {fileID: 2100000, guid: bcd441a1afd316d45ba513b69e304056, type: 2}
   lightOff: {fileID: 2100000, guid: 544554f8921eef34583db23e5c689835, type: 2}
   doorOpen: 0
+--- !u!114 &994776893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994776883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 2683666724
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &994938109
 GameObject:
   m_ObjectHideFlags: 0
@@ -240589,6 +240638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1acbdaf3dbfbb44a9f87aba78c0335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   powerOn: 0
   lights:
   - {fileID: 253739541}
@@ -240658,6 +240710,23 @@ MonoBehaviour:
   fuseTrigger: 0
   fsI: {fileID: 1520860993}
   doorsOpen: 0
+--- !u!114 &1031675112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950930661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1796589699
+  _assetId: 2545822126
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1031703741
 GameObject:
   m_ObjectHideFlags: 0
@@ -265506,6 +265575,7 @@ GameObject:
   - component: {fileID: 1143454081}
   - component: {fileID: 1143454084}
   - component: {fileID: 1143454085}
+  - component: {fileID: 1143454086}
   m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
@@ -265814,6 +265884,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   SecuredDoor: {fileID: 919132148779127224}
   powerSystem: {fileID: 1031675107}
   powerDoorCost: 5
@@ -265822,6 +265895,23 @@ MonoBehaviour:
   lightGreen: {fileID: 2100000, guid: bcd441a1afd316d45ba513b69e304056, type: 2}
   lightOff: {fileID: 2100000, guid: 544554f8921eef34583db23e5c689835, type: 2}
   doorOpen: 0
+--- !u!114 &1143454086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143454077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 1513328583
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1143518663
 GameObject:
   m_ObjectHideFlags: 0
@@ -331504,6 +331594,7 @@ GameObject:
   - component: {fileID: 1437096823}
   - component: {fileID: 1437096828}
   - component: {fileID: 1437096829}
+  - component: {fileID: 1437096830}
   m_Layer: 8
   m_Name: Button (1)
   m_TagString: Untagged
@@ -331812,6 +331903,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   SecuredDoor: {fileID: 919132149075454590}
   powerSystem: {fileID: 1031675107}
   powerDoorCost: 5
@@ -331820,6 +331914,23 @@ MonoBehaviour:
   lightGreen: {fileID: 2100000, guid: bcd441a1afd316d45ba513b69e304056, type: 2}
   lightOff: {fileID: 2100000, guid: 544554f8921eef34583db23e5c689835, type: 2}
   doorOpen: 0
+--- !u!114 &1437096830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437096820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 3035782512
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1437143487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4a57d5fb0570bdd4bb473e916abb4500, type: 3}
@@ -380118,6 +380229,7 @@ GameObject:
   - component: {fileID: 1635403495}
   - component: {fileID: 1635403500}
   - component: {fileID: 1635403501}
+  - component: {fileID: 1635403502}
   m_Layer: 8
   m_Name: Button (4)
   m_TagString: Untagged
@@ -380426,6 +380538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc3317a92cecbd4092d8b7d9aa63b26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   SecuredDoor: {fileID: 919132148956066504}
   powerSystem: {fileID: 1031675107}
   powerDoorCost: 5
@@ -380434,6 +380549,23 @@ MonoBehaviour:
   lightGreen: {fileID: 2100000, guid: bcd441a1afd316d45ba513b69e304056, type: 2}
   lightOff: {fileID: 2100000, guid: 544554f8921eef34583db23e5c689835, type: 2}
   doorOpen: 0
+--- !u!114 &1635403502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635403492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 490443755
+  _assetId: 0
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0
 --- !u!1 &1635651323
 GameObject:
   m_ObjectHideFlags: 0
@@ -399668,7 +399800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1727985166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399690,7 +399822,7 @@ Transform:
   m_GameObject: {fileID: 1727985165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 88.2, y: 11.9, z: -140.7}
+  m_LocalPosition: {x: 88.2, y: 14.9, z: -140.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

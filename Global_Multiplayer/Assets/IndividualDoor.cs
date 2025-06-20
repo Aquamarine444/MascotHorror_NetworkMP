@@ -1,7 +1,7 @@
+using Mirror;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
-public class IndividualDoor : MonoBehaviour
+public class IndividualDoor : NetworkBehaviour
 {
     public GameObject SecuredDoor;
     public PowerManager powerSystem;
@@ -12,57 +12,25 @@ public class IndividualDoor : MonoBehaviour
     public Material lightGreen;
     public Material lightOff;
 
-    // Renamed for clarity
+    [SyncVar(hook = nameof(OnDoorStateChanged))]
     public bool doorOpen;
-
-    public void DoorOpen()
-    {
-        if (powerSystem != null && powerSystem.powerOn)
-        {
-            ToggleDoor();
-        }
-        else
-        {
-            Debug.Log("Power is off. Door cannot be used by player.");
-        }
-    }
 
     private void Update()
     {
-        if (powerSystem.powerOn)
-        {
-            if (doorOpen)
-            {
-                light.GetComponent<MeshRenderer>().material = lightGreen;
-                
-            }
-            else
-            {
-                light.GetComponent<MeshRenderer>().material = lightRed;
-            }
-        }
-        else // Power is off
-        {
-            light.GetComponent<MeshRenderer>().material = lightOff;
-
-            if (doorOpen)
-            {
-                // Force door closed
-                doorOpen = false;
-                SecuredDoor.SetActive(true);
-                powerSystem.doorsOpen--;
-                Debug.Log("Power lost - door forcefully closed.");
-            }
-        }
+        UpdateLightAndForceClose();
     }
 
+    public void DoorOpen()
+    {
+       
 
-    public void ToggleDoor()
+        CmdToggleDoor();
+    }
+
+    [Command]
+    private void CmdToggleDoor()
     {
         doorOpen = !doorOpen;
-
-        // If the door is open, hide it (i.e., remove the physical door GameObject)
-        SecuredDoor.SetActive(!doorOpen);
 
         if (doorOpen)
         {
@@ -74,6 +42,37 @@ public class IndividualDoor : MonoBehaviour
         {
             powerSystem.doorsOpen--;
             Debug.Log("Door closed.");
+        }
+
+        SecuredDoor.SetActive(!doorOpen);
+    }
+
+    void OnDoorStateChanged(bool oldVal, bool newVal)
+    {
+        SecuredDoor.SetActive(!newVal);
+    }
+
+    void UpdateLightAndForceClose()
+    {
+        if (powerSystem == null) return;
+
+        if (powerSystem.powerOn)
+        {
+            light.GetComponent<MeshRenderer>().material = doorOpen ? lightGreen : lightRed;
+        }
+        else
+        {
+            light.GetComponent<MeshRenderer>().material = lightOff;
+
+            if (doorOpen)
+            {
+                doorOpen = false;
+                SecuredDoor.SetActive(true);
+                if (isServer)
+                    powerSystem.doorsOpen--;
+
+                Debug.Log("Power lost - door forcefully closed.");
+            }
         }
     }
 }

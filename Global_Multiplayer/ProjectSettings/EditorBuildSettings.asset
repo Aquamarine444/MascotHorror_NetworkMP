@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ShooterScene.unity
     guid: cc70bc3a6cc3049429470e1f8728d9b6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/UIOverload.unity
     guid: 8fbe14cfa6a8bf2469342481e41fbcf1
   - enabled: 0
@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/DeanAdditions.unity
     guid: e1a50a4917d766f49a5d14e53ca559f7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MascotAI.unity
     guid: d2d6437488bdcc740afe96ffcfc2a039
   - enabled: 1

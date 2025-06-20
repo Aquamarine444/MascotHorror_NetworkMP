@@ -1,32 +1,64 @@
-using NUnit.Framework;
+using Mirror;
 using UnityEngine;
 
-public class PowerManager : MonoBehaviour
+public class PowerManager : NetworkBehaviour
 {
+    [SyncVar(hook = nameof(OnPowerStateChanged))]
     public bool powerOn = false;
+
     public GameObject[] lights;
 
     [Header("Power Settings")]
-    public float powerLevel = 100f;
-    public float currentPower = 100f;
+    [SyncVar] public float powerLevel = 100f;
+    [SyncVar] public float currentPower = 100f;
     public float powerDecreaseRate;
 
+    [SyncVar(hook = nameof(OnFuseTriggerChanged))]
     public bool fuseTrigger = false;
 
     private float totalPowerLost = 0f;
-    private bool previousFuseTrigger = false;
 
     public FuseSwitchInteract fsI;
 
-    public int doorsOpen;
+    [SyncVar] public int doorsOpen;
 
-
-    private void Start()
+    public override void OnStartClient()
     {
-        currentPower = powerLevel;
-        powerOn = false;
+        base.OnStartClient();
+        SetLights(powerOn);
     }
 
+    void Update()
+    {
+        if (!isServer) return; // Only the server should control power logic
+
+        if (doorsOpen >= 3)
+        {
+            powerOn = false;
+        }
+
+        if (powerOn)
+        {
+            float powerLostThisFrame = powerDecreaseRate * Time.deltaTime;
+            currentPower -= powerLostThisFrame;
+            totalPowerLost += powerLostThisFrame;
+
+            while (totalPowerLost >= 10f)
+            {
+                totalPowerLost -= 10f;
+                GetComponent<PowerMeter>()?.RemoveBar();
+            }
+
+            if (currentPower <= 0f)
+            {
+                currentPower = 0f;
+                powerOn = false;
+                Debug.Log("Power depleted. Turning off.");
+            }
+        }
+    }
+
+    [Server]
     public void SpendPower(float amount)
     {
         currentPower -= amount;
@@ -43,84 +75,51 @@ public class PowerManager : MonoBehaviour
             currentPower = 0f;
             powerOn = false;
             currentPower = powerLevel;
-
             Debug.Log("Power depleted due to door usage.");
-
-            //fsI.forceTurnOff();
         }
     }
 
-    private void Update()
+    // Called by clients when they toggle fuse
+    [Command(requiresAuthority = false)]
+    public void CmdSetFuseTrigger(bool state)
     {
-        /*if (Input.GetKeyDown(KeyCode.V))
-            SpendPower(5f);*/
+        fuseTrigger = state;
+    }
 
-        if (doorsOpen >=3)
+    void OnPowerStateChanged(bool oldValue, bool newValue)
+    {
+        SetLights(newValue);
+    }
+
+    void OnFuseTriggerChanged(bool oldVal, bool newVal)
+    {
+        if (newVal)
         {
-            powerOn = false;
-        }
-
-        if (powerOn)
-        {
-            foreach (GameObject light in lights)
-                light.SetActive(true);
-
-            float powerLostThisFrame = powerDecreaseRate * Time.deltaTime;
-            currentPower -= powerLostThisFrame;
-            totalPowerLost += powerLostThisFrame;
-
-            while (totalPowerLost >= 10f)
+            if (currentPower > 0f)
             {
-                totalPowerLost -= 10f;
-                GetComponent<PowerMeter>()?.RemoveBar();
-            }
+                powerOn = true;
 
-            if (currentPower <= 0f)
-            {
-                currentPower = 0f;
-                powerOn = false;
-                // turn power off
-                Debug.Log("Power depleted. Turning off.");
-
-                //fsI.forceTurnOff();
-            }
-
-            Debug.Log("Power Level: " + currentPower.ToString("F2"));
-        }
-
-        else
-        {
-            foreach (GameObject light in lights)
-                light.SetActive(false);
-        }
-
-        if (fuseTrigger != previousFuseTrigger)
-        {
-            previousFuseTrigger = fuseTrigger;
-
-            if (fuseTrigger)
-            {
-                // Fuse activated
-                if (currentPower > 0f)
+                Debug.Log("Power turned ON from fuse.");
+                PowerMeter meter = GetComponent<PowerMeter>();
+                if (meter != null)
                 {
-                    powerOn = true;
-                    //DoorManager.Instance?.ReactivateAllDoors();
-                    Debug.Log("Power turned ON from fuse.");
-
-                    PowerMeter meter = GetComponent<PowerMeter>();
-                    if (meter != null)
-                    {
-                        meter.ResetMeter();   // Ensure all bars are visible
-                        meter.StartMeter();   // Initialize the meter logic
-                    }
+                    meter.ResetMeter();
+                    meter.StartMeter();
                 }
             }
-            else
-            {
-                // Fuse deactivated
-                powerOn = false;
-                Debug.Log("Power turned OFF from fuse reset.");
-            }
+        }
+        else
+        {
+            powerOn = false;
+            Debug.Log("Power turned OFF from fuse reset.");
+        }
+    }
+
+    void SetLights(bool state)
+    {
+        foreach (GameObject light in lights)
+        {
+            light.SetActive(state);
         }
     }
 }

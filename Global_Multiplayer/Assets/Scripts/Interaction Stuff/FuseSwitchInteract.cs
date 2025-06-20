@@ -1,24 +1,25 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
+using Mirror;
 
-public class FuseSwitchInteract : MonoBehaviour, IInteractible
+public class FuseSwitchInteract : NetworkBehaviour, IInteractible
 {
     [SerializeField] private bool inspect;
     [SerializeField] private bool examine;
     [SerializeField] private bool trigger;
     [SerializeField] private bool place;
     [SerializeField] private GameObject examineCamera;
-    public bool Inspect { get { return inspect; } }
-    public bool Examine { get { return examine; } }
-    public bool Trigger { get { return trigger; } }
-    public bool Place { get { return place; } }
-    public GameObject ExamineCam { get { return examineCamera; } }
+
+    public bool Inspect => inspect;
+    public bool Examine => examine;
+    public bool Trigger => trigger;
+    public bool Place => place;
+    public GameObject ExamineCam => examineCamera;
 
     public string text;
-
     public CommsManager cM;
 
+    [SyncVar(hook = nameof(OnFuseStateChanged))]
     public bool isOn;
 
     public GameObject light;
@@ -28,109 +29,101 @@ public class FuseSwitchInteract : MonoBehaviour, IInteractible
 
     public PowerManager power;
 
-    public GameObject player;
+    private GameObject player;
 
     public GameObject elevator;
     public GameObject controlRoomDoor;
-
     public DoorManager dM;
 
     public bool Interact(Interactors interact)
     {
+
         player = interact.gameObject;
 
-        // When turning off
-        if (isOn)
-        {
-            gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
-            isOn = false;
-            power.fuseTrigger = false;
+        // Send fuse toggle command to server with player's fuse state
+        bool hasFuse = player.GetComponent<PlayerInventory>().fuseFilled;
+        CmdToggleFuseSwitch(hasFuse);
 
-            if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
-            {
-                light.GetComponent<MeshRenderer>().material = lightRed;
-              
-            }
-
-            else if (!interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
-            {
-                light.GetComponent<MeshRenderer>().material = LightBlank;
-
-            }
-
-        }
-
-        // When turning on
-        else if (!isOn)
-        {
-            gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", true);
-            isOn = true;
-         
-            if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == false)
-            {
-                //turn power on
-                //StartCoroutine(SwitchFlip());
-                light.GetComponent<MeshRenderer>().material = lightRed;
-
-                //
-                
-                power.fuseTrigger = true;
-
-            }
-
-            else if (interact.gameObject.GetComponent<PlayerInventory>().fuseFilled == true)
-            {
-                //Open Elevator
-                Debug.Log("Power is on");
-                light.GetComponent<MeshRenderer>().material = lightGreen;
-
-                //dM.DeactivateAllDoors();
-                controlRoomDoor.SetActive(false);
-
-
-                elevator.SetActive(false);
-
-                //dM.DeactivateAllDoors();
-
-                Debug.Log("Doors Open");
-
-                power.fuseTrigger = true;
-            }
-
-        }
-        //gameObject.GetComponent<MeshRenderer>().enabled = false;
         return false;
     }
 
-    public void forceTurnOff()
+    [Command(requiresAuthority = false)]
+    void CmdToggleFuseSwitch(bool playerHasFuse)
     {
-        Debug.Log("works");
-        gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
+        isOn = !isOn;
 
-        isOn = false;
-        power.fuseTrigger = false;
-
-        if (player.GetComponent<PlayerInventory>().fuseFilled == true)
+        if (isOn)
         {
-            light.GetComponent<MeshRenderer>().material = LightBlank;
+            power.fuseTrigger = true;
+
+            if (!playerHasFuse)
+            {
+                RpcSetLight("red");
+            }
+            else
+            {
+                RpcSetLight("green");
+                elevator.SetActive(false);
+                controlRoomDoor.SetActive(false);
+                Debug.Log("Doors Open");
+            }
+        }
+        else
+        {
+            power.fuseTrigger = false;
+
+            if (playerHasFuse)
+            {
+                RpcSetLight("blank");
+            }
+            else
+            {
+                RpcSetLight("blank");
+            }
         }
 
-        else if (!player.GetComponent<PlayerInventory>().fuseFilled == true)
-        {
-            light.GetComponent<MeshRenderer>().material = LightBlank;
+        RpcSetFuseAnim(isOn);
+    }
 
+    // Hook to change isOn visuals on clients
+    void OnFuseStateChanged(bool oldValue, bool newValue)
+    {
+        RpcSetFuseAnim(newValue);
+    }
+
+    [ClientRpc]
+    void RpcSetFuseAnim(bool on)
+    {
+        Animator anim = gameObject.transform.parent.GetComponent<Animator>();
+        if (anim != null)
+            anim.SetBool("isOn", on);
+    }
+
+    [ClientRpc]
+    void RpcSetLight(string color)
+    {
+        if (!light) return;
+
+        switch (color)
+        {
+            case "red":
+                light.GetComponent<MeshRenderer>().material = lightRed;
+                break;
+            case "green":
+                light.GetComponent<MeshRenderer>().material = lightGreen;
+                break;
+            default:
+                light.GetComponent<MeshRenderer>().material = LightBlank;
+                break;
         }
     }
 
-    private IEnumerator SwitchFlip()
+    [Server]
+    public void ForceTurnOff()
     {
-        yield return new WaitForSeconds(.5f);
-
-        gameObject.transform.parent.GetComponent<Animator>().SetBool("isOn", false);
         isOn = false;
-
-
-        
-
+        power.fuseTrigger = false;
+        RpcSetFuseAnim(false);
+        RpcSetLight("blank");
     }
 }
