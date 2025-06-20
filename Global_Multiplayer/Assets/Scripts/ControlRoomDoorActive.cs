@@ -1,7 +1,8 @@
 using UnityEngine;
 using TMPro;
+using Mirror;
 
-public class ControlRoomDoorActive : MonoBehaviour
+public class ControlRoomDoorActive : NetworkBehaviour
 {
     [Header("Raycast Settings")]
     public float interactDistance = 3f;

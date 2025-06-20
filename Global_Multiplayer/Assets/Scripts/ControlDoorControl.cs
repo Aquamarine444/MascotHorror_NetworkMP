@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using Mirror;
 
 
-public class ControlDoorControl : MonoBehaviour
+public class ControlDoorControl : NetworkBehaviour
 {
     public Collider openZone;
     public Collider endZone;

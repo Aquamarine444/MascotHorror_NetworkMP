@@ -22,12 +22,22 @@ public class PowerManager : NetworkBehaviour
 
     public FuseSwitchInteract fsI;
 
+    public AudioSource poweron;
+    public AudioSource poweroff;
+
     [SyncVar] public int doorsOpen;
 
     public override void OnStartClient()
     {
         base.OnStartClient();
         SetLights(powerOn);
+    }
+
+    private void Start()
+    {
+        poweron.enabled = false;
+        poweroff.enabled = false;
+
     }
 
     void Update()
@@ -41,6 +51,8 @@ public class PowerManager : NetworkBehaviour
 
         if (powerOn)
         {
+            poweron.enabled = true;
+            poweroff.enabled = false;
             lightParentEMMISSION.SetActive(true);
             lightParentOFF.SetActive(false);
 
@@ -64,6 +76,8 @@ public class PowerManager : NetworkBehaviour
 
         else
         {
+            poweroff.enabled = true;
+            poweron.enabled = false;
             lightParentEMMISSION.SetActive(false);
             lightParentOFF.SetActive(true);
         }

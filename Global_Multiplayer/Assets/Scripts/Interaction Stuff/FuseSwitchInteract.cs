@@ -35,6 +35,15 @@ public class FuseSwitchInteract : NetworkBehaviour, IInteractible
     public GameObject controlRoomDoor;
     public DoorManager dM;
 
+
+    public ControlDoorControl controlDoorControl;
+    public ControlRoomDoorActive controlRoomDoorActive;
+    public Elevator elevatorActivate;
+
+    public GameObject moondrop;
+    public GameObject sundrop;
+
+
     public bool Interact(Interactors interact)
     {
         player = interact.gameObject;
@@ -114,11 +123,21 @@ public class FuseSwitchInteract : NetworkBehaviour, IInteractible
     [ClientRpc]
     void RpcOpenElevatorDoors()
     {
-        if (elevator != null)
-            elevator.SetActive(false);
 
-        if (controlRoomDoor != null)
-            controlRoomDoor.SetActive(false);
+        if (elevatorActivate != null)
+            elevatorActivate.enabled = true;
+
+        if (controlDoorControl != null)
+            controlDoorControl.enabled = false;
+
+        if (controlRoomDoorActive != null)
+            controlRoomDoorActive.enabled = true;
+
+        moondrop.SetActive(false);
+        sundrop.SetActive(false);
+
+
+
     }
 
     [Server]

@@ -23,11 +23,19 @@ public class EndScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Counter++;
+        if (other.CompareTag("Player"))
+        {
+            Counter++;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Counter--;
+        if (other.CompareTag("Player"))
+        {
+            Counter--;
+        }
+    
     }
 }

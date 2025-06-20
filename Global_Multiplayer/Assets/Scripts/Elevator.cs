@@ -1,6 +1,7 @@
 using UnityEngine;
+using Mirror;
 
-public class Elevator : MonoBehaviour
+public class Elevator : NetworkBehaviour
 {
     [Header("Audio")]
     public AudioSource audioSource;
