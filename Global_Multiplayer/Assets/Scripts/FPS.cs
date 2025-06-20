@@ -32,7 +32,10 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
     [Header("AnimationStuff")]
     public Animator AnimState;
     public GameObject PlayerRig;
-    public bool isMoving = false;
+    private bool isMoving = false;
+
+    [SyncVar(hook = nameof(OnAnimationStateChanged))]
+    private bool isWalking = false;
 
     void Start()
     {
@@ -51,10 +54,16 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        AnimState = PlayerRig.GetComponent<Animator>();
+        if (PlayerRig != null)
+        {
+            AnimState = PlayerRig.GetComponent<Animator>();
+        }
 
-        AnimState.SetBool("AnimFloat", true);
-        AnimState.SetBool("AnimWalk", false);
+        if (AnimState != null)
+        {
+            AnimState.SetBool("AnimFloat", true);
+            AnimState.SetBool("AnimWalk", false);
+        }
 
     }
 
@@ -66,6 +75,24 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         playerInput.enabled = true;
     }
 
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+
+        // Make sure we have the animator reference
+        if (AnimState == null && PlayerRig != null)
+        {
+            AnimState = PlayerRig.GetComponent<Animator>();
+        }
+
+        // Apply current walking state
+        if (AnimState != null)
+        {
+            AnimState.SetBool("AnimWalk", isWalking);
+            AnimState.SetBool("AnimFloat", !isWalking);
+        }
+    }
+
     private void Update()
     {
         if (!isLocalPlayer) return; // return stops the code
@@ -74,6 +101,8 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         HandleLook();
 
         MouseController();
+
+        
 
     }
 
@@ -88,7 +117,7 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         //checks if player is moving
         isMoving = move.x != 0 || move.y != 0;
         
-        if (isMoving)
+        /*if (isMoving)
         {
             AnimState.SetBool("AnimWalk", true);
             AnimState.SetBool("AnimFloat", false);
@@ -98,6 +127,14 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
         {
             AnimState.SetBool("AnimWalk", false);
             AnimState.SetBool("AnimFloat", true);
+        }*/
+
+        //reduce network traffic
+        if (isWalking != isMoving)
+        {
+            isWalking = isMoving;
+
+            CmdUpdateAnimation(isMoving);
         }
 
        
@@ -164,7 +201,7 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
                 Cursor.visible = true;
             }
 
-            if (Counter % 2 == 2)
+            if (Counter % 2 == 0)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -172,4 +209,44 @@ public class FPSPlayer : NetworkBehaviour //NetworkBehaviour - class that comes/
 
         }
     }
+
+    [Command]
+    void CmdUpdateAnimation(bool walking)
+    {
+        RpcUpdateAnimation(walking);
+    }
+
+    [ClientRpc]
+    void RpcUpdateAnimation(bool walking)
+    {
+        if (AnimState != null)
+        {
+            AnimState.SetBool("AnimWalk", walking);
+            AnimState.SetBool("AnimFloat", !walking);
+        }
+    }
+
+    // Hook method called when SyncVar changes
+    private void OnAnimationStateChanged(bool oldValue, bool newValue)
+    {
+
+        // Ensure we have the animator reference
+        if (AnimState == null && PlayerRig != null)
+        {
+            AnimState = PlayerRig.GetComponent<Animator>();
+        }
+
+        // This runs on all clients when the SyncVar changes
+        if (AnimState != null)
+        {
+            AnimState.SetBool("AnimWalk", newValue);
+            AnimState.SetBool("AnimFloat", !newValue);
+        }
+
+    }
+
+    // This runs on all clients when the SyncVar changes
+    /*AnimState.SetBool("AnimWalk", newValue);
+    AnimState.SetBool("AnimFloat", !newValue);*/
+
 }

@@ -39,6 +39,14 @@ public class SpiritMovement : MonoBehaviour
 
         CheckIfReachedDestination(); //Used for roaming
 
+
+        if (moveToPlayer == true)
+        {
+            Debug.Log("Num num");
+            ChaseSound.SetActive(true);
+            MainSong.Stop();
+        }
+
     }
 
     private void Awake()
@@ -107,12 +115,10 @@ public class SpiritMovement : MonoBehaviour
     {
             if (other.CompareTag("Player"))
             {
-            Debug.Log("Num num");
-                ChaseSound.SetActive(true);
-                MainSong.Stop();
                 moveToPlayer = true;
                 navAgent.SetDestination(other.transform.position);
             }
+
     }
 
     private void OnTriggerExit(Collider other) //Lost Player

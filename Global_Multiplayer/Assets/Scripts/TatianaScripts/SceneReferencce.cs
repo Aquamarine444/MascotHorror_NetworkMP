@@ -1,30 +1,29 @@
 using Mirror;
 using UnityEngine;
 
+
 public class NarrativeManagerSpawner : NetworkBehaviour
 {
-    [Header("Prefab Reference")]
-    public GameObject narrativeManagerPrefab;
+    public int ViewCounter = 0;
+    public GameObject LobbyScreen;
 
-    private static NarrativeScriptManager spawnedManager;
-
-    public override void OnStartServer()
+    [Server]
+    public void Update()
     {
-        if (narrativeManagerPrefab != null && spawnedManager == null)
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            GameObject spawned = Instantiate(narrativeManagerPrefab);
-            NetworkServer.Spawn(spawned);
-            spawnedManager = spawned.GetComponent<NarrativeScriptManager>();
-        }
-    }
+                ViewCounter += 1;
 
-    public override void OnStopServer()
-    {
-        if (spawnedManager != null)
-        {
-            NetworkServer.UnSpawn(spawnedManager.gameObject);
-            Destroy(spawnedManager.gameObject);
-            spawnedManager = null;
+                if (ViewCounter % 2 == 1)
+                {
+                    LobbyScreen.SetActive(false);
+                }
+
+                if (ViewCounter % 2 == 0)
+                {
+                    LobbyScreen?.SetActive(true);
+                }
+          
         }
     }
 }

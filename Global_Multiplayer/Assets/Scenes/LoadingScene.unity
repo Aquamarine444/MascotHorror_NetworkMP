@@ -786,30 +786,36 @@ PrefabInstance:
         Flashlight.....
 
 
-        Puzzle
-        Controls.......
+        Hide/Show
+        Mouse Pointer....
+
+
+        Pause......
+
+
+        Puzzle Controls.......
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 1723906665831706951, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_fontSize
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1723906665831706951, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_fontSizeBase
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3109944493604236193, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 64.7
+      value: 143
       objectReference: {fileID: 0}
     - target: {fileID: 3109944493604236193, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -102.4
+      value: -102.5
       objectReference: {fileID: 0}
     - target: {fileID: 3395599566545148618, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60.9
+      value: -44.5
       objectReference: {fileID: 0}
     - target: {fileID: 4620372735269968964, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_text
@@ -825,6 +831,12 @@ PrefabInstance:
         F
 
 
+        L
+
+
+        esc
+
+
         K
 
 
@@ -832,11 +844,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4620372735269968964, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_fontSize
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4620372735269968964, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_fontSizeBase
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5626097541480915403, guid: 8fff648a687a3ee47b1f41f2b4814211, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
