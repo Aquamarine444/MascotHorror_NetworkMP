@@ -24,8 +24,8 @@ public class SpiritMovement : MonoBehaviour
 
 
 
-    [SerializeField]
-    private GameObject Player;
+    //[SerializeField]
+   // private GameObject Player;
 
     void Start()
     {
@@ -86,7 +86,7 @@ public class SpiritMovement : MonoBehaviour
                     {
                         if (navAgent.stoppingDistance == 0f)
                         {
-                            Player.tag = "Spirit";
+                            //Player.tag = "Spirit";
                             moveToPlayer = false;
                         }
                     }

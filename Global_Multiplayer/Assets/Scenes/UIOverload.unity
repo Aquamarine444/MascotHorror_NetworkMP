@@ -10470,13 +10470,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000410811634184618, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -113
+      value: -37
       objectReference: {fileID: 0}
     - target: {fileID: 1129626967468501699, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
       propertyPath: m_text
-      value: "Kesavan:\nLevel design\nPower and door mechanics\nLock system\nLighting\n\nDean:\nInteraction
-        code\nInventory System \nNetworking\nCamera System\n\nMia-Tatiana:\nMascot
-        Movement\nCamera System\nNetworking\nUI\n\n"
+      value: "Kesavan:\nLevel design\nPower and door mechanics\nLock system\nLighting\nSound
+        \n\nDean:\nInteraction code\nInventory System \nNetworking\nCamera System\nLighting\n\nMia-Tatiana:\nMascot
+        Movement\nCamera System\nNetworking\nUI\nSound\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 1172748556289972451, guid: 7b32d879bc838bd4cac79d0821a47157, type: 3}
       propertyPath: m_Pivot.x
