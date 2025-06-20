@@ -37,7 +37,6 @@ public class FuseSwitchInteract : NetworkBehaviour, IInteractible
 
     public bool Interact(Interactors interact)
     {
-
         player = interact.gameObject;
 
         // Send fuse toggle command to server with player's fuse state
@@ -63,23 +62,14 @@ public class FuseSwitchInteract : NetworkBehaviour, IInteractible
             else
             {
                 RpcSetLight("green");
-                elevator.SetActive(false);
-                controlRoomDoor.SetActive(false);
+                RpcOpenElevatorDoors(); //  Sync elevator & door state to all clients
                 Debug.Log("Doors Open");
             }
         }
         else
         {
             power.fuseTrigger = false;
-
-            if (playerHasFuse)
-            {
-                RpcSetLight("blank");
-            }
-            else
-            {
-                RpcSetLight("blank");
-            }
+            RpcSetLight("blank");
         }
 
         RpcSetFuseAnim(isOn);
@@ -104,18 +94,31 @@ public class FuseSwitchInteract : NetworkBehaviour, IInteractible
     {
         if (!light) return;
 
+        var renderer = light.GetComponent<MeshRenderer>();
+        if (renderer == null) return;
+
         switch (color)
         {
             case "red":
-                light.GetComponent<MeshRenderer>().material = lightRed;
+                renderer.material = lightRed;
                 break;
             case "green":
-                light.GetComponent<MeshRenderer>().material = lightGreen;
+                renderer.material = lightGreen;
                 break;
             default:
-                light.GetComponent<MeshRenderer>().material = LightBlank;
+                renderer.material = LightBlank;
                 break;
         }
+    }
+
+    [ClientRpc]
+    void RpcOpenElevatorDoors()
+    {
+        if (elevator != null)
+            elevator.SetActive(false);
+
+        if (controlRoomDoor != null)
+            controlRoomDoor.SetActive(false);
     }
 
     [Server]

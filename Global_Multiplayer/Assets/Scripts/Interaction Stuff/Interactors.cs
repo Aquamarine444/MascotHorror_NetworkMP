@@ -1,20 +1,16 @@
 using Mirror;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Interactors : NetworkBehaviour
 {
-
     [SerializeField] private Camera playerCamera;
     [SerializeField] private LayerMask interactLayer;
 
     [SerializeField] private IInteractible teractible;
-
     [SerializeField] private Transform teractibleTransform;
     [SerializeField] private Collider teractibleCollider;
-    //[SerializeField] private int teractiblesFound;
     [SerializeField] private GameObject teractibleCamera;
 
     [SerializeField] private ObjectInspect OI;
@@ -22,46 +18,30 @@ public class Interactors : NetworkBehaviour
     public GameObject interactUI;
     public GameObject minicrosshairUI;
 
-
     [SerializeField] private bool canRaycast = true;
-
 
     private void Update()
     {
-        if (canRaycast)
+        // Prevent input on non-local players
+        if (!isLocalPlayer || !canRaycast) return;
+
+        RaycastHit hit;
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, Mathf.Infinity))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, Mathf.Infinity))
+            if ((interactLayer.value & (1 << hit.collider.gameObject.layer)) != 0)
             {
-                if ((interactLayer.value & (1 << hit.collider.gameObject.layer)) != 0)
+                teractibleTransform = hit.transform;
+                teractibleCollider = hit.collider;
+                teractible = hit.collider.GetComponent<IInteractible>();
+
+                if (teractible != null)
                 {
-                    teractibleTransform = hit.transform;
+                    teractibleCamera = teractible.ExamineCam != null ? teractible.ExamineCam : teractibleCamera;
 
-                    teractibleCollider = hit.collider;
-                    teractible = hit.collider.GetComponent<IInteractible>();
-
-                    if (teractible != null)
-                    {
-                        teractibleCamera = teractible.ExamineCam;
-                        teractibleCamera = teractible.ExamineCam != null ? teractible.ExamineCam : teractibleCamera;
-
-                        //Debug.Log("works");
-
-                        OutlineOn();
-                        EnableInteractUI();
-                        TryInteract();
-
-                    }
-
-
+                    OutlineOn();
+                    EnableInteractUI();
+                    TryInteract();
                 }
-                else
-                {
-                    OutlineOff();
-                    DisableInteractUI();
-                }
-
-
             }
             else
             {
@@ -69,49 +49,41 @@ public class Interactors : NetworkBehaviour
                 DisableInteractUI();
             }
         }
+        else
+        {
+            OutlineOff();
+            DisableInteractUI();
+        }
     }
 
     private void TryInteract()
     {
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton1))
         {
-
             DisableInteractUI();
             OutlineOff();
-
             minicrosshairUI.SetActive(false);
-            teractible.Interact(this);
 
-            // If you want to pick up the item
-            if (teractible.Inspect && !teractible.Examine &&!teractible.Trigger && !teractible.Place)
+            if (teractible != null)
             {
-                Inspect(teractibleTransform);
+                // The actual interaction logic must be handled locally or via Cmds depending on the object's network state
+                teractible.Interact(this);
+
+                if (teractible.Inspect && !teractible.Examine && !teractible.Trigger && !teractible.Place)
+                    Inspect(teractibleTransform);
+
+                else if (teractible.Examine && !teractible.Inspect && !teractible.Trigger && !teractible.Place)
+                    Examine(teractibleCamera);
+
+                else if (teractible.Trigger && !teractible.Inspect && !teractible.Examine && !teractible.Place)
+                    Trigger();
+
+                else if (teractible.Place && !teractible.Inspect && !teractible.Examine && !teractible.Trigger)
+                    Place(teractibleCamera);
+
+                canRaycast = false;
             }
-
-            // If you want to zoom in
-            if (teractible.Examine && !teractible.Inspect && !teractible.Trigger && !teractible.Place)
-            {
-                Examine(teractibleCamera);
-            }
-
-            if (teractible.Trigger && !teractible.Inspect && !teractible.Examine && !teractible.Place)
-            {
-                Trigger();
-            }
-
-            if (teractible.Place && !teractible.Inspect && !teractible.Examine && !teractible.Trigger)
-            {
-                Place(teractibleCamera);
-            }
-
-
-            canRaycast = false;
-            //teractible.Interact(this);
-
-
-
         }
-
     }
 
     public void OutlineOn()
@@ -119,10 +91,7 @@ public class Interactors : NetworkBehaviour
         if (teractibleCollider != null)
         {
             var outline = teractibleCollider.GetComponent<Outline>();
-            if (outline != null)
-            {
-                outline.enabled = true;
-            }
+            if (outline != null) outline.enabled = true;
         }
     }
 
@@ -131,51 +100,24 @@ public class Interactors : NetworkBehaviour
         if (teractibleCollider != null)
         {
             var outline = teractibleCollider.GetComponent<Outline>();
-            if (outline != null)
-            {
-                outline.enabled = false;
-            }
+            if (outline != null) outline.enabled = false;
         }
     }
 
-    public void EnableInteractUI()
-    {
-        interactUI.SetActive(true);
-    }
+    public void EnableInteractUI() => interactUI?.SetActive(true);
+    public void DisableInteractUI() => interactUI?.SetActive(false);
 
-    public void DisableInteractUI()
-    {
-        interactUI.SetActive(false);
-    }
+    private void Inspect(Transform T) => OI?.Pickup(T);
+    private void Examine(GameObject C) => OI?.ZoomIn(C);
+    private void Trigger() => OI?.Trigger();
+    private void Place(GameObject C) => OI?.Place(C);
 
-    private void Inspect(Transform T)
-    {
-        OI.Pickup(T);
-    }
-
-    private void Examine(GameObject C)
-    {
-        OI.ZoomIn(C);
-    }
-
-    private void Trigger()
-    {
-        OI.Trigger();
-    }
-
-    private void Place(GameObject C)
-    {
-        OI.Place(C);
-    }
-
-    public void EnableRaycast()
-    {
-        canRaycast = true;
-    }
+    public void EnableRaycast() => canRaycast = true;
 
     private void OnDrawGizmos()
     {
-        // Align gizmo with the player's camera crosshair.
+        if (playerCamera == null) return;
+
         Vector3 cameraCenter = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, playerCamera.nearClipPlane));
         Gizmos.color = Color.red;
         Gizmos.DrawLine(cameraCenter, cameraCenter + playerCamera.transform.forward * 3f);
