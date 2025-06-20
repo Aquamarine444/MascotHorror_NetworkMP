@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : MonoBehaviour
 {
+    public GameObject PausePanel;
     void Update()
     {
         /*if (NetworkServer.connections.Count != 2)
@@ -14,9 +15,14 @@ public class GameSceneManager : MonoBehaviour
             SceneManager.LoadScene("UIOverload");
         }*/
 
-        if (Input.GetKeyUp(KeyCode.X))
+        /*if (Input.GetKeyUp(KeyCode.X))
         {
             OnReturnToStart();
+        }*/
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PausePanel.SetActive(true);
         }
     }
 
@@ -29,7 +35,6 @@ public class GameSceneManager : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        Time.timeScale = 1.0f;
         SceneManager.LoadScene("UIOverload");
     }
 }
